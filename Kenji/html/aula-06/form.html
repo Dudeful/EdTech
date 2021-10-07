@@ -12,7 +12,7 @@
     <form action="#">
       <div>
         <fieldset>
-          <legend>Aula 01:</legend>
+          <legend><h1 style="color: grey">Aula 01:</h1></legend>
           <h1><b>Hello World!</b></h1>
         </fieldset>
       </div>
@@ -21,7 +21,7 @@
 
       <div>
         <fieldset>
-          <legend>Aula 02:</legend>
+          <legend><h1 style="color: grey">Aula 02:</h1></legend>
           <h1>Alpha EdTech</h1>
           <h2>Professor Kenji</h2>
           <p>
@@ -121,7 +121,7 @@
       
       <div style="background-color: #202020; color: white">
         <fieldset>
-          <legend>Aula 03:</legend>
+          <legend><h1 style="color: grey">Aula 03:</h1></legend>
           <h1>
             <a style="color: #176d76" href="https://sejaalphaedtech.org.br/">Alpha <b>EdTech</b></a>
           </h1>
@@ -263,7 +263,17 @@
 
       <div>
         <fieldset>
-          <legend>Aula 04:</legend>
+          <legend><h1 style="color: grey">Aula 04:</h1></legend>
+          <img width="60%" height="auto" src="https://raw.githubusercontent.com/Dudeful/EdTech/master/Kenji/html/aula-06/images/q01.jpg" />
+          <img width="60%" height="auto" src="https://raw.githubusercontent.com/Dudeful/EdTech/master/Kenji/html/aula-06/images/q02.jpg" />
+          <img width="60%" height="auto" src="https://raw.githubusercontent.com/Dudeful/EdTech/master/Kenji/html/aula-06/images/q03.jpg" />
+          <img width="60%" height="auto" src="https://raw.githubusercontent.com/Dudeful/EdTech/master/Kenji/html/aula-06/images/q04.jpg" />
+          <img width="60%" height="auto" src="https://raw.githubusercontent.com/Dudeful/EdTech/master/Kenji/html/aula-06/images/q05.jpg" />
+          <img width="60%" height="auto" src="https://raw.githubusercontent.com/Dudeful/EdTech/master/Kenji/html/aula-06/images/q06.jpg" />
+          <img width="60%" height="auto" src="https://raw.githubusercontent.com/Dudeful/EdTech/master/Kenji/html/aula-06/images/q07.jpg" />
+          <img width="60%" height="auto" src="https://raw.githubusercontent.com/Dudeful/EdTech/master/Kenji/html/aula-06/images/q07.jpg" />
+          <img width="60%" height="auto" src="https://raw.githubusercontent.com/Dudeful/EdTech/master/Kenji/html/aula-06/images/q08.jpg" />
+          <img width="60%" height="auto" src="https://raw.githubusercontent.com/Dudeful/EdTech/master/Kenji/html/aula-06/images/q09.jpg" />
         </fieldset>
       </div>
 
@@ -271,7 +281,7 @@
       
       <div>
         <fieldset>
-          <legend>Aula 05:</legend>
+          <legend><h1 style="color: grey">Aula 05:</h1></legend>
           <h2>Selecione abaixo o que for correto.</h2>
           <h4>Faz parte da categoria Heading Content:</h4>
           <ul>
@@ -356,18 +366,63 @@
 
       <div>
         <fieldset>
-          <legend>Aula 06:</legend>
-          <label for="fname">First name:</label>
-          <input type="text" id="fname" name="fname" /><br /><br />
-          <label for="lname">Last name:</label>
-          <input type="text" id="lname" name="lname" /><br /><br />
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" /><br /><br />
-          <label for="birthday">Birthday:</label>
-          <input type="date" id="birthday" name="birthday" /><br /><br />
-          <input type="submit" value="Submit" />
-        </fieldset>
-      </div>
-    </form>
-  </body>
-</html>
+          <legend><h1 style="color: grey">Aula 06:</h1></legend>
+          <div>
+            <label for="nome">Nome:</label>
+            <input style="margin-bottom: 20px;" type="text" id="nome" name="nome" />
+          </div>
+          <div style="margin-bottom: 15px;">
+            <label for="empresa">Empresa:</label>
+            <input type="text" id="empresa" name="empresa" />
+          </div>
+          <div>
+            <label>Cargo:</label>
+            <ul>
+              <li>
+                <input type="checkbox" name="junior" id="junior" /> 
+                <label for="junior">Dev Junior</label>
+              </li>
+              <li>
+                <input type="checkbox" name="pleno" id="pleno" />
+                <label for="pleno">Dev Pleno</label>
+              </li>
+              <li>
+                <input type="checkbox" name="senior" id="senior" />
+                <label for="senior">Dev Sênior</label>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <label>Stack utilizado:</label>
+            <ul>
+              <li>
+                <input type="radio" name="mern" id="mern" />
+                <label for="mern">MERN</label>
+              </li>
+              <li>
+                <input type="radio" name="mean" id="mean" />
+                <label for="mean">MEAN</label>
+              </li>
+              <li>
+                <input type="radio" name="mevn" id="mevn" />
+                <label for="mevn">MEVN</label>
+              </li>
+            </ul>
+          </div>
+            
+          <div>
+            <label for="range">Salário:</label>
+            <br />
+            <small>10k</small>
+            <input type="range" id="range" name="range" />
+            <small>60k</small>
+          </div>
+            
+          <input style="margin-top: 20px;" type="submit" value="Enviar" />
+          </fieldset>
+        </div>
+      </form>
+    </body>
+    </html>
+    
