@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alpha EdTech - Kenji Aula 11</title>
+  </head>
+
+  <style>
+    body {
+      overflow: hidden;
+      margin: 0;
+    }
+  </style>
+
+  <body></body>
+  <script>
+    let size = 10;
+
+    function start() {
+      area.start();
+      obj1 = new component(
+        size,
+        size,
+        `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(
+          Math.random() * 255
+        )}, ${Math.floor(Math.random() * 255)}`,
+        window.innerWidth / 2 - 5,
+        window.innerHeight / 2 - 5
+      );
+      obj2 = new component(
+        size,
+        size,
+        `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(
+          Math.random() * 255
+        )}, ${Math.floor(Math.random() * 255)}`,
+        window.innerWidth / 2 - 5,
+        window.innerHeight / 2 - 5
+      );
+      obj3 = new component(
+        size,
+        size,
+        `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(
+          Math.random() * 255
+        )}, ${Math.floor(Math.random() * 255)}`,
+        window.innerWidth / 2 - 5,
+        window.innerHeight / 2 - 5
+      );
+      obj4 = new component(
+        size,
+        size,
+        `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(
+          Math.random() * 255
+        )}, ${Math.floor(Math.random() * 255)}`,
+        window.innerWidth / 2 - 5,
+        window.innerHeight / 2 - 5
+      );
+      obj5 = new component(
+        size,
+        size,
+        `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(
+          Math.random() * 255
+        )}, ${Math.floor(Math.random() * 255)}`,
+        window.innerWidth / 2 - 5,
+        window.innerHeight / 2 - 5
+      );
+      obj6 = new component(
+        size,
+        size,
+        `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(
+          Math.random() * 255
+        )}, ${Math.floor(Math.random() * 255)}`,
+        window.innerWidth / 2 - 5,
+        window.innerHeight / 2 - 5
+      );
+      obj7 = new component(
+        size,
+        size,
+        `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(
+          Math.random() * 255
+        )}, ${Math.floor(Math.random() * 255)}`,
+        window.innerWidth / 2 - 5,
+        window.innerHeight / 2 - 5
+      );
+      obj8 = new component(
+        size,
+        size,
+        `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(
+          Math.random() * 255
+        )}, ${Math.floor(Math.random() * 255)}`,
+        window.innerWidth / 2 - 5,
+        window.innerHeight / 2 - 5
+      );
+      obj9 = new component(
+        size,
+        size,
+        `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(
+          Math.random() * 255
+        )}, ${Math.floor(Math.random() * 255)}`,
+        window.innerWidth / 2 - 5,
+        window.innerHeight / 2 - 5
+      );
+      obj10 = new component(
+        size,
+        size,
+        `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(
+          Math.random() * 255
+        )}, ${Math.floor(Math.random() * 255)}`,
+        window.innerWidth / 2 - 5,
+        window.innerHeight / 2 - 5
+      );
+    }
+
+    let area = {
+      canvas: document.createElement("canvas"),
+      start: function () {
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        this.interval = setInterval(update, 5);
+      },
+      clear: function () {
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      },
+    };
+
+    function component(width, height, color, x, y) {
+      this.width = width;
+      this.height = height;
+      this.x = x;
+      this.y = y;
+      this.update = function () {
+        ctx = area.context;
+        ctx.fillStyle = color;
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+      };
+    }
+
+    function update() {
+      // area.clear();
+      obj1.x += (Math.random() - 0.5) * 50;
+      obj2.x += (Math.random() - 0.5) * 50;
+      obj3.x += (Math.random() - 0.5) * 50;
+      obj4.x += (Math.random() - 0.5) * 50;
+      obj5.x += (Math.random() - 0.5) * 50;
+      obj6.x += (Math.random() - 0.5) * 50;
+      obj7.x += (Math.random() - 0.5) * 50;
+      obj8.x += (Math.random() - 0.5) * 50;
+      obj9.x += (Math.random() - 0.5) * 50;
+      obj10.x += (Math.random() - 0.5) * 50;
+      obj1.y += (Math.random() - 0.5) * 50;
+      obj2.y += (Math.random() - 0.5) * 50;
+      obj3.y += (Math.random() - 0.5) * 50;
+      obj4.y += (Math.random() - 0.5) * 50;
+      obj5.y += (Math.random() - 0.5) * 50;
+      obj6.y += (Math.random() - 0.5) * 50;
+      obj7.y += (Math.random() - 0.5) * 50;
+      obj8.y += (Math.random() - 0.5) * 50;
+      obj9.y += (Math.random() - 0.5) * 50;
+      obj10.y += (Math.random() - 0.5) * 50;
+
+      obj1.update();
+      obj2.update();
+      obj3.update();
+      obj4.update();
+      obj5.update();
+      obj6.update();
+      obj7.update();
+      obj8.update();
+      obj9.update();
+      obj10.update();
+    }
+
+    document.body.onload = start();
+  </script>
+</html>
