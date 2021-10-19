@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+}
+.parent_div {
+  display: flex;
+  justify-content: space-between;
+}
+#child_div_1 {
+  width: 40vw;
+  height: 100vh;
+  background-color: red;
+}
+#child_div_2 {
+  width: 30vw;
+  height: 100vh;
+  background-color: blue;
+}
+#child_div_3 {
+  width: 40vw;
+  height: 100vh;
+  background-color: green;
+}
