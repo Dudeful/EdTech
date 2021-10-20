@@ -25,9 +25,9 @@
           window["obj" + k] = new component(
             size,
             size,
-            `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(
+            `rgb(${Math.floor(Math.random() * 0)}, ${Math.floor(
               Math.random() * 255
-            )}, ${Math.floor(Math.random() * 255)}`,
+            )}, ${Math.floor(Math.random() * 0)}`,
             event.touches[0].clientX,
             event.touches[0].clientY
           );
@@ -95,28 +95,38 @@
     function update2(numObj, offsetX, offsetY) {
       // area.clear();
       for (let k = 1; k <= (numObj / 5) * 1; k++) {
-        window["obj" + k].x += (Math.random() - offsetX) * 40;
-        window["obj" + k].y += (Math.random() - offsetY) * 40;
+        window["obj" + k].x +=
+          (Math.random() - offsetX) * window.innerHeight * 0.04;
+        window["obj" + k].y +=
+          (Math.random() - offsetY) * window.innerHeight * 0.04;
         window["obj" + k].update();
       }
       for (let k = (numObj / 5) * 1 + 1; k <= (numObj / 5) * 2; k++) {
-        window["obj" + k].x += (Math.random() - offsetX) * 30;
-        window["obj" + k].y += (Math.random() - offsetY) * 30;
+        window["obj" + k].x +=
+          (Math.random() - offsetX) * window.innerHeight * 0.03;
+        window["obj" + k].y +=
+          (Math.random() - offsetY) * window.innerHeight * 0.03;
         window["obj" + k].update();
       }
       for (let k = (numObj / 5) * 2 + 1; k <= (numObj / 5) * 3; k++) {
-        window["obj" + k].x += (Math.random() - offsetX) * 20;
-        window["obj" + k].y += (Math.random() - offsetY) * 20;
+        window["obj" + k].x +=
+          (Math.random() - offsetX) * window.innerHeight * 0.02;
+        window["obj" + k].y +=
+          (Math.random() - offsetY) * window.innerHeight * 0.02;
         window["obj" + k].update();
       }
       for (let k = (numObj / 5) * 3 + 1; k <= (numObj / 5) * 4; k++) {
-        window["obj" + k].x += (Math.random() - offsetX) * 10;
-        window["obj" + k].y += (Math.random() - offsetY) * 10;
+        window["obj" + k].x +=
+          (Math.random() - offsetX) * window.innerHeight * 0.01;
+        window["obj" + k].y +=
+          (Math.random() - offsetY) * window.innerHeight * 0.01;
         window["obj" + k].update();
       }
       for (let k = (numObj / 5) * 4 + 1; k <= (numObj / 5) * 5; k++) {
-        window["obj" + k].x += (Math.random() - offsetX) * 5;
-        window["obj" + k].y += (Math.random() - offsetY) * 5;
+        window["obj" + k].x +=
+          (Math.random() - offsetX) * window.innerHeight * 0.005;
+        window["obj" + k].y +=
+          (Math.random() - offsetY) * window.innerHeight * 0.005;
         window["obj" + k].update();
       }
     }
