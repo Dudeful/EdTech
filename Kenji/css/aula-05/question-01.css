@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+#container {
+  width: 80vw;
+  margin: auto;
+  padding: 1vh 0 3vh;
+  font-family: "Montserrat", sans-serif;
+  color: #343a40;
+}
+
+#first_img {
+  height: 50vh;
+  width: 100vw;
+  margin-left: -10vw;
+  background-image: url("images/Ivan-the-Terrible-and-His-Son-Ivan.jfif");
+  background-position: 0vh -15vh;
+  background-size: cover;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 200;
+  font-size: 600%;
+  margin: 0;
+  letter-spacing: 3.5vw;
+}
+
+h1,
+h2 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+hr {
+  width: 40vw;
+  margin-top: 0;
+  margin-left: 6vw;
+}
+
+#beauty_hr {
+  width: 100%;
+  margin: 1vh auto 2.5vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  color: #232323;
+  line-height: 1.8em;
+  padding-left: 2em;
+}
+
+#golden_spiral {
+  float: right;
+  width: 30%;
+}
+
+#golden_spiral img {
+  display: block;
+  width: 95%;
+  margin: 0 0 3% 5%;
+}
+
+#monalisa {
+  float: right;
+  width: 20%;
+}
+
+#monalisa img {
+  display: block;
+  width: 95%;
+  margin: 0 0 3% 5%;
+}
