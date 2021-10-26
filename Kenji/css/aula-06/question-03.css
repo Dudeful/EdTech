@@ -51,7 +51,7 @@ body {
   color: aliceblue;
   text-shadow: 4px 4px 3px rgb(45, 53, 59);
 
-  transition-property: letter-spacing, font-family;
+  transition-property: letter-spacing;
   transition-duration: 3s;
   transition-delay: 0s;
 }
@@ -102,7 +102,6 @@ body {
 }
 
 #index a:hover {
-  font-size: 1.2rem;
   color: rgb(35, 61, 61);
   font-weight: 600;
 }

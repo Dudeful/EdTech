@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background-color: aliceblue;
+}
+
+#container {
+  font-family: "Cinzel", serif;
+  width: 90vw;
+  height: 95vh;
+  margin: 5vh auto 0;
+}
+
+#cover {
+  margin: 0 0 0 -5vw;
+  height: 30vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cover h1 {
+  font-family: "Cinzel", serif;
+  position: absolute;
+  font-weight: 200;
+  font-size: 15vh;
+  letter-spacing: 3.5vw;
+  color: aliceblue;
+  text-shadow: 4px 4px 3px rgb(45, 53, 59);
+
+  transition-property: letter-spacing;
+  transition-duration: 3s;
+  transition-delay: 0s;
+}
+
+#cover h1:hover {
+  letter-spacing: 6vw;
+}
+
+#cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0px -350px;
+}
+
+#index {
+  box-shadow: 1px 1px 15px 10px rgba(119, 136, 153, 0.1);
+  background-color: rgba(218, 230, 241, 0.33);
+  padding: 2vh 4vw;
+  margin: 8vh auto;
+  border: 1px solid lightslategray;
+  width: fit-content;
+}
+
+#index h3 {
+  padding: 0;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+#index ul {
+  margin: 0;
+  padding: 0;
+}
+
+#index li {
+  margin-top: 1vh;
+  font-size: 1.25rem;
+}
+
+#index a {
+  text-decoration: none;
+  color: darkslategrey;
+  font-weight: 500;
+  transition-property: letter-spacing;
+  transition-duration: 1s;
+  transition-delay: 0s;
+}
+
+#index a:hover {
+  font-size: 1.22rem;
+  color: rgb(35, 61, 61);
+  font-weight: 800;
+}
+
+#index a:focus {
+  color: rgb(0, 49, 49);
+  letter-spacing: 2px;
+}
+
+#index a:visited {
+  color: rgb(209, 84, 46);
+  font-style: italic;
+}
+
+#index a:active {
+  text-shadow: 1px 1px 2px rgb(45, 53, 59);
+}
