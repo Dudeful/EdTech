@@ -66,10 +66,3 @@ body {
   text-decoration: none;
   color: darkslategrey;
 }
-
-#index a:hover {
-  font-size: 1.2rem;
-
-  color: rgb(35, 61, 61);
-  font-weight: 600;
-}
