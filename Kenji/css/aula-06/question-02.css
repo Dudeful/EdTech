@@ -65,11 +65,29 @@ body {
 #index a {
   text-decoration: none;
   color: darkslategrey;
+
+  transition-property: letter-spacing;
+  transition-duration: 1s;
+  transition-delay: 0s;
 }
 
 #index a:hover {
   font-size: 1.2rem;
-
   color: rgb(35, 61, 61);
   font-weight: 600;
+}
+
+#index a:focus {
+  color: rgb(0, 49, 49);
+  letter-spacing: 2px;
+}
+
+#index a:visited {
+  color: rgb(209, 84, 46);
+  font-style: italic;
+  font-weight: 200;
+}
+
+#index a:active {
+  text-shadow: 1px 1px 2px rgb(45, 53, 59);
 }
