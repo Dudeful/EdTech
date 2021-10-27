@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
+}
+
+#title {
+  color: currentColor;
+  font-weight: 400;
+  margin: -15vh auto 5vh;
+}
+
+#pie_chart {
+  margin: 4vh auto;
+  display: flex;
+  height: 55vh;
+  width: 55vh;
+  border-radius: 50%;
+  background: conic-gradient(
+    #f54748 0% 14.7%,
+    #00acb5ee 0% 22.8%,
+    rgb(255, 193, 7) 0% 30.6%,
+    rgba(145, 107, 191, 0.9) 0% 34.4%,
+    hsl(143, 65%, 64%) 0% 38%,
+    hsla(221, 25%, 27%, 0.9) 0% 100%
+  );
+  transition: 1s all;
+}
+
+#pie_chart:hover {
+  height: 60vh;
+  width: 60vh;
+  box-shadow: 0px 0px 70px 35px rgba(58, 58, 86, 0.5);
+  border: 2px solid white;
+}
+
+#subtitles {
+  width: fit-content;
+  margin: auto -20rem;
+}
+
+li {
+  font-weight: 900;
+  margin-top: 1rem;
+  letter-spacing: 0.2rem;
+  font-size: 1.1rem;
+}
+
+#china_li {
+  color: #f54748;
+}
+#us_li {
+  color: #00acb5ee;
+}
+#germany_li {
+  color: rgb(255, 193, 7);
+}
+#france_li {
+  color: rgba(145, 107, 191, 0.9);
+}
+#japan_li {
+  color: hsl(143, 65%, 64%);
+}
+#others_li {
+  color: hsla(221, 25%, 27%, 0.9);
+}
