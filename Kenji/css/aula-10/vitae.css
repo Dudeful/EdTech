@@ -124,9 +124,9 @@ body {
     width: 100vw;
   }
   #profile {
-    flex: 0 0 10%;
+    flex: 0 0 30%;
   }
   #background {
-    flex: 0 0 90%;
+    flex: 0 0 70%;
   }
 }
