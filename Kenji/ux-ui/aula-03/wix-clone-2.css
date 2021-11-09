@@ -1,0 +1,286 @@
+body {
+  margin: 0;
+  color: #285a5b;
+  font-family: 'Oswald', sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #285a5b;
+}
+#navbar {
+  box-sizing: border-box;
+  height: 124px;
+  width: 100vw;
+  padding: 0 3vw;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fffdfb;
+  align-items: center;
+  z-index: 2;
+}
+#navbar #logo a {
+  display: flex;
+  align-items: center;
+}
+#navbar #logo h1 {
+  font-size: 27px;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: 1px;
+}
+#navbar #logo img {
+  height: 85px;
+  margin-bottom: 18px;
+}
+#navbar #nav_links a {
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  margin: auto 1em;
+}
+#navbar #profile_basket {
+  display: inline-flex;
+  align-items: center;
+}
+#navbar #profile_basket a {
+  margin: auto 2em;
+  display: inline-flex;
+  align-items: center;
+}
+#navbar #profile_basket a img {
+  height: 24px;
+}
+#navbar #profile_basket a span {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #4f7170;
+  margin-left: 14px;
+}
+#navbar #profile_basket a #basket_items_count {
+  margin-left: -20px;
+  margin-bottom: -10px;
+}
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+#main_section {
+  padding-top: 124px;
+  max-width: 100vw;
+  height: 100vh;
+  box-shadow: inset 0 0 0 100vw rgba(32, 32, 32, 0.25);
+  background-image: url('images/background-chicken.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+#main_section #brand {
+  display: flex;
+  flex-wrap: wrap;
+  color: #ffffff;
+  align-items: center;
+  text-align: center;
+}
+
+#main_section h1 {
+  margin: 0;
+  font-size: 100px;
+  letter-spacing: 5px;
+  font-weight: 500;
+  flex: 1 1 100%;
+}
+
+#main_section h3 {
+  margin: 0;
+  flex: 1 1 100%;
+  letter-spacing: 2px;
+  font-weight: 400;
+  font-size: 30px;
+  margin: 20px 0 0;
+}
+
+#main_section h4 {
+  margin: 0 0 20px;
+  flex: 1 1 100%;
+  letter-spacing: 3px;
+  font-weight: 400;
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+}
+#main_section hr {
+  flex: 1 1 50%;
+  max-width: 50%;
+  background-color: white;
+}
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+#info_section {
+  width: 92vw;
+  margin: 8vh auto;
+  display: flex;
+}
+#info_section #about {
+  background-image: url('images/eggs-close.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex: 1 1 33.3333%;
+  display: flex;
+  align-items: center;
+}
+#info_section #about div,
+#info_section #address div {
+  margin: auto;
+  background-color: #fffdfb;
+  width: fit-content;
+  padding: 50px 30px;
+  text-align: center;
+}
+#info_section #about div h3,
+#info_section #address div h3 {
+  font-size: 30px;
+  letter-spacing: 2px;
+  font-weight: 400;
+  margin: 0 0 10px;
+}
+#info_section #about div a,
+#info_section #address div a {
+  margin-top: 0;
+  font-family: 'Roboto';
+  font-weight: 400;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #202020;
+}
+#info_section #order_today {
+  background-color: #ffb84d;
+  flex: 1 1 33.3333%;
+  text-align: center;
+  position: relative;
+  padding: 50px 0;
+}
+#info_section #order_today img {
+  position: absolute;
+  height: 150px;
+}
+
+#info_section #order_today h3 {
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  width: 50%;
+  margin: 100px auto 50px;
+}
+
+#info_section #order_today p {
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 30px;
+  max-width: 57%;
+  margin: 40px auto;
+}
+
+#info_section #order_today button {
+  font-size: 16px;
+  color: white;
+  background-color: #285a5b;
+  border: none;
+  outline: none;
+  padding: 15px 30px;
+  margin: 40px auto;
+  cursor: pointer;
+}
+
+#info_section #address {
+  background-image: url('images/kid-holding-chicken.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex: 1 1 33.3333%;
+  display: flex;
+  align-items: center;
+}
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+#testimony_section {
+  background-image: url('images/background-paper.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding: 120px 0;
+}
+#testimony_section img {
+  height: 105px;
+  margin: auto;
+  display: block;
+}
+#testimony_section h2 {
+  font-size: 38px;
+  font-weight: 400;
+}
+#testimony_section h6,
+#testimony_section p {
+  font-family: 'Roboto';
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  width: 45%;
+  margin: 50px auto;
+}
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+#instagram_section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 92vw;
+  margin: auto;
+}
+#instagram_section h2 {
+  font-size: 40px;
+  font-weight: 400;
+  flex: 1 1 100%;
+  margin: 10px auto;
+}
+#instagram_section h4 {
+  flex: 1 1 100%;
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: 3px;
+  font-family: 'Roboto';
+  margin: 10px auto;
+}
+#instagram_section img {
+  box-sizing: border-box;
+  padding: 40px;
+  width: 25%;
+  height: 400px;
+  object-fit: cover;
+  flex: 1 1 25%;
+}
+
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------- */
+#main_footer {
+  display: flex;
+  justify-content: space-between;
+  width: 80vw;
+  margin: 10vh auto;
+  font-weight: 400;
+  font-family: 'Roboto';
+}
+
+#main_footer #chicken_2 {
+  height: 150px;
+}
