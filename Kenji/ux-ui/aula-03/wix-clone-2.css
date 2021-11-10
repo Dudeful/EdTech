@@ -74,10 +74,10 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
 }
-
 #main_section #brand {
   display: flex;
   flex-wrap: wrap;
@@ -85,7 +85,6 @@ a {
   align-items: center;
   text-align: center;
 }
-
 #main_section h1 {
   margin: 0;
   font-size: 100px;
@@ -93,7 +92,6 @@ a {
   font-weight: 500;
   flex: 1 1 100%;
 }
-
 #main_section h3 {
   margin: 0;
   flex: 1 1 100%;
@@ -102,7 +100,6 @@ a {
   font-size: 30px;
   margin: 20px 0 0;
 }
-
 #main_section h4 {
   margin: 0 0 20px;
   flex: 1 1 100%;
@@ -167,7 +164,6 @@ a {
   position: absolute;
   height: 150px;
 }
-
 #info_section #order_today h3 {
   font-size: 40px;
   font-weight: 400;
@@ -175,7 +171,6 @@ a {
   width: 50%;
   margin: 100px auto 50px;
 }
-
 #info_section #order_today p {
   font-family: 'Roboto';
   font-size: 16px;
@@ -185,7 +180,6 @@ a {
   max-width: 57%;
   margin: 40px auto;
 }
-
 #info_section #order_today button {
   font-size: 16px;
   color: white;
@@ -196,7 +190,6 @@ a {
   margin: 40px auto;
   cursor: pointer;
 }
-
 #info_section #address {
   background-image: url('images/kid-holding-chicken.webp');
   background-position: center;
@@ -214,6 +207,7 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   text-align: center;
   padding: 120px 0;
 }
@@ -268,7 +262,6 @@ a {
   object-fit: cover;
   flex: 1 1 25%;
 }
-
 /* ---------------------------------------------------------- */
 /* ---------------------------------------------------------- */
 /* ---------------------------------------------------------- */
@@ -279,8 +272,21 @@ a {
   margin: 10vh auto;
   font-weight: 400;
   font-family: 'Roboto';
+  line-height: 10px;
 }
-
 #main_footer #chicken_2 {
   height: 150px;
+}
+#main_footer h3 {
+  margin: 5px auto 40px;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+#main_footer #social_icons img {
+  margin: 0 20px 20px 0;
+  height: 28px;
+}
+#main_footer #social_icons a {
+  text-decoration: underline;
 }
