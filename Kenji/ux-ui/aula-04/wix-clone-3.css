@@ -36,6 +36,7 @@ a {
   margin: 0;
   font-family: 'Museo';
   font-weight: 700;
+  padding-top: 7%;
 }
 #navbar #logo h5 {
   color: #293e31;
@@ -63,6 +64,9 @@ a {
   color: white;
   font-size: 13px;
   padding: 0 15px;
+}
+#navbar #nav_links a:hover {
+  color: #fe8340;
 }
 #navbar #nav_links a[active] {
   color: #fe8340;
@@ -269,8 +273,110 @@ a {
 }
 /* ----------------------------------- */
 #blog_section {
-  visibility: hidden;
   display: flex;
+  flex-wrap: wrap;
+  padding: 15vh 19vw 30vh;
+  margin: auto;
+  box-sizing: border-box;
+  background-color: #dacec2;
+}
+#blog_section h2 {
+  flex: 1 1 100%;
+  color: #293e31;
+  font-size: 32px;
+  font-family: 'Museo';
+}
+#blog_section hr {
+  flex: 1 1 100%;
+  max-width: 62px;
+  margin-left: 0;
+  border: none;
+  height: 1px;
+  background-color: #293e31;
+}
+#blog_section #blog_posts_home {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+#blog_section #blog_posts_home .blog_cards {
+  background-color: white;
+}
+#blog_section #blog_posts_home .blog_cards .post_card_wrapper {
+  box-sizing: border-box;
+  padding: 28px 24px 25px;
+  height: 55%;
+}
+#blog_section #blog_posts_home .blog_cards h4 {
+  font-size: 18px;
+  color: #5a5a5a;
+  width: 242px;
+}
+#blog_section #blog_posts_home .blog_cards h4:hover {
+  color: #fe8340;
+}
+#blog_section #blog_posts_home .blog_cards hr {
+  min-width: 100%;
+  opacity: 0.15;
+}
+#blog_section #blog_posts_home #post_card_info {
+  display: flex;
+  justify-content: space-between;
+}
+#blog_section #blog_posts_home #post_card_info div {
+  font-size: 12px;
+  color: #414141;
+  font-weight: 500;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-right: auto;
+  margin-left: 12px;
+}
+#blog_section #blog_posts_home #post_card_info div h6,
+#blog_section #blog_posts_home #post_card_info div p {
+  margin: 0;
+  flex: 1 1 100%;
+}
+#blog_section #blog_posts_home .blog_cards img {
+  height: 164px;
+}
+#blog_section #blog_posts_home #post_card_info img {
+  height: 32px;
+}
+#blog_section #blog_posts_home #post_card_likes {
+  display: flex;
+  justify-content: space-between;
+  height: 19px;
+  margin-left: -60px;
+}
+#blog_section #blog_posts_home #post_card_likes img {
+  height: 100%;
+}
+#blog_section #blog_posts_home #post_card_likes a span {
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+  font-size: 12px;
+  position: relative;
+  top: -5px;
+}
+#blog_section button {
+  margin: 10vh auto auto;
+  border: none;
+  outline: none;
+  flex: 1 1 100%;
+  max-width: 142px;
+  height: 40px;
+  background-color: #fe8340;
+  color: #293e31;
+  font-size: 16px;
+  font-family: 'Raleway';
+  cursor: pointer;
+}
+#blog_section button:hover {
+  background-color: #293e31;
+  color: white;
 }
 /* ----------------------------------- */
 #main_footer {
