@@ -1,0 +1,90 @@
+/* #202020
+#606060
+#EAEAEA
+#DEDEDE
+#C0C0C0
+#9F9F9F
+#9C9C9C
+
+#F0BD61
+#FCCE7C
+#FFD996
+#FFE3B0
+#FFECCB */
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+#main_nav {
+  box-sizing: border-box;
+  padding: 8px 16px;
+  height: 63.5px;
+  background-color: #000000;
+  color: #5a5d5a;
+}
+#nav_container {
+  width: 100%;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+#main_nav #navbar_brand {
+  box-sizing: border-box;
+  height: 47.5px;
+  padding: 5px 0;
+  margin: 0 16px 0 0;
+}
+#main_nav #logo {
+  height: 37.5px;
+}
+#main_nav #navbar_collaspse {
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#main_nav #navbar_links a {
+  padding: 8px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #ffffff99;
+  height: 100%;
+}
+#main_nav #navbar_links a img {
+  height: 5px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+#main_nav #navbar_login {
+  color: #ffffff99;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+}
+#main_nav #navbar_login img {
+  height: 30px;
+  margin-right: 4px;
+}
+#main_nav #navbar_login a {
+  color: #ffffff99;
+  text-decoration: none;
+}
+#main_nav #navbar_login a img {
+  height: 5px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+#hierarchy {
+  padding: 0 15px;
+  background-color: #d0d896;
+}
+#hierarchy p {
+  font-size: 0.75rem;
+  padding: 6px 0;
+  margin: 0;
+}
