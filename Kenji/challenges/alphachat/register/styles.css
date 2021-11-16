@@ -15,7 +15,8 @@ iframe {
 }
 header {
   display: flex;
-  position: relative;
+  position: absolute;
+  top: 12vh;
   width: 100vw;
   height: 60px;
   background-color: #606060;
@@ -44,6 +45,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 10vh;
 }
 main section {
   display: flex;
