@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AlphaChat</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,30 +15,70 @@
   <body>
     <div id="main_menu">
       <header>
-        <img src="images/profile-pic.svg" />
-        <h3>Jack Doe</h3>
+        <div id="main_menu_back">
+          <a href="/main_screen/html/initialChat.html#" target="_parent">
+            <img src="images/back.svg" />
+            <h6>Voltar</h6>
+          </a>
+        </div>
+        <a style="text-decoration: none; color: #ffffff99" href="/profile/profile.html" target="_parent">
+          <div>
+            <img src="images/profile-pic.svg" />
+            <h3>Jack Doe</h3>
+          </div>
+        </a>
       </header>
       <div>
-        <div id="contacts_link" class="main_menu_links">
-          <img src="images/contacts.svg" />
-          <h3>Contatos</h3>
-        </div>
-        <div id="newgroup_link" class="main_menu_links">
-          <img src="images/new-group.svg" />
-          <h3>Novo Grupo</h3>
-        </div>
-        <div id="calls_link" class="main_menu_links">
-          <img src="images/calls.svg" />
-          <h3>Chamadas</h3>
-        </div>
-        <div id="settings_link" class="main_menu_links">
-          <img src="images/settings.svg" />
-          <h3>Configurações</h3>
-        </div>
-        <div id="logout_link" class="main_menu_links">
-          <img src="images/logout.svg" />
-          <h3>Log Out</h3>
-        </div>
+        <a
+          style="text-decoration: none"
+          href="/main_screen/html/initialChat.html#contacts_menu_modal"
+          target="_parent"
+        >
+          <div id="contacts_link" class="main_menu_links">
+            <img src="images/contacts.svg" />
+            <h3>Contatos</h3>
+          </div>
+        </a>
+
+        <a
+          style="text-decoration: none"
+          href="/main_screen/html/initialChat.html#newgroup_modal"
+          target="_parent"
+        >
+          <div id="newgroup_link" class="main_menu_links">
+            <img src="images/new-group.svg" />
+            <h3>Novo Grupo</h3>
+          </div>
+        </a>
+
+        <a
+          style="text-decoration: none"
+          href="/main_screen/html/initialChat.html#calls_menu_modal"
+          target="_parent"
+        >
+          <div id="calls_link" class="main_menu_links">
+            <img src="images/calls.svg" />
+            <h3>Chamadas</h3>
+          </div>
+        </a>
+
+        <a
+          style="text-decoration: none"
+          href="/main_screen/html/initialChat.html#settings_menu_modal"
+          target="_parent"
+        >
+          <div id="settings_link" class="main_menu_links">
+            <img src="images/settings.svg" />
+            <h3>Configurações</h3>
+          </div>
+        </a>
+
+        <a style="text-decoration: none" href="/login/login.html" target="_parent">
+          <div id="logout_link" class="main_menu_links">
+            <img src="images/logout.svg" />
+            <h3>Log Out</h3>
+          </div>
+        </a>
       </div>
       <h2 id="main_menu_logo">AlphaChat</h2>
     </div>

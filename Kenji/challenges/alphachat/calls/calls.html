@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AlphaChat</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,10 +15,12 @@
   <body>
     <div id="user_calls">
       <div id="user_calls_header">
-        <div>
-          <img src="images/back.svg" />
-          <h3>Chamadas</h3>
-        </div>
+        <a style="text-decoration: none" href="/main_screen/html/initialChat.html#" target="_parent">
+          <div>
+            <img src="images/back.svg" />
+            <h3>Chamadas</h3>
+          </div>
+        </a>
         <img src="images/user_info_menu.svg" />
       </div>
 
@@ -26,7 +28,13 @@
         <h5>Você ainda não fez chamadas</h5>
       </div>
 
-      <h2>Fechar</h2>
+      <a
+        style="text-decoration: none; color: #ffffff99"
+        href="/main_screen/html/initialChat.html#"
+        target="_parent"
+      >
+        <h2>Fechar</h2>
+      </a>
     </div>
   </body>
 </html>
