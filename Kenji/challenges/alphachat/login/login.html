@@ -1,3 +1,22 @@
+<!-- Resumo => 
+        Positivos
+        1º Boa modularização da aplicação.
+        2º Consistência e padrão de design
+        3º Boa estrutura CSS
+        4º Codificação em inglês
+        
+        Negativos
+        1º Valores de atributos sem padronização(preferencialmente kebab-case)
+        2º Presença de estilos inline em alguns elementos
+        3º Quebra no padrão de modularização na pasta main_screen, a pasta contem as subpastas CSS e html que não estão presentes nos outros componentes
+        
+        
+        Extra
+        1º É recomendado que as pastas de ícones(icons), fontes(fonts) e imagens(images) sejam subpastas da pasta assets.
+        2º O uso da tag <svg> dentro do html é recomendado apenas quando você tem a pretensão de manipular seus <paths>, não sendo o caso, basta carregar o SVG através da tag <img>
+        
+        Vocês encontrarão mais feedback ao abaixo neste arquivo e no arquivo 'mainmenu.html'
+     -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,7 +39,9 @@
     <main>
       <form action="" autocomplete="off">
         <section>
-          <img id="logo_login" src="logo.png" alt="" />
+          <!--De acordo as especificações W3C toda <section> precisa ter uma tag de título(<h1>, <h2>...)-->
+          <img id="logo_login" src="logo.png" alt="" /><!--Valores de atributos devem estar preferencialmente em kebab-case-->
+          <!--É esperado em toda tag <img> valor descritivo para a imagem no atributo alt, salvo apenas nos casos em que a imagem possua legenda.-->
         </section>
         <section>
           <input type="text" name="username" id="username" placeholder="E-mail ou Telefone" />
@@ -32,7 +53,10 @@
         </section>
         <section>
           <a id="login_button" href="../main_screen/html/initialChat.html">Login</a>
-          <a href="../register/register.html"><span id="registerbtn">Cadastre-se</span></a>
+          <a href="../register/register.html">
+            <span id="registerbtn">Cadastre-se</span>
+            <!--As propriedades des estilos desta tag <span> poderia estar na propria tag <a> e esta <span> não seria necessaria-->
+          </a>
         </section>
       </form>
     </main>

@@ -1,0 +1,49 @@
+Bom dia galera. Já dei alguns retornos para alguns dos grupos da avaliação do projeto que desenvolveram.
+
+Aqui vai algumas dicas presentes na maioria delas.
+
+1º Manter a codificação em uma única linguagem(preferencialmente inglês).
+2º Criar valores de atributos descritivos e preferencialmente em kebab-case.
+3º De acordo as especificações W3C toda <section> precisa ter uma tag de título(<h1>, <h2>...).
+4º Toda vez que uma div é criada para agrupar um único elemento, ela é desnecessária.
+	Ex.: <div id="logo"> 
+		<img src="./assets/images/logo.svg alt="Logomarca" />
+	     </div>
+
+Os valores de estilo da div em questão podem ser passadas diretamente para a tag <img>.
+
+5º É redundante colocar a palavras "imagem", "image" dentro do valor de atributo 'alt' da tag <img>.
+
+6º A tag <nav> já explicita o papel dela, nesse caso não é necessário declarar um role="navigation" por exemplo.
+
+7º Ao agrupar elementos com a tag <figure> é recomendado o uso da tag <figcaption> dentro dela sempre que houver legenda para a imagem.
+
+8º O uso da tag <svg> dentro do html é recomendado apenas quando você tem a pretensão de manipular seus <paths>, não sendo o caso, basta carregar o SVG através da tag <img>
+
+9º Não é recomendado o uso de tag em maiúsculo
+
+10º É recomendado que as pastas de ícones(icons), fontes(fonts) e imagens(images) sejam subpastas da pasta assets.
+
+11º É uma boa prática em tags com auto fechamento, fechá-las com />
+	Exemplo 1 <img src="./assets/images/logo.svg alt="Logomarca" />
+	Exemplo 2 <input type="text" name="login-name" ... />
+	Exemplo 3 <br />
+
+12º Overflow: hidden; é sinônimo de erro na definição das dimensões dos elementos.
+	div {
+	  width: 100px;
+	  height: 100px;
+	  padding: 10px;
+	  border: 1px solid #202020;
+	}
+	Com esses parametros acima, o elemento em questão possui na verdade altura e largura de 122px pois padding e border somam ao que está definido no width e height,
+	
+	* {
+	  box-sizing: border-box;
+	}
+	Com o parametro box-sizing setado em border-box as dimensões do elemento limita-se ao que foi definido no width e height, dessa forma padding e border não irá mais compor a largura e altura e o elemento em questão terá de fato 100px por 100px;
+
+13º É recomendado criar ao menos duas folhas de estilos para separar estilos gerais de estilos mais específicos.
+          set-style.css => para estilos padrões como as variáveis de estilos, estilos para body, button, input, etc. Tudo que for genérico
+          style.css => para estilos de elementos mais específicos definidos por id ou class
+
