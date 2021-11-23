@@ -38,8 +38,8 @@ body {
 iframe {
   display: flex;
   width: 50vw;
-  height: 50vh;
-  margin: 10vh auto;
+  height: 60vh;
+  margin: 8vh auto;
 }
 #photos {
   width: 90vw;
