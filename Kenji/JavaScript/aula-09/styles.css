@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat';
+  color: #202020;
+}
+
+#root {
+  width: 60vw;
+  height: 100%;
+  margin: 0 auto;
+  padding: 15px;
+  box-shadow: 0 0 15px 0 #20202020;
+}
+
+#product {
+  object-fit: cover;
+  width: 65%;
+  border-radius: 4px;
+  display: block;
+  margin: 15px auto 0;
+  box-shadow: 0 0 8px 0 #20202090;
+  transition: box-shadow 0.5s ease-in-out;
+}
+#product:hover {
+  box-shadow: 0 0 30px 0 #20202090;
+}
+
+#rating_input_section {
+  padding: 5px;
+  width: 40vw;
+  margin: 10vh auto 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#rating_input_section > * {
+  margin: 10px;
+}
+
+#user_name_input {
+  width: 35%;
+}
+
+#user_rating_input {
+  margin-left: auto;
+  width: 30%;
+}
+
+label {
+  font-size: 14px;
+  align-self: center;
+  font-weight: 500;
+}
+
+#user_comment_input {
+  flex: 1 1 100%;
+}
+
+#submit_button {
+  border: none;
+  color: #202020;
+  background-color: rgb(109, 141, 202);
+  font-size: 16px;
+  padding: 5px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color, color, 0.25s ease-in-out;
+}
+
+#submit_button:hover {
+  background-color: #202020;
+  color: rgb(109, 141, 202);
+}
+
+#user_rating_section {
+  width: 60vw;
+  margin: 10vh auto;
+}
+
+#user_rating_section h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin: 15px 10px;
+}
+
+.user_rating {
+  box-sizing: border-box;
+  margin: 1.5vh;
+  padding: 10px 15px;
+  background-color: #20202010;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.user_rating > * {
+  margin: 10px 0;
+  flex: 1 1 100%;
+}
+
+.user_rating h3 {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.user_rating h4 {
+  font-weight: 600;
+  font-size: 20px;
+  color: rgb(70, 90, 150);
+}
+
+.user_rating p {
+  font-size: 16px;
+  letter-spacing: 1px;
+}
