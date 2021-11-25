@@ -92,11 +92,18 @@ form#calculator {
   }
 
   form#calculator {
-    padding: 50px 20px;
+    padding: 40px 20px;
+    height: 30vh;
   }
 
   #result {
     height: 100px;
+  }
+
+  #first_operator,
+  #second_operator {
+    font-size: 16px;
+    height: 30px;
   }
 }
 
