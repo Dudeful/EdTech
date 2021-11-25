@@ -83,17 +83,27 @@ form#calculator {
 
 /* ------------ MOBILES -------------- */
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
   #container,
-  #calculator {
-    width: 100vw;
+  form#calculator,
+  #result {
+    min-width: 100vw;
     padding: 0;
+  }
+
+  form#calculator {
+    padding: 50px 20px;
+  }
+
+  #result {
+    height: 100px;
   }
 }
 
-@media screen and (min-width: 550px) {
+@media screen and (max-width: 550px) {
   #container,
-  #calculator {
-    width: 100vw;
+  form#calculator,
+  #result {
+    min-width: 100vw;
   }
 }
