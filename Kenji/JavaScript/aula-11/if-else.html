@@ -23,49 +23,49 @@
           <legend>BUILD YOUR BURGER</legend>
           <fieldset class="menu_options">
             <legend>Choose the bread</legend>
-            <input id="french" type="radio" name="bread" />
+            <input onclick="this.value = true" value="" id="french" type="radio" name="bread" />
             <label for="bread">Pão Francês (R$3,00)</label>
-            <input id="australian" type="radio" name="bread" />
+            <input onclick="this.value = true" value="" id="australian" type="radio" name="bread" />
             <label for="bread">Pão Australiano (R$8,00)</label>
-            <input id="brio" type="radio" name="bread" />
+            <input onclick="this.value = true" value="" id="brio" type="radio" name="bread" />
             <label for="bread">Pão de Brioche (R$6,00)</label>
           </fieldset>
 
           <fieldset class="menu_options">
             <legend>Choose the burger</legend>
-            <input id="picanha" type="radio" name="burger" />
-            <label for="burger">Hambúrguer de Picanha (R$13,00)</label>
-            <input id="ribs" type="radio" name="burger" />
-            <label for="burger">Hambúrguer de Costela (R$10,00)</label>
-            <input id="vegan" type="radio" name="burger" />
-            <label for="burger">Hambúrguer Vegano (R$12,00)</label>
+            <input onclick="this.value = true" value="" id="picanha" type="radio" name="picanha" />
+            <label for="picanha">Hambúrguer de Picanha (R$13,00)</label>
+            <input onclick="this.value = true" value="" id="ribs" type="radio" name="ribs" />
+            <label for="ribs">Hambúrguer de Costela (R$10,00)</label>
+            <input onclick="this.value = true" value="" id="vegan" type="radio" name="vegan" />
+            <label for="vegan">Hambúrguer Vegano (R$12,00)</label>
           </fieldset>
 
           <fieldset class="menu_options">
             <legend>Choose the salad</legend>
-            <input id="lettuce" type="radio" name="salad" />
-            <label for="salad">Alface (R$1,50)</label>
-            <input id="tomato" type="radio" name="salad" />
-            <label for="salad">Tomate (R$1,50)</label>
-            <input id="no_salad" type="radio" name="salad" />
-            <label for="salad">Sem Salada (R$0,00)</label>
+            <input onclick="this.value = true" value="" id="lettuce" type="radio" name="lettuce" />
+            <label for="lettuce">Alface (R$1,50)</label>
+            <input onclick="this.value = true" value="" id="tomato" type="radio" name="tomato" />
+            <label for="tomato">Tomate (R$1,50)</label>
+            <input onclick="this.value = true" value="" id="no_salad" type="radio" name="no_salad" />
+            <label for="no_salad">Sem Salada (R$0,00)</label>
           </fieldset>
 
           <fieldset class="menu_options">
             <legend>Escolha o queijo</legend>
-            <input id="mozzarella" type="radio" name="cheese" />
-            <label for="cheese">Mussarela (R$3,00)</label>
-            <input id="danish" type="radio" name="cheese" />
-            <label for="cheese">Prato (R$3,00)</label>
-            <input id="cheddar" type="radio" name="cheese" />
-            <label for="cheese">Cheddar (R$5,00)</label>
+            <input onclick="this.value = true" value="" id="mozzarella" type="radio" name="mozzarella" />
+            <label for="mozzarella">Mussarela (R$3,00)</label>
+            <input onclick="this.value = true" value="" id="danish" type="radio" name="danish" />
+            <label for="danish">Prato (R$3,00)</label>
+            <input onclick="this.value = true" value="" id="cheddar" type="radio" name="cheddar" />
+            <label for="cheddar">Cheddar (R$5,00)</label>
           </fieldset>
         </fieldset>
 
         <button type="button" onclick="sendOrder()">Enviar Pedido</button>
       </form>
 
-      <div id="order"></div>
+      <div style="display: none" id="order"></div>
     </div>
 
     <script src="app.js"></script>

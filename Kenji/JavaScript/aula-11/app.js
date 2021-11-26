@@ -2,6 +2,10 @@ function sendOrder() {
   let order = [];
   let bill = 0;
 
+  console.log(document.getElementById('french'));
+  console.log(document.getElementById('australian'));
+  console.log(document.getElementById('brio'));
+
   if (document.getElementById('french').value) {
     order.push('Pão Francês');
     bill += 3;
@@ -16,10 +20,12 @@ function sendOrder() {
   if (document.getElementById('picanha').value) {
     order.push('Hambúrguer de Picanha');
     bill += 13;
-  } else if (document.getElementById('ribs').value) {
+  }
+  if (document.getElementById('ribs').value) {
     order.push('Hambúrguer de Costela');
     bill += 10;
-  } else if (document.getElementById('vegan').value) {
+  }
+  if (document.getElementById('vegan').value) {
     order.push('Hambúrguer Vegano');
     bill += 12;
   }
@@ -27,38 +33,44 @@ function sendOrder() {
   if (document.getElementById('lettuce').value) {
     order.push('Alface');
     bill += 1.5;
-  } else if (document.getElementById('tomato').value) {
+  }
+  if (document.getElementById('tomato').value) {
     order.push('Tomate');
     bill += 1.5;
-  } else if (document.getElementById('no_salad').value) {
+  }
+  if (document.getElementById('no_salad').value) {
     order.push('Sem Salada');
   }
 
   if (document.getElementById('mozzarella').value) {
     order.push('Mussarela');
     bill += 3;
-  } else if (document.getElementById('danish').value) {
+  }
+  if (document.getElementById('danish').value) {
     order.push('Queijo Prato');
     bill += 3;
-  } else if (document.getElementById('cheddar').value) {
+  }
+  if (document.getElementById('cheddar').value) {
     order.push('Cheddar');
     bill += 5;
   }
 
-  console.log(order);
-  console.log(bill);
-
   const burger = document.createElement('div');
   const price = document.createElement('h3');
+
   burger.innerHTML = `
-  <h3>${order[0]}</h3> 
-  <h3>${order[1]} </h3>
-  <h3>${order[2]} </h3>
-  <h3>${order[3]} </h3>
+  <h3 class='order_items'>${order[0]}</h3> 
+  <h3 class='order_items'>${order[1]} </h3>
+  <h3 class='order_items'>${order[2]} </h3>
+  <h3 class='order_items'>${order[3]} </h3>
   `;
 
+  price.className = 'order_price';
   price.innerText = `R$ ${bill}`;
 
-  document.getElementById('order').appendChild(burger);
-  document.getElementById('order').appendChild(price);
+  const order_div = document.getElementById('order');
+  order_div.style = 'display: block;';
+  order_div.innerHTML = '<h4>Pedido #91</h4>';
+  order_div.appendChild(burger);
+  order_div.appendChild(price);
 }

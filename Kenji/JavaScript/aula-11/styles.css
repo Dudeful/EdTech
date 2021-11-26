@@ -46,3 +46,19 @@ input {
   margin: 2vh auto;
   cursor: pointer;
 }
+
+#order {
+  background-color: #20202020;
+  padding: 40px;
+  width: fit-content;
+  margin: auto;
+}
+
+.order_items {
+  font-weight: 500;
+}
+
+.order_price {
+  font-weight: 600;
+  font-size: 25px;
+}
