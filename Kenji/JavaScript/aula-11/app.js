@@ -1,10 +1,14 @@
+function chooseBread(event) {
+  document.getElementById('french').value = '';
+  document.getElementById('australian').value = '';
+  document.getElementById('brio').value = '';
+
+  event.target.value = true;
+}
+
 function sendOrder() {
   let order = [];
   let bill = 0;
-
-  console.log(document.getElementById('french'));
-  console.log(document.getElementById('australian'));
-  console.log(document.getElementById('brio'));
 
   if (document.getElementById('french').value) {
     order.push('Pão Francês');
@@ -38,7 +42,11 @@ function sendOrder() {
     order.push('Tomate');
     bill += 1.5;
   }
-  if (document.getElementById('no_salad').value) {
+  if (
+    document.getElementById('no_salad').value &&
+    !document.getElementById('lettuce').value &&
+    !document.getElementById('tomato').value
+  ) {
     order.push('Sem Salada');
   }
 
@@ -56,21 +64,92 @@ function sendOrder() {
   }
 
   const burger = document.createElement('div');
+  if (order.length === 4) {
+    burger.innerHTML = `
+    <h3 class='order_items'>${order[0]}</h3> 
+    <h3 class='order_items'>${order[1]} </h3>
+    <h3 class='order_items'>${order[2]} </h3>
+    <h3 class='order_items'>${order[3]} </h3>
+    `;
+  } else if (order.length === 5) {
+    burger.innerHTML = `
+    <h3 class='order_items'>${order[0]}</h3> 
+    <h3 class='order_items'>${order[1]} </h3>
+    <h3 class='order_items'>${order[2]} </h3>
+    <h3 class='order_items'>${order[3]} </h3>
+    <h3 class='order_items'>${order[4]} </h3>
+    `;
+  } else if (order.length === 6) {
+    burger.innerHTML = `
+    <h3 class='order_items'>${order[0]}</h3> 
+    <h3 class='order_items'>${order[1]} </h3>
+    <h3 class='order_items'>${order[2]} </h3>
+    <h3 class='order_items'>${order[3]} </h3>
+    <h3 class='order_items'>${order[4]} </h3>
+    <h3 class='order_items'>${order[5]} </h3>
+    `;
+  } else if (order.length === 7) {
+    burger.innerHTML = `
+    <h3 class='order_items'>${order[0]}</h3> 
+    <h3 class='order_items'>${order[1]} </h3>
+    <h3 class='order_items'>${order[2]} </h3>
+    <h3 class='order_items'>${order[3]} </h3>
+    <h3 class='order_items'>${order[4]} </h3>
+    <h3 class='order_items'>${order[5]} </h3>
+    <h3 class='order_items'>${order[6]} </h3>
+    `;
+  } else if (order.length === 8) {
+    burger.innerHTML = `
+    <h3 class='order_items'>${order[0]}</h3> 
+    <h3 class='order_items'>${order[1]} </h3>
+    <h3 class='order_items'>${order[2]} </h3>
+    <h3 class='order_items'>${order[3]} </h3>
+    <h3 class='order_items'>${order[4]} </h3>
+    <h3 class='order_items'>${order[5]} </h3>
+    <h3 class='order_items'>${order[6]} </h3>
+    <h3 class='order_items'>${order[7]} </h3>
+    `;
+  } else if (order.length === 9) {
+    burger.innerHTML = `
+    <h3 class='order_items'>${order[0]}</h3> 
+    <h3 class='order_items'>${order[1]} </h3>
+    <h3 class='order_items'>${order[2]} </h3>
+    <h3 class='order_items'>${order[3]} </h3>
+    <h3 class='order_items'>${order[4]} </h3>
+    <h3 class='order_items'>${order[5]} </h3>
+    <h3 class='order_items'>${order[6]} </h3>
+    <h3 class='order_items'>${order[7]} </h3>
+    <h3 class='order_items'>${order[8]} </h3>
+    `;
+  } else if (order.length === 10) {
+    burger.innerHTML = `
+    <h3 class='order_items'>${order[0]}</h3> 
+    <h3 class='order_items'>${order[1]} </h3>
+    <h3 class='order_items'>${order[2]} </h3>
+    <h3 class='order_items'>${order[3]} </h3>
+    <h3 class='order_items'>${order[4]} </h3>
+    <h3 class='order_items'>${order[5]} </h3>
+    <h3 class='order_items'>${order[6]} </h3>
+    <h3 class='order_items'>${order[7]} </h3>
+    <h3 class='order_items'>${order[8]} </h3>
+    <h3 class='order_items'>${order[9]} </h3>
+    `;
+  }
+
+  const userName = document.createElement('h2');
+  userName.setAttribute('id', 'user_name_order');
+  userName.innerText = document.getElementById('user_name').value;
+
   const price = document.createElement('h3');
-
-  burger.innerHTML = `
-  <h3 class='order_items'>${order[0]}</h3> 
-  <h3 class='order_items'>${order[1]} </h3>
-  <h3 class='order_items'>${order[2]} </h3>
-  <h3 class='order_items'>${order[3]} </h3>
-  `;
-
   price.className = 'order_price';
   price.innerText = `R$ ${bill}`;
 
   const order_div = document.getElementById('order');
   order_div.style = 'display: block;';
-  order_div.innerHTML = '<h4>Pedido #91</h4>';
+  order_div.innerHTML = '';
+  order_div.appendChild(userName);
   order_div.appendChild(burger);
   order_div.appendChild(price);
+
+  window.scrollTo(0, order_div.offsetTop);
 }

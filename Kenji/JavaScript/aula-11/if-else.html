@@ -21,13 +21,16 @@
       <form id="burger_menu">
         <fieldset id="main_fieldset">
           <legend>BUILD YOUR BURGER</legend>
+
+          <input type="text" id="user_name" name="user_name" placeholder="Nome do Cliente" />
+
           <fieldset class="menu_options">
             <legend>Choose the bread</legend>
-            <input onclick="this.value = true" value="" id="french" type="radio" name="bread" />
+            <input onclick="chooseBread(event)" value="" id="french" type="radio" name="bread" />
             <label for="bread">Pão Francês (R$3,00)</label>
-            <input onclick="this.value = true" value="" id="australian" type="radio" name="bread" />
+            <input onclick="chooseBread(event)" value="" id="australian" type="radio" name="bread" />
             <label for="bread">Pão Australiano (R$8,00)</label>
-            <input onclick="this.value = true" value="" id="brio" type="radio" name="bread" />
+            <input onclick="chooseBread(event)" value="" id="brio" type="radio" name="bread" />
             <label for="bread">Pão de Brioche (R$6,00)</label>
           </fieldset>
 
