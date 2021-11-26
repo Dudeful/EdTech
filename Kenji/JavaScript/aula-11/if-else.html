@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alpha EdTech - JavaScript if else</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header id="main_header">
+      <h1>Burgerfull Burgers</h1>
+      <h4>Limited price, unlimited taste!</h4>
+    </header>
+    <div id="container">
+      <form id="burger_menu">
+        <fieldset id="main_fieldset">
+          <legend>BUILD YOUR BURGER</legend>
+          <fieldset class="menu_options">
+            <legend>Choose the bread</legend>
+            <input id="french" type="radio" name="bread" />
+            <label for="bread">Pão Francês (R$3,00)</label>
+            <input id="australian" type="radio" name="bread" />
+            <label for="bread">Pão Australiano (R$8,00)</label>
+            <input id="brio" type="radio" name="bread" />
+            <label for="bread">Pão de Brioche (R$6,00)</label>
+          </fieldset>
+
+          <fieldset class="menu_options">
+            <legend>Choose the burger</legend>
+            <input id="picanha" type="radio" name="burger" />
+            <label for="burger">Hambúrguer de Picanha (R$13,00)</label>
+            <input id="ribs" type="radio" name="burger" />
+            <label for="burger">Hambúrguer de Costela (R$10,00)</label>
+            <input id="vegan" type="radio" name="burger" />
+            <label for="burger">Hambúrguer Vegano (R$12,00)</label>
+          </fieldset>
+
+          <fieldset class="menu_options">
+            <legend>Choose the salad</legend>
+            <input id="lettuce" type="radio" name="salad" />
+            <label for="salad">Alface (R$1,50)</label>
+            <input id="tomato" type="radio" name="salad" />
+            <label for="salad">Tomate (R$1,50)</label>
+            <input id="no_salad" type="radio" name="salad" />
+            <label for="salad">Sem Salada (R$0,00)</label>
+          </fieldset>
+
+          <fieldset class="menu_options">
+            <legend>Escolha o queijo</legend>
+            <input id="mozzarella" type="radio" name="cheese" />
+            <label for="cheese">Mussarela (R$3,00)</label>
+            <input id="danish" type="radio" name="cheese" />
+            <label for="cheese">Prato (R$3,00)</label>
+            <input id="cheddar" type="radio" name="cheese" />
+            <label for="cheese">Cheddar (R$5,00)</label>
+          </fieldset>
+        </fieldset>
+
+        <button type="button" onclick="sendOrder()">Enviar Pedido</button>
+      </form>
+
+      <div id="order"></div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
