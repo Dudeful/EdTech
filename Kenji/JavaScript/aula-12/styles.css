@@ -53,9 +53,11 @@ body {
   letter-spacing: 1px;
   display: flex;
   flex-wrap: wrap;
+  align-items: baseline;
+  overflow: auto;
 }
 
-.bart_word {
+.bart_phrase {
   color: white;
   font-size: 17px;
   padding: 0 5px;
@@ -63,7 +65,7 @@ body {
   transition: visibility 0.5s ease-in; */
 }
 
-/* .show_word {
+/* .show_phrase {
   color: white;
   transition: visibility 0.5s ease-in;
   visibility: visible;

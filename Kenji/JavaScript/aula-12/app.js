@@ -2,17 +2,30 @@ const write_phrases = () => {
   document.getElementById('blackboard').innerHTML = '';
 
   let blackboardWidth = window.innerWidth * 0.74;
-  let x = blackboardWidth / 245;
+  let phrasesPerRow = parseInt(blackboardWidth / 245);
+  let totalPhrases = 11 * phrasesPerRow;
 
-  console.log(x);
+  console.log(phrasesPerRow);
 
-  let i = 0;
   const nPhrases = document.getElementById('n_phrases').value;
 
-  while (i < nPhrases) {
-    document.getElementById('blackboard').innerHTML += `
-      <span class="bart_word">A verdade não está la fora</span>
-    `;
-    i++;
+  if (nPhrases <= totalPhrases) {
+    let i = 0;
+
+    while (i < nPhrases) {
+      document.getElementById('blackboard').innerHTML += `
+      <span class="bart_phrase">A verdade não está la fora</span>
+      `;
+      i++;
+    }
+  } else {
+    let i = 0;
+
+    while (i < nPhrases % totalPhrases) {
+      document.getElementById('blackboard').innerHTML += `
+      <span class="bart_phrase">A verdade não está la fora</span>
+      `;
+      i++;
+    }
   }
 };
