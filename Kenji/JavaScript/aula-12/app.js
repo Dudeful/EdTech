@@ -5,8 +5,6 @@ const write_phrases = () => {
   let phrasesPerRow = parseInt(blackboardWidth / 245);
   let totalPhrases = 11 * phrasesPerRow;
 
-  console.log(phrasesPerRow);
-
   const nPhrases = document.getElementById('n_phrases').value;
 
   if (nPhrases <= totalPhrases) {
@@ -18,6 +16,11 @@ const write_phrases = () => {
       `;
       i++;
     }
+
+    document.getElementById('erased').innerHTML = `
+      <h4>O quadro foi apagado 0 vezes</h4>
+      <h4>Foram escritas ${Math.ceil(nPhrases / phrasesPerRow)} linhas</h4>
+    `;
   } else {
     let i = 0;
 
@@ -27,5 +30,10 @@ const write_phrases = () => {
       `;
       i++;
     }
+
+    document.getElementById('erased').innerHTML = `
+      <h4>O quadro foi apagado ${Math.floor(nPhrases / totalPhrases)} vezes</h4>
+      <h4>Foram escritas ${Math.ceil((nPhrases % totalPhrases) / phrasesPerRow)} linhas</h4>
+    `;
   }
 };
