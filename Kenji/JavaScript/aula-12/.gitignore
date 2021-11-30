@@ -1,3 +1,5 @@
-.*.insyncdl
+.*
 
 *.txt
+
+!.gitignore
