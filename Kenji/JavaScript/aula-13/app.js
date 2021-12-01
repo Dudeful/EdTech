@@ -116,11 +116,15 @@ const race = (laps) => {
 };
 
 const tiebreaker = () => {
+  console.log("IT'S A MATCH!!");
+
   const match = document.createElement('h3');
   match.setAttribute('id', 'tiebreaker');
-  match.innerHTML = "IT'S A MATCH!!";
-  document.getElementById('container').insertBefore(match, results);
-  console.log("IT'S A MATCH!!");
+  match.innerText = "IT'S A MATCH!!";
+
+  document.getElementById('container').appendChild(match);
+
+  setTimeout(() => document.getElementById('tiebreaker').remove(), 5000);
 
   race(1);
 };
