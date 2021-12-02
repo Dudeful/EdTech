@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alpha EdTech - JavaScript Array</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <input id="array_input" type="text" placeholder="Elementos separados por vírgula (ex.: 1,2,3,4,5)" />
+
+        <div id="standard_inputs">
+          <input type="number" placeholder="#0" />
+          <input type="number" placeholder="#1" />
+          <input type="number" placeholder="#2" />
+          <input type="number" placeholder="#3" />
+        </div>
+
+        <button class="buttons" onclick="saveToArray()">Salvar Array</button>
+        <button class="buttons" onclick="reverseArray()">Inverter Array</button>
+        <button class="buttons" onclick="sortArray()">Ordenar Array</button>
+        <button class="buttons" onclick="customArray()">Input Mode</button>
+      </header>
+
+      <main>
+        <h2 id="render_array_title"></h2>
+        <p id="render_array"></p>
+      </main>
+    </div>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
