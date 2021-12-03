@@ -18,7 +18,7 @@ const playerMove = (pos, index1, index2) => {
     }
 
     setTimeout(() => {
-      if (matrix[0][0] === matrix[1][1] && matrix[0][1] === matrix[0][2]) {
+      if (matrix[0][0] === matrix[0][1] && matrix[0][1] === matrix[0][2]) {
         alert(`JOGADOR "${matrix[0][0]}" VENCE!!`);
         clearBoard();
       } else if (matrix[1][0] === matrix[1][1] && matrix[1][1] === matrix[1][2]) {
