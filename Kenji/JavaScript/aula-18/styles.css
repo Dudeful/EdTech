@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat';
+}
+
+#container {
+  width: 80vw;
+  height: 100%;
+  margin: auto;
+  padding: 20px;
+}
+
+#purchase_data {
+  padding: 50px;
+  margin: 5vh 5vw;
+  box-shadow: 0 0 5px 0 #20202020;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+}
+
+#purchase_data > * {
+  font-size: 16px;
+  margin: 5px;
+  height: 30px;
+}
+
+#purchase_data button {
+  cursor: pointer;
+  background-color: #334756;
+  color: #f6f6f6;
+  border: none;
+  border-radius: 3px;
+  margin: 30px 0;
+}
+
+#purchase_data button:hover {
+  background-color: #082032;
+  font-size: 17px;
+  box-shadow: 0 0 4px 0 #20202050;
+}
+
+#container table {
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+  border: 2px solid #33475620;
+  /* display: none; */
+}
+
+#container table th {
+  font-size: 20px;
+  font-weight: 500;
+  color: #082032;
+  width: 33.333%;
+  background-color: #33475625;
+}
+
+#container table td {
+  font-size: 16px;
+  font-weight: 400;
+}
