@@ -21,7 +21,7 @@ body {
 
 #purchase_data > * {
   font-size: 16px;
-  margin: 5px;
+  margin: 0px 5px 10px 5px;
   height: 30px;
 }
 
@@ -31,12 +31,27 @@ body {
   color: #f6f6f6;
   border: none;
   border-radius: 3px;
-  margin: 30px 0;
+  margin-top: 10px;
+  transition: all 0.1s ease-in-out;
+}
+
+#groupBy {
+  display: flex;
+  justify-content: space-between;
+}
+
+#groupBy button {
+  font-size: 16px;
+  height: 30px;
+  width: 49%;
+  background-color: #3b6b91;
+  color: #f6f6f6;
+  font-weight: 600;
 }
 
 #purchase_data button:hover {
   background-color: #082032;
-  font-size: 17px;
+  font-size: 16.4px;
   box-shadow: 0 0 4px 0 #20202050;
 }
 

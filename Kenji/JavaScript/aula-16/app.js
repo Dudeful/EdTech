@@ -3,7 +3,11 @@ results.setAttribute('id', 'results');
 
 let winnersArray = [];
 
-let racers = { edna: undefined, pedro: undefined, juca: undefined };
+let racers = {
+  edna: undefined,
+  pedro: undefined,
+  juca: undefined,
+};
 
 const cars = {
   popular: {
@@ -30,7 +34,9 @@ const speeds = (min1, max1, min2, max2, minSkid, maxSkid) => {
   let minSpeed = Math.floor(Math.random() * (max1 - min1 + 1) + min1);
   let maxSpeed = Math.floor(Math.random() * (max2 - min2 + 1) + min2);
   let skid = Math.random() * (maxSkid - minSkid) + minSkid;
-  let speed = Math.floor(Math.random() * (maxSpeed - minSpeed + 1) + minSpeed) * ((100 - skid) / 100);
+  let speed =
+    Math.floor(Math.random() * (maxSpeed - minSpeed + 1) + minSpeed) *
+    ((100 - skid) / 100);
 
   return speed;
 };
@@ -49,23 +55,23 @@ const carSpeeds = {
 
   sport: function () {
     return speeds(
-      cars.popular.minSpeed.min,
-      cars.popular.minSpeed.max,
-      cars.popular.maxSpeed.min,
-      cars.popular.maxSpeed.max,
-      cars.popular.skid.min,
-      cars.popular.skid.max
+      cars.sport.minSpeed.min,
+      cars.sport.minSpeed.max,
+      cars.sport.maxSpeed.min,
+      cars.sport.maxSpeed.max,
+      cars.sport.skid.min,
+      cars.sport.skid.max
     );
   },
 
   supersport: function () {
     return speeds(
-      cars.popular.minSpeed.min,
-      cars.popular.minSpeed.max,
-      cars.popular.maxSpeed.min,
-      cars.popular.maxSpeed.max,
-      cars.popular.skid.min,
-      cars.popular.skid.max
+      cars.supersport.minSpeed.min,
+      cars.supersport.minSpeed.max,
+      cars.supersport.maxSpeed.min,
+      cars.supersport.maxSpeed.max,
+      cars.supersport.skid.min,
+      cars.supersport.skid.max
     );
   },
 };
@@ -95,7 +101,9 @@ const lapWinner = (racers) => {
 };
 
 const finalWinner = () => {
-  const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
+  const countOccurrences = (arr, val) =>
+    arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
+
   console.log('Edna: ' + countOccurrences(winnersArray, 'Edna'));
   console.log('Pedro: ' + countOccurrences(winnersArray, 'Pedro'));
   console.log('Juca: ' + countOccurrences(winnersArray, 'Juca'));
