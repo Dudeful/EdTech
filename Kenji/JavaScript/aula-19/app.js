@@ -12,7 +12,7 @@ const getFormInput = () => {
   });
 
   appendNewDataToTable(invoices.at(-1));
-  clearForm();
+  // clearForm();
 };
 
 const clearForm = () => {
@@ -25,11 +25,15 @@ const appendNewDataToTable = (newCustomerData) => {
   let newTableRow = `
     <tr>
       <td>${newCustomerData.customerName}</td>
-      <td>${new Date(newCustomerData.dueDate).toLocaleDateString('pt-BR', {
-        year: 'numeric',
-        month: 'numeric',
-        day: 'numeric',
-      })}</td>
+      <td>${
+        newCustomerData.dueDate
+          ? new Date(newCustomerData.dueDate).toLocaleDateString('pt-BR', {
+              year: 'numeric',
+              month: 'numeric',
+              day: 'numeric',
+            })
+          : '-'
+      }</td>
       <td>$${newCustomerData.purchaseTotal}</td>
       <td>${
         newCustomerData.interest
@@ -78,30 +82,28 @@ const calculateInterest = (invoiceArray) => {
 };
 
 const groupBy = (arr, property) => {
-  return arr.reduce((previousElement, nextElement) => {
+  return arr.reduce((acc, nextElement) => {
     let key = nextElement[property];
 
-    if (!previousElement[key]) {
-      previousElement[key] = [];
+    if (!acc[key]) {
+      acc[key] = [];
     }
 
-    previousElement[key].push(nextElement);
+    acc[key].push(nextElement);
 
-    return previousElement;
+    return acc;
   }, {});
 };
 
 const groupByName = (invoiceArray) => {
   let groupedByName = groupBy(invoiceArray, 'customerName');
   console.log(groupedByName);
-
   renderGroupedBy(groupedByName);
 };
 
 const groupByDueDate = (invoiceArray) => {
   let groupedByDueDate = groupBy(invoiceArray, 'dueDate');
   console.log(groupedByDueDate);
-
   renderGroupedBy(groupedByDueDate);
 };
 
@@ -117,4 +119,30 @@ const renderGroupedBy = (invoiceArray) => {
   Object.keys(invoiceArray).forEach((group) => {
     invoiceArray[group].forEach((invoiceEl) => appendNewDataToTable(invoiceEl));
   });
+};
+
+const calculateTotalPerCustomer = (invoiceArray) => {
+  let groupedByName = groupBy(invoiceArray, 'customerName');
+
+  const reducer = (acc, currentValue) =>
+    acc + Number(currentValue.purchaseTotal);
+
+  let totalsArray = Object.keys(groupedByName).map((customer) => {
+    let total = groupedByName[customer].reduce(reducer, 0);
+    return { customerName: customer, purchaseTotal: total };
+  });
+
+  renderTotals(totalsArray);
+};
+
+const renderTotals = (totalsArray) => {
+  //obs.: necessário adicionar coluna de juros na próxima atualização.
+  document.getElementById('customers_log').innerHTML = `
+  <tr>
+    <th>Nome</th>
+    <th>Vencimento</th>
+    <th>Valor</th>
+  </tr>`;
+
+  totalsArray.forEach((invoice) => appendNewDataToTable(invoice));
 };
