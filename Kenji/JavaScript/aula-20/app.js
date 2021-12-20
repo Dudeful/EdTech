@@ -149,106 +149,28 @@ const renderTotals = (totalsArray) => {
 
 const filterInvoices = (invoiceArray) => {
   let initialDate = document.getElementById('initialDate').value;
-  initialDate = new Date(initialDate).getTime();
-  let finalDate = document.getElementById('finalDate').value;
-  finalDate = new Date(finalDate).getTime();
-  let minTotal = Number(document.getElementById('minTotal').value);
-  let maxTotal = Number(document.getElementById('maxTotal').value);
+  initialDate = initialDate ? new Date(initialDate).getTime() : 0;
 
-  if (initialDate && finalDate && minTotal && maxTotal) {
-    let filteredArray = invoiceArray.filter((invoice) => {
-      dueDate = new Date(invoice.dueDate).getTime();
-      return (
-        dueDate >= initialDate &&
-        dueDate <= finalDate &&
-        invoice.purchaseTotal >= minTotal &&
-        invoice.purchaseTotal <= maxTotal
-      );
-    });
-    renderFilteredInvoices(filteredArray);
-  } else if (initialDate && finalDate && minTotal) {
-    let filteredArray = invoiceArray.filter((invoice) => {
-      dueDate = new Date(invoice.dueDate).getTime();
-      return (
-        dueDate >= initialDate &&
-        dueDate <= finalDate &&
-        invoice.purchaseTotal >= minTotal
-      );
-    });
-    renderFilteredInvoices(filteredArray);
-  } else if (initialDate && finalDate && maxTotal) {
-    let filteredArray = invoiceArray.filter((invoice) => {
-      dueDate = new Date(invoice.dueDate).getTime();
-      return (
-        dueDate >= initialDate &&
-        dueDate <= finalDate &&
-        invoice.purchaseTotal <= maxTotal
-      );
-    });
-    renderFilteredInvoices(filteredArray);
-  } else if (initialDate && finalDate) {
-    let filteredArray = invoiceArray.filter((invoice) => {
-      dueDate = new Date(invoice.dueDate).getTime();
-      return dueDate >= initialDate && dueDate <= finalDate;
-    });
-    renderFilteredInvoices(filteredArray);
-  } else if (initialDate && minTotal) {
-    let filteredArray = invoiceArray.filter((invoice) => {
-      return (
-        invoice.dueDate >= initialDate && invoice.purchaseTotal >= minTotal
-      );
-    });
-    renderFilteredInvoices(filteredArray);
-  } else if (initialDate && maxTotal) {
-    let filteredArray = invoiceArray.filter((invoice) => {
-      return (
-        invoice.dueDate >= initialDate && invoice.purchaseTotal <= maxTotal
-      );
-    });
-    renderFilteredInvoices(filteredArray);
-  } else if (finalDate && minTotal) {
-    let filteredArray = invoiceArray.filter((invoice) => {
-      return invoice.dueDate <= finalDate && invoice.purchaseTotal >= minTotal;
-    });
-    renderFilteredInvoices(filteredArray);
-  } else if (finalDate && maxTotal) {
-    let filteredArray = invoiceArray.filter((invoice) => {
-      return invoice.dueDate <= finalDate && invoice.purchaseTotal <= maxTotal;
-    });
-    renderFilteredInvoices(filteredArray);
-  } else if (minTotal && maxTotal) {
-    let filteredArray = invoiceArray.filter((invoice) => {
-      return (
-        invoice.purchaseTotal >= minTotal && invoice.purchaseTotal <= maxTotal
-      );
-    });
-    renderFilteredInvoices(filteredArray);
-  } else if (initialDate) {
-    let filteredArray = invoiceArray.filter((invoice) => {
-      dueDate = new Date(invoice.dueDate).getTime();
-      return dueDate >= initialDate;
-    });
-    renderFilteredInvoices(filteredArray);
-  } else if (finalDate) {
-    let filteredArray = invoiceArray.filter((invoice) => {
-      dueDate = new Date(invoice.dueDate).getTime();
-      return dueDate >= finalDate;
-    });
-    renderFilteredInvoices(filteredArray);
-  } else if (minTotal) {
-    let filteredArray = invoiceArray.filter((invoice) => {
-      return invoice.purchaseTotal >= minTotal;
-    });
-    renderFilteredInvoices(filteredArray);
-  } else if (maxTotal) {
-    let filteredArray = invoiceArray.filter((invoice) => {
-      return invoice.purchaseTotal <= maxTotal;
-    });
-    renderFilteredInvoices(filteredArray);
-  } else {
-    console.error('invalid filtering parameters');
-    return;
-  }
+  let finalDate = document.getElementById('finalDate').value;
+  finalDate = finalDate ? new Date(finalDate).getTime() : 9999999999999;
+
+  let minTotal = Number(document.getElementById('minTotal').value);
+  minTotal = minTotal ? minTotal : 0;
+
+  let maxTotal = Number(document.getElementById('maxTotal').value);
+  maxTotal = maxTotal ? maxTotal : 9999999999999;
+
+  let filteredArray = invoiceArray.filter((invoice) => {
+    dueDate = new Date(invoice.dueDate).getTime();
+    return (
+      dueDate >= initialDate &&
+      dueDate <= finalDate &&
+      invoice.purchaseTotal >= minTotal &&
+      invoice.purchaseTotal <= maxTotal
+    );
+  });
+
+  renderFilteredInvoices(filteredArray);
 };
 
 const renderFilteredInvoices = (filteredArray) => {
