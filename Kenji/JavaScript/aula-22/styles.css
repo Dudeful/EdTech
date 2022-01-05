@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#container {
+  width: 80%;
+  margin: auto;
+  padding: 10vh 25px;
+  box-shadow: 0 0px 10px 0 #20202030;
+}
+
+#container button {
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+  transition: all 0.2s ease-in-out;
+  padding: 5px 20px;
+  border-radius: 3px;
+  background-color: #202020;
+  color: aliceblue;
+  font-weight: 800;
+  box-shadow: 0 0px 5px 0 #20202030;
+}
+
+#container button:hover {
+  color: #202020;
+  background-color: aliceblue;
+}
+
+#story {
+  font-size: 1.2rem;
+  text-align: justify;
+  line-height: 26px;
+  margin-top: 50px;
+}
+
+#story img {
+  width: 33%;
+  margin-left: 15px;
+  float: right;
+  opacity: 0.8;
+}
