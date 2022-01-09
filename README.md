@@ -1,5 +1,5 @@
 <p align="center">
-    Multiple small projects developed as a student in <a href='https://www.alphaedtech.org.br/' target="_blank" >Alpha EdTech</a> code academy
+    Multiple small projects developed as a student in <a href='https://www.alphaedtech.org.br/'>Alpha EdTech</a> code academy
 </p>
 
 <p align="center">
