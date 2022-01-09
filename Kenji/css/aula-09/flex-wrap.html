@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alpha EdTech - CSS Aula 09</title>
+    <link rel="stylesheet" href="flex-wrap.css" />
+  </head>
+  <script>
+    const removeClass = () => {
+      document.getElementById('box').className = '';
+    };
+
+    const addClass = (class_1, class_2, class_3) => {
+      document.getElementById('box').classList.add(class_1, class_2, class_3);
+    };
+  </script>
+  <body>
+    <button onclick="removeClass(); addClass('wrap', 'standard', 'row_reverse')">
+      box = flex-wrap: wrap; flex-direction: row-reverse; children = flex: 1 1 400px;
+    </button>
+    <button onclick="removeClass(); addClass('wrap', 'standard')">
+      box = flex-wrap: wrap; children = flex: 1 1 400px;
+    </button>
+    <button onclick="removeClass(); addClass('gutters')">
+      box = flex-wrap: wrap; margin: -10px; children = flex: 1 1 400px; margin: 10px;
+    </button>
+    <button onclick="removeClass(); addClass('wrap', 'grid_like')">
+      flex-wrap: wrap; children = flex: 0 0 33.33%;
+    </button>
+    <!-- <button onclick="removeClass(); addClass('wrap', 'column', 'column_reverse')">
+      box = flex-wrap: wrap; flex-direction: row-reverse;
+    </button> -->
+    <div id="container">
+      <div id="box" class="wrap standard">
+        <div>111111111111111111111111111</div>
+        <div>222222222222222222222222222</div>
+        <div>333333333333333333333333333</div>
+        <div>444444444444444444444444444</div>
+        <div>555555555555555555555555555</div>
+        <div>666666666666666666666666666</div>
+        <div>777777777777777777777777777</div>
+        <div>888888888888888888888888888</div>
+        <div>999999999999999999999999999</div>
+        <div>000000000000000000000000000</div>
+      </div>
+    </div>
+  </body>
+</html>

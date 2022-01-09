@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat';
+  background-color: #dfd8ca;
+}
+
+header {
+  text-align: center;
+  font-weight: 500;
+}
+
+#container {
+  width: 450px;
+  margin: 15vh auto;
+}
+
+#tictactoe {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #181d31;
+  border-radius: 5px;
+  margin: -10px;
+}
+
+#tictactoe > * {
+  border: none;
+  flex: 1 1 110px;
+  width: 110px;
+  height: 110px;
+  background-color: #fbf3e4;
+  color: #b91646;
+  border-radius: 5px;
+  margin: 10px;
+  font-weight: 600;
+  font-size: 100px;
+  text-align: center;
+  caret-color: transparent;
+  cursor: pointer;
+}

@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Alpha EdTech - Aula HTML #02</title>
+  </head>
+  <body>
+    <h1>Alpha EdTech</h1>
+    <h2>Professor Kenji</h2>
+    <p>
+      Este documento tem como objetivo dirimir dúvidas quanto ao erro de embedding referente ao X-Frame-Options, <br />
+      que é recorrente ao se utilizar tags &lt;iframe&gt; dentro de uma aplicação.
+    </p>
+    <h3>Afinal, o que é "X-Frame-Options"?</h3>
+    <p>
+      É parte do cabeçalho HTTP frequentemente presente na "response" enviada pelo servidor ao cliente <br />
+      que solicita o embedding de conteúdo de aplicações de terceiros. <br />
+    </p>
+    <h4>Principais usos:</h4>
+    <ul>
+      <li>Evitar que sites de terceiros disponibilizem o conteúdo da sua aplicação dentro de suas páginas;</li>
+      <br />
+      <li>
+        Evitar ataques de "clickjacking", que consiste em enganar o usuário fazendo-o clicar em links ou botões <br />
+        de terceiros inadivertidamente;
+      </li>
+      <br />
+      <li>
+        Proibir que uma página seja disponibilizada dentro de um frame, independente de conflitos origem X destino.
+      </li>
+    </ul>
+    <h4>Possíveis configurações:</h4>
+    <ul>
+      <li>X-Frame-Options: DENY</li>
+      <ul>
+        <li>
+          Esta configuração impede determinada página de ser disponibilizada dentro de um frame em outra página, <br />
+          independente do destino final.
+        </li>
+      </ul>
+      <br />
+      <li>X-Frame-Options: SAMEORIGIN</li>
+      <ul>
+        <li>
+          Já neste caso, o bloqueio será realizado se e somente se a página de destino, que está tentando <br />
+          carregar o conteúdo, NÃO estiver hospedada na mesma origem, ou seja, sob o mesmo domínio. <br />
+          Logo, o conteúdo de "https://www.google.com.br" só poderá ser disponibilizado em um frame se a página <br />
+          solicitante estiver nesta mesma origem.
+        </li>
+      </ul>
+    </ul>
+    <p>
+      É importante ressaltar que a configuração do "X-Frame-Options" só é possível de ser feita no servidor, <br />
+      logo é inútil tentar burlar esta diretiva. Tal tentativa pode inclusive acarretar em "red flags" <br />
+      nos mecanismos de buscas já que a medida infringe as normas estabelecidas pelo Google Guidelines, por exemplo.
+    </p>
+    <h4>Exemplo de erro gerado por X-Frame-Options: SAMEORIGIN</h4>
+    <ul>
+      <li>Console Error: X-Frame-Options</li>
+      <ul>
+        <img
+          src="https://github.com/Dudeful/EdTech/blob/master/Kenji/html/aula-02/x-frame-options.jpg?raw=true"
+          alt="console-error-x-frame-options"
+          height="auto"
+          width="50%"
+        />
+      </ul>
+      <br />
+      <li>HTTP Headers</li>
+      <ul>
+        <img
+          src="https://github.com/Dudeful/EdTech/blob/master/Kenji/html/aula-02/http-header.jpg?raw=true"
+          alt="http-options"
+          height="auto"
+          width="50%"
+        />
+      </ul>
+    </ul>
+    <h4>Para maiores informações:</h4>
+    <ul>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options" target="_blank">
+          X-Frame-Options
+        </a>
+      </li>
+      <li>
+        <a href="https://www.w3schools.com/tags/tag_iframe.ASP" target="_blank">&lt;iframe&gt; tag</a>
+      </li>
+      <li>
+        <a href="https://jsfiddle.net/pj1v0396/" target="_blank">jsfiddle para reprodução do erro</a>
+      </li>
+    </ul>
+    <br />
+  </body>
+</html>

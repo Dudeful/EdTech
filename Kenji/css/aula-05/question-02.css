@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+}
+
+#container {
+  width: 100vw;
+  height: 90vh;
+  padding-top: 10vh;
+}
+
+h1 {
+  position: absolute;
+  margin-left: 20%;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+#clock {
+  position: relative;
+  border: 10px solid;
+  border-radius: 50%;
+  width: 35vw;
+  height: 35vw;
+  margin: auto;
+  transform: rotate(-270deg);
+  font-weight: bold;
+}
+
+#p1 {
+  position: absolute;
+  width: 100%;
+  margin-top: 48%;
+  margin-left: 0%;
+  /* writing-mode: sideways-rl;
+  text-orientation: upright; */
+  transform: rotate(30deg);
+}
+
+#p2 {
+  position: absolute;
+  width: 100%;
+  margin-top: 48%;
+  margin-left: 0%;
+  /* writing-mode: sideways-rl;
+  text-orientation: upright; */
+  transform: rotate(60deg);
+}
+
+#p3 {
+  position: absolute;
+  width: 100%;
+  margin-top: 48%;
+  margin-left: 0%;
+  /* writing-mode: sideways-rl;
+  text-orientation: upright; */
+  transform: rotate(90deg);
+}
+#p4 {
+  position: absolute;
+  width: 100%;
+  margin-top: 48%;
+  margin-left: 0%;
+  /* writing-mode: sideways-rl;
+  text-orientation: upright; */
+  transform: rotate(120deg);
+}
+#p5 {
+  position: absolute;
+  width: 100%;
+  margin-top: 48%;
+  margin-left: 0%;
+  /* writing-mode: sideways-rl;
+  text-orientation: upright; */
+  transform: rotate(150deg);
+}
+#p6 {
+  position: absolute;
+  width: 100%;
+  margin-top: 48%;
+  margin-left: 0%;
+  /* writing-mode: sideways-rl;
+  text-orientation: upright; */
+  transform: rotate(180deg);
+}
+#p7 {
+  position: absolute;
+  width: 100%;
+  margin-top: 48%;
+  margin-left: 0%;
+  /* writing-mode: sideways-rl;
+  text-orientation: upright; */
+  transform: rotate(210deg);
+}
+#p8 {
+  position: absolute;
+  width: 100%;
+  margin-top: 48%;
+  margin-left: 0%;
+  /* writing-mode: sideways-rl;
+  text-orientation: upright; */
+  transform: rotate(240deg);
+}
+#p9 {
+  position: absolute;
+  width: 100%;
+  margin-top: 48%;
+  margin-left: 0%;
+  /* writing-mode: sideways-rl;
+  text-orientation: upright; */
+  transform: rotate(270deg);
+}
+#p10 {
+  position: absolute;
+  width: 100%;
+  margin-top: 48%;
+  margin-left: 0%;
+  /* writing-mode: sideways-rl;
+  text-orientation: upright; */
+  transform: rotate(300deg);
+}
+#p11 {
+  position: absolute;
+  width: 100%;
+  margin-top: 48%;
+  margin-left: 0%;
+  /* writing-mode: sideways-rl;
+  text-orientation: upright; */
+  transform: rotate(330deg);
+}
+#p12 {
+  position: absolute;
+  width: 100%;
+  margin-top: 48%;
+  margin-left: 0%;
+  /* writing-mode: sideways-rl;
+  text-orientation: upright; */
+  transform: rotate(360deg);
+}

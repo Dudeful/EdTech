@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alpha EdTech - CSS Aula 04</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+    }
+    #parent_div {
+      display: flex;
+      justify-content: space-evenly;
+      background-color: blueviolet;
+      height: 100vh;
+    }
+    #parent_div div {
+      width: 15vw;
+      height: 90vh;
+      margin-top: 3vh;
+      background-color: aqua;
+      text-align: center;
+    }
+    #div_1 {
+      border: crimson;
+      border-style: solid;
+      border-width: 2vh 1vw;
+      border-radius: 20% 0%;
+    }
+    #div_2 {
+      border: chocolate;
+      border-style: double dashed none;
+      border-width: 2vh 1vw;
+      border-radius: 0%;
+    }
+    #div_3 {
+      border-image: linear-gradient(black, white) 20;
+      border-style: inset;
+      border-width: 2vh 1vw;
+    }
+    #div_4 {
+      border: midnightblue;
+      border-style: none groove;
+      border-width: 2.5vh 1.25vw;
+      border-radius: 5%;
+    }
+    #div_5 {
+      box-sizing: border-box;
+      border-top: double 4vh red;
+      border-right: groove 2vw green;
+      border-bottom: inset 4vh blue;
+      border-left: ridge 2vw green;
+      border-radius: 2%;
+    }
+  </style>
+  <body>
+    <div id="parent_div">
+      <div id="div_1">
+        <p>border: crimson;</p>
+        <p>border-style: solid;</p>
+        <p>border-width: 2vh 1vw;</p>
+        <p>border-radius: 15% 0%;</p>
+      </div>
+      <div id="div_2">
+        <p>border: chocolate;</p>
+        <p>border-style: double dashed none;</p>
+        <p>border-width: 2vh 1vw;</p>
+        <p>border-radius: 0%;</p>
+      </div>
+      <div id="div_3">
+        <p>border-image: linear-gradient(black, white) 20;</p>
+        <p>border-width: 2vh 1vw;</p>
+      </div>
+      <div id="div_4">
+        <p>border: midnightblue;</p>
+        <p>border-style: none groove;</p>
+        <p>border-width: 2.5vh 1.25vw;</p>
+        <p>border-radius: 5%;</p>
+      </div>
+      <div id="div_5">
+        <p>box-sizing: border-box;</p>
+        <p>border-top: double 4vh red;</p>
+        <p>border-right: groove 2vw green;</p>
+        <p>border-bottom: inset 4vh blue;</p>
+        <p>border-left: ridge 2vw green;</p>
+        <p>border-radius: 2%;</p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Montserrat';
+}
+
+#container {
+  max-width: 80vw;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 0 10px 0 #20202020;
+}
+
+form#calculator {
+  width: 50%;
+  margin: auto;
+  padding: 25px;
+  box-shadow: 0 0 10px 0 #20202040;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#inputs {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#first_operator,
+#second_operator {
+  width: 50%;
+  margin: 10px;
+  text-align: center;
+  font-size: 22px;
+}
+
+#operations {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.operation {
+  width: 25%;
+  height: 32px;
+  margin: 10px;
+  font-size: 22px;
+  cursor: pointer;
+  border: none;
+  background-color: #009dae80;
+  border-radius: 4px;
+  color: #202020;
+  transition: background-color, font-size, 0.2s ease-in-out;
+}
+
+.operation:hover {
+  background-color: #009dae;
+  font-size: 26px;
+  color: white;
+}
+
+#result {
+  height: 7vh;
+  width: 50%;
+  margin: auto;
+  background-color: #20202080;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#result_span {
+  font-size: 30px;
+  color: white;
+}
+
+/* ------------ MOBILES -------------- */
+
+@media screen and (max-width: 768px) {
+  #container,
+  form#calculator,
+  #result {
+    min-width: 100vw;
+    padding: 0;
+  }
+
+  form#calculator {
+    padding: 40px 20px;
+    height: 30vh;
+  }
+
+  #result {
+    height: 100px;
+  }
+
+  #first_operator,
+  #second_operator {
+    font-size: 16px;
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  #container,
+  form#calculator,
+  #result {
+    min-width: 100vw;
+  }
+}

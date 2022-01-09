@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Alpha EdTech - Kenji Aula 06</title>
+    <meta
+      name="description"
+      content="Demonstração da utilização de todas as  tags utilizadas até o momento no curso de HTML do professor Kenji"
+    />
+  </head>
+  <body>
+    <form action="#">
+      <div>
+        <fieldset>
+          <legend><h1 style="color: grey">Aula 01:</h1></legend>
+          <h1><b>Hello World!</b></h1>
+        </fieldset>
+      </div>
+
+      <br />
+
+      <div>
+        <fieldset>
+          <legend><h1 style="color: grey">Aula 02:</h1></legend>
+          <h1>Alpha EdTech</h1>
+          <h2>Professor Kenji</h2>
+          <p>
+            Este documento tem como objetivo dirimir dúvidas quanto ao erro de embedding referente ao X-Frame-Options,
+            <br />
+            que é recorrente ao se utilizar tags &lt;iframe&gt; dentro de uma aplicação.
+          </p>
+          <h3>Afinal, o que é "X-Frame-Options"?</h3>
+          <p>
+            É parte do cabeçalho HTTP frequentemente presente na "response" enviada pelo servidor ao cliente <br />
+            que solicita o embedding de conteúdo de aplicações de terceiros. <br />
+          </p>
+          <h4>Principais usos:</h4>
+          <ul>
+            <li>Evitar que sites de terceiros disponibilizem o conteúdo da sua aplicação dentro de suas páginas;</li>
+            <br />
+            <li>
+              Evitar ataques de "clickjacking", que consiste em enganar o usuário fazendo-o clicar em links ou botões
+              <br />
+              de terceiros inadivertidamente;
+            </li>
+            <br />
+            <li>
+              Proibir que uma página seja disponibilizada dentro de um frame, independente de conflitos origem X
+              destino.
+            </li>
+          </ul>
+          <h4>Possíveis configurações:</h4>
+          <ul>
+            <li>X-Frame-Options: DENY</li>
+            <ul>
+              <li>
+                Esta configuração impede determinada página de ser disponibilizada dentro de um frame em outra página,
+                <br />
+                independente do destino final.
+              </li>
+            </ul>
+            <br />
+            <li>X-Frame-Options: SAMEORIGIN</li>
+            <ul>
+              <li>
+                Já neste caso, o bloqueio será realizado se e somente se a página de destino, que está tentando <br />
+                carregar o conteúdo, NÃO estiver hospedada na mesma origem, ou seja, sob o mesmo domínio. <br />
+                Logo, o conteúdo de "https://www.google.com.br" só poderá ser disponibilizado em um frame se a página
+                <br />
+                solicitante estiver nesta mesma origem.
+              </li>
+            </ul>
+          </ul>
+          <p>
+            É importante ressaltar que a configuração do "X-Frame-Options" só é possível de ser feita no servidor,
+            <br />
+            logo é inútil tentar burlar esta diretiva. Tal tentativa pode inclusive acarretar em "red flags" <br />
+            nos mecanismos de buscas já que a medida infringe as normas estabelecidas pelo Google Guidelines, por
+            exemplo.
+          </p>
+          <h4>Exemplo de erro gerado por X-Frame-Options: SAMEORIGIN</h4>
+          <ul>
+            <li>Console Error: X-Frame-Options</li>
+            <ul>
+              <img
+                src="https://github.com/Dudeful/EdTech/blob/master/Kenji/html/aula-02/x-frame-options.jpg?raw=true"
+                alt="console-error-x-frame-options"
+                height="auto"
+                width="50%"
+              />
+            </ul>
+            <br />
+            <li>HTTP Headers</li>
+            <ul>
+              <img
+                src="https://github.com/Dudeful/EdTech/blob/master/Kenji/html/aula-02/http-header.jpg?raw=true"
+                alt="http-options"
+                height="auto"
+                width="50%"
+              />
+            </ul>
+          </ul>
+          <h4>Para maiores informações:</h4>
+          <ul>
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options" target="_blank">
+                X-Frame-Options
+              </a>
+            </li>
+            <li>
+              <a href="https://www.w3schools.com/tags/tag_iframe.ASP" target="_blank">&lt;iframe&gt; tag</a>
+            </li>
+            <li>
+              <a href="https://jsfiddle.net/pj1v0396/" target="_blank">jsfiddle para reprodução do erro</a>
+            </li>
+          </ul>
+        </fieldset>
+      </div>
+
+      <br />
+      
+      <div style="background-color: #202020; color: white">
+        <fieldset>
+          <legend><h1 style="color: grey">Aula 03:</h1></legend>
+          <h1>
+            <a style="color: #176d76" href="https://sejaalphaedtech.org.br/">Alpha <b>EdTech</b></a>
+          </h1>
+          <h2><i><a style="color: white" href="http://www.kenji.com.br/principal.php">Professor Kenji</i></a></h2>
+          <p>
+            Este documento tem como objetivo dirimir dúvidas quanto ao erro de embedding referente ao
+            <strong>X-Frame-Options</strong>, <br />
+            que é recorrente ao se utilizar tags &lt;iframe&gt; dentro de uma aplicação.
+          </p>
+          <h3>Afinal, o que é "X-Frame-Options"?</h3>
+          <p>
+            É parte do cabeçalho <b>HTTP</b> frequentemente presente na <i>"response"</i> enviada pelo servidor ao cliente
+            <br />
+            que solicita o embedding de conteúdo de aplicações de terceiros. <br />
+          </p>
+          <h4>Principais usos:</h4>
+          <ul>
+            <li>Evitar que sites de terceiros disponibilizem o conteúdo da sua aplicação dentro de suas páginas;</li>
+            <br />
+            <li>
+              Evitar ataques de <i>"clickjacking"</i>, que consiste em enganar o usuário fazendo-o clicar em links ou botões
+              <br />
+              de terceiros inadivertidamente;
+            </li>
+            <br />
+            <li>
+              Proibir que uma página seja disponibilizada dentro de um frame, independente de conflitos
+              <b><i>origem X destino</i></b
+              >.
+            </li>
+          </ul>
+          <h4>Possíveis configurações:</h4>
+          <ul>
+            <li><b>X-Frame-Options: DENY</b></li>
+            <ul>
+              <li>
+                Esta configuração impede determinada página de ser disponibilizada dentro de um frame em outra página, <br />
+                independente do destino final.
+              </li>
+            </ul>
+            <br />
+            <li><strong>X-Frame-Options: SAMEORIGIN</strong></li>
+            <ul>
+              <li>
+                Já neste caso, o bloqueio será realizado se e somente se a página de destino, que está tentando <br />
+                carregar o conteúdo, NÃO estiver hospedada na mesma origem, ou seja, sob o mesmo domínio. <br />
+                Logo, o conteúdo de "https://www.google.com.br" só poderá ser disponibilizado em um frame se a página <br />
+                solicitante estiver nesta mesma origem.
+              </li>
+            </ul>
+          </ul>
+          <p>
+            <q>
+              <i>
+                importante ressaltar que a configuração do X-Frame-Options só é possível de ser feita no servidor, <br />
+                logo é inútil tentar burlar esta diretiva. Tal tentativa pode inclusive acarretar em red flags
+                <br />
+                nos mecanismos de buscas já que a medida infringe as normas estabelecidas pelo Google Guidelines, por exemplo.
+              </i>
+            </q>
+          </p>
+          <!-- Imagens relevantes para compreensão do erro -->
+          <h4>Exemplo de erro gerado por X-Frame-Options: SAMEORIGIN</h4>
+          <ul>
+            <li>Console Error: X-Frame-Options</li>
+            <ul>
+              <a target="blank" href="https://github.com/Dudeful/EdTech/blob/master/Kenji/html/aula-02/x-frame-options.jpg?raw=true">
+              <img
+                src="https://github.com/Dudeful/EdTech/blob/master/Kenji/html/aula-02/x-frame-options.jpg?raw=true"
+                alt="console-error-x-frame-options"
+                height="auto"
+                width="50%"
+              />
+            </a>
+            </ul>
+            <br />
+            <li>HTTP Headers</li>
+            <ul>
+              <a target="_blank" href="https://github.com/Dudeful/EdTech/blob/master/Kenji/html/aula-02/http-header.jpg?raw=true">
+                <img
+                src="https://github.com/Dudeful/EdTech/blob/master/Kenji/html/aula-02/http-header.jpg?raw=true"
+                alt="http-options"
+                height="auto"
+                width="50%"
+                />
+              </a>
+            </ul>
+          </ul>
+          <!-- Fontes disponíveis para consulta relevante ao tema -->
+          <p><i>Para maiores informações:</i></p>
+          <table>
+            <tr>
+              <th><h3><b>Fonte</b></h3></th>
+              <th><h3><b>Recurso</b></h3></th>
+              <th><h3><b>Link</b></h3></th>
+            </tr>
+            <tr>
+              <td>Mozilla</td>
+              <td>X-Frame-Options:</td>
+              <td>        
+                <a style="color: rgb(70, 70, 255)" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options" target="_blank">
+                  https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>W3Schools</td>
+              <td>&lt;iframe&gt; tag:</td>
+              <td>
+                <a style="color: rgb(70, 70, 255)" href="https://www.w3schools.com/tags/tag_iframe.ASP" target="_blank">
+                  https://www.w3schools.com/tags/tag_iframe.ASP
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>JsFiddle</td>
+              <td>Reprodução do Erro:</td>
+              <td>
+                <a style="color: rgb(70, 70, 255)" href="https://jsfiddle.net/pj1v0396/" target="_blank">
+                  https://jsfiddle.net/pj1v0396/
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Auth0</td>
+              <td>Clickjacking:</td>
+              <td>
+                <a style="color: rgb(70, 70, 255)" href="https://auth0.com/blog/preventing-clickjacking-attacks/" target="_blank">
+                  https://auth0.com/blog/preventing-clickjacking-attacks/
+                </a>
+              </td>
+            </tr>
+          </table>
+          <br />
+        </fieldset>
+      </div>
+      
+      <br />
+
+      <div>
+        <fieldset>
+          <legend><h1 style="color: grey">Aula 04:</h1></legend>
+          <img width="60%" height="auto" src="https://raw.githubusercontent.com/Dudeful/EdTech/master/Kenji/html/aula-06/images/q01.jpg" />
+          <img width="60%" height="auto" src="https://raw.githubusercontent.com/Dudeful/EdTech/master/Kenji/html/aula-06/images/q02.jpg" />
+          <img width="60%" height="auto" src="https://raw.githubusercontent.com/Dudeful/EdTech/master/Kenji/html/aula-06/images/q03.jpg" />
+          <img width="60%" height="auto" src="https://raw.githubusercontent.com/Dudeful/EdTech/master/Kenji/html/aula-06/images/q04.jpg" />
+          <img width="60%" height="auto" src="https://raw.githubusercontent.com/Dudeful/EdTech/master/Kenji/html/aula-06/images/q05.jpg" />
+          <img width="60%" height="auto" src="https://raw.githubusercontent.com/Dudeful/EdTech/master/Kenji/html/aula-06/images/q06.jpg" />
+          <img width="60%" height="auto" src="https://raw.githubusercontent.com/Dudeful/EdTech/master/Kenji/html/aula-06/images/q07.jpg" />
+          <img width="60%" height="auto" src="https://raw.githubusercontent.com/Dudeful/EdTech/master/Kenji/html/aula-06/images/q07.jpg" />
+          <img width="60%" height="auto" src="https://raw.githubusercontent.com/Dudeful/EdTech/master/Kenji/html/aula-06/images/q08.jpg" />
+          <img width="60%" height="auto" src="https://raw.githubusercontent.com/Dudeful/EdTech/master/Kenji/html/aula-06/images/q09.jpg" />
+        </fieldset>
+      </div>
+
+      <br />
+      
+      <div>
+        <fieldset>
+          <legend><h1 style="color: grey">Aula 05:</h1></legend>
+          <h2>Selecione abaixo o que for correto.</h2>
+          <h4>Faz parte da categoria Heading Content:</h4>
+          <ul>
+            <li>
+              <input type="radio" name="blockquote_1" id="blockquote_1" />
+              <label for="blockquote_1">&lt;blockquote&gt;</label>
+            </li>
+            <li>
+              <input type="radio" name="span" id="span" />
+              <label for="span">&lt;span&gt;</label>
+            </li>
+            <li>
+              <input type="radio" name="h1" id="h1" />
+              <label for="h1">&lt;h1&gt;</label>
+            </li>
+            <li>
+              <input type="radio" name="article" id="article" />
+              <label for="article">&lt;article&gt;</label>
+            </li>
+          </ul>
+          <h4>Faz parte da categoria Phrasing Content:</h4>
+          <ul>
+            <li>
+              <input type="radio" name="blockquote_2" id="blockquote_2" />
+              <label for="blockquote_2">&lt;blockquote&gt;</label>
+            </li>
+            <li>
+              <input type="radio" name="span_2" id="span_2" />
+              <label for="span_2">&lt;span&gt;</label>
+            </li>
+            <li>
+              <input type="radio" name="h1_2" id="h1_2" />
+              <label for="h1_2">&lt;h1&gt;</label>
+            </li>
+            <li>
+              <input type="radio" name="article_2" id="article_2" />
+              <label for="article_2">&lt;article&gt;</label>
+            </li>
+          </ul>
+          <h4>Faz parte da categoria Sectioning Content:</h4>
+          <ul>
+            <li>
+              <input type="radio" name="blockquote_3" id="blockquote_3" />
+              <label for="blockquote_3">&lt;blockquote&gt;</label>
+            </li>
+            <li>
+              <input type="radio" name="span_3" id="span_3" />
+              <label for="span_3">&lt;span&gt;</label>
+            </li>
+            <li>
+              <input type="radio" name="h1_3" id="h1_3" />
+              <label for="h1_3">&lt;h1&gt;</label>
+            </li>
+            <li>
+              <input type="radio" name="article_3" id="article_3" />
+              <label for="article_3">&lt;article&gt;</label>
+            </li>
+          </ul>
+          <h4>Faz parte da categoria Flow Content:</h4>
+          <ul>
+            <li>
+              <input type="radio" name="blockquote_4" id="blockquote_4" />
+              <label for="blockquote_4">&lt;blockquote&gt;</label>
+            </li>
+            <li>
+              <input type="radio" name="span_4" id="span_4" />
+              <label for="span_4">&lt;span&gt;</label>
+            </li>
+            <li>
+              <input type="radio" name="h1_4" id="h1_4" />
+              <label for="h1_4">&lt;h1&gt;</label>
+            </li>
+            <li>
+              <input type="radio" name="article_4" id="article_4" />
+              <label for="article_4">&lt;article&gt;</label>
+            </li>
+          </ul>
+        </fieldset>
+      </div>
+
+      <br />
+
+      <div>
+        <fieldset>
+          <legend><h1 style="color: grey">Aula 06:</h1></legend>
+          <div>
+            <label for="nome">Nome:</label>
+            <input style="margin-bottom: 20px;" type="text" id="nome" name="nome" />
+          </div>
+          <div style="margin-bottom: 15px;">
+            <label for="empresa">Empresa:</label>
+            <input type="text" id="empresa" name="empresa" />
+          </div>
+          <div>
+            <label>Cargo:</label>
+            <ul>
+              <li>
+                <input type="checkbox" name="junior" id="junior" /> 
+                <label for="junior">Dev Junior</label>
+              </li>
+              <li>
+                <input type="checkbox" name="pleno" id="pleno" />
+                <label for="pleno">Dev Pleno</label>
+              </li>
+              <li>
+                <input type="checkbox" name="senior" id="senior" />
+                <label for="senior">Dev Sênior</label>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <label>Stack utilizado:</label>
+            <ul>
+              <li>
+                <input type="radio" name="mern" id="mern" />
+                <label for="mern">MERN</label>
+              </li>
+              <li>
+                <input type="radio" name="mean" id="mean" />
+                <label for="mean">MEAN</label>
+              </li>
+              <li>
+                <input type="radio" name="mevn" id="mevn" />
+                <label for="mevn">MEVN</label>
+              </li>
+            </ul>
+          </div>
+            
+          <div>
+            <label for="range">Salário:</label>
+            <br />
+            <small>10k</small>
+            <input type="range" id="range" name="range" />
+            <small>60k</small>
+          </div>
+            
+          <input style="margin-top: 20px;" type="submit" value="Enviar" />
+          </fieldset>
+        </div>
+      </form>
+    </body>
+    </html>
+    

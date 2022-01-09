@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat';
+}
+
+#main_header {
+  text-align: center;
+  background-color: #daddfc;
+  padding: 20px;
+  color: #396eb0;
+}
+#main_header h1,
+#main_header h4 {
+  font-weight: 500;
+  margin-top: 0;
+}
+
+#container {
+  color: #142f43;
+  font-weight: 500;
+  width: 80vw;
+  margin: 5vh auto;
+}
+
+fieldset {
+  margin: 2vh auto;
+  padding: 15px;
+}
+
+input {
+  margin-left: 35px;
+}
+
+#user_name {
+  margin-left: 0;
+  font-size: 18px;
+  height: 25px;
+}
+
+#burger_menu button {
+  border: none;
+  font-size: 20px;
+  background-color: #142f43;
+  color: white;
+  width: 200px;
+  height: 30px;
+  border-radius: 3px;
+  margin: 2vh auto;
+  cursor: pointer;
+}
+
+#order {
+  background-color: #20202020;
+  padding: 40px;
+  width: fit-content;
+  margin: auto;
+}
+
+.order_items {
+  font-weight: 500;
+}
+
+.order_price {
+  font-weight: 600;
+  font-size: 25px;
+}
+
+#user_name_order {
+  font-weight: 600;
+  font-size: 28px;
+  margin-bottom: 40px;
+}

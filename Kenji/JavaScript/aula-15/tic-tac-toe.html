@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alpha EdTech - JavaScript Tic Tac Toe</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>JOGO DA VELHA</h1>
+      <h4>Jogador O sempre começa!</h4>
+    </header>
+    <div id="container">
+      <div id="tictactoe">
+        <span class=".moves" type="text" id="p1" onclick="playerMove(this.getAttribute('id'), 0, 0)"></span>
+        <span class=".moves" type="text" id="p2" onclick="playerMove(this.getAttribute('id'), 0, 1)"></span>
+        <span class=".moves" type="text" id="p3" onclick="playerMove(this.getAttribute('id'), 0, 2)"></span>
+        <span class=".moves" type="text" id="p4" onclick="playerMove(this.getAttribute('id'), 1, 0)"></span>
+        <span class=".moves" type="text" id="p5" onclick="playerMove(this.getAttribute('id'), 1, 1)"></span>
+        <span class=".moves" type="text" id="p6" onclick="playerMove(this.getAttribute('id'), 1, 2)"></span>
+        <span class=".moves" type="text" id="p7" onclick="playerMove(this.getAttribute('id'), 2, 0)"></span>
+        <span class=".moves" type="text" id="p8" onclick="playerMove(this.getAttribute('id'), 2, 1)"></span>
+        <span class=".moves" type="text" id="p9" onclick="playerMove(this.getAttribute('id'), 2, 2)"></span>
+      </div>
+    </div>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

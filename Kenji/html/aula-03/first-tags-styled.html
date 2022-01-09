@@ -1,0 +1,145 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Alpha EdTech - Aula HTML #02</title>
+    <!-- Todas as informações disponibilizadas aqui são apenas de caráter informativo.
+    O autor não se responsabiliza por configurações de aplicações feitas por desenvolvedores 
+    que possam comprometer a segurança de seus usuários. -->
+  </head>
+  <body style="background-color: #202020; color: white">
+    <h1>
+      <a style="color: #176d76" href="https://sejaalphaedtech.org.br/">Alpha <b>EdTech</b></a>
+    </h1>
+    <h2><i><a style="color: white" href="http://www.kenji.com.br/principal.php">Professor Kenji</i></a></h2>
+    <p>
+      Este documento tem como objetivo dirimir dúvidas quanto ao erro de embedding referente ao
+      <strong>X-Frame-Options</strong>, <br />
+      que é recorrente ao se utilizar tags &lt;iframe&gt; dentro de uma aplicação.
+    </p>
+    <h3>Afinal, o que é "X-Frame-Options"?</h3>
+    <p>
+      É parte do cabeçalho <b>HTTP</b> frequentemente presente na <i>"response"</i> enviada pelo servidor ao cliente
+      <br />
+      que solicita o embedding de conteúdo de aplicações de terceiros. <br />
+    </p>
+    <h4>Principais usos:</h4>
+    <ul>
+      <li>Evitar que sites de terceiros disponibilizem o conteúdo da sua aplicação dentro de suas páginas;</li>
+      <br />
+      <li>
+        Evitar ataques de <i>"clickjacking"</i>, que consiste em enganar o usuário fazendo-o clicar em links ou botões
+        <br />
+        de terceiros inadivertidamente;
+      </li>
+      <br />
+      <li>
+        Proibir que uma página seja disponibilizada dentro de um frame, independente de conflitos
+        <b><i>origem X destino</i></b
+        >.
+      </li>
+    </ul>
+    <h4>Possíveis configurações:</h4>
+    <ul>
+      <li><b>X-Frame-Options: DENY</b></li>
+      <ul>
+        <li>
+          Esta configuração impede determinada página de ser disponibilizada dentro de um frame em outra página, <br />
+          independente do destino final.
+        </li>
+      </ul>
+      <br />
+      <li><strong>X-Frame-Options: SAMEORIGIN</strong></li>
+      <ul>
+        <li>
+          Já neste caso, o bloqueio será realizado se e somente se a página de destino, que está tentando <br />
+          carregar o conteúdo, NÃO estiver hospedada na mesma origem, ou seja, sob o mesmo domínio. <br />
+          Logo, o conteúdo de "https://www.google.com.br" só poderá ser disponibilizado em um frame se a página <br />
+          solicitante estiver nesta mesma origem.
+        </li>
+      </ul>
+    </ul>
+    <p>
+      <q>
+        <i>
+          importante ressaltar que a configuração do X-Frame-Options só é possível de ser feita no servidor, <br />
+          logo é inútil tentar burlar esta diretiva. Tal tentativa pode inclusive acarretar em red flags
+          <br />
+          nos mecanismos de buscas já que a medida infringe as normas estabelecidas pelo Google Guidelines, por exemplo.
+        </i>
+      </q>
+    </p>
+    <!-- Imagens relevantes para compreensão do erro -->
+    <h4>Exemplo de erro gerado por X-Frame-Options: SAMEORIGIN</h4>
+    <ul>
+      <li>Console Error: X-Frame-Options</li>
+      <ul>
+        <a target="blank" href="https://github.com/Dudeful/EdTech/blob/master/Kenji/html/aula-02/x-frame-options.jpg?raw=true">
+        <img
+          src="https://github.com/Dudeful/EdTech/blob/master/Kenji/html/aula-02/x-frame-options.jpg?raw=true"
+          alt="console-error-x-frame-options"
+          height="auto"
+          width="50%"
+        />
+      </a>
+      </ul>
+      <br />
+      <li>HTTP Headers</li>
+      <ul>
+        <a target="_blank" href="https://github.com/Dudeful/EdTech/blob/master/Kenji/html/aula-02/http-header.jpg?raw=true">
+          <img
+          src="https://github.com/Dudeful/EdTech/blob/master/Kenji/html/aula-02/http-header.jpg?raw=true"
+          alt="http-options"
+          height="auto"
+          width="50%"
+          />
+        </a>
+      </ul>
+    </ul>
+    <!-- Fontes disponíveis para consulta relevante ao tema -->
+    <p><i>Para maiores informações:</i></p>
+    <table>
+      <tr>
+        <th><h3><b>Fonte</b></h3></th>
+        <th><h3><b>Recurso</b></h3></th>
+        <th><h3><b>Link</b></h3></th>
+      </tr>
+      <tr>
+        <td>Mozilla</td>
+        <td>X-Frame-Options:</td>
+        <td>        
+          <a style="color: rgb(70, 70, 255)" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options" target="_blank">
+            https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>W3Schools</td>
+        <td>&lt;iframe&gt; tag:</td>
+        <td>
+          <a style="color: rgb(70, 70, 255)" href="https://www.w3schools.com/tags/tag_iframe.ASP" target="_blank">
+            https://www.w3schools.com/tags/tag_iframe.ASP
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>JsFiddle</td>
+        <td>Reprodução do Erro:</td>
+        <td>
+          <a style="color: rgb(70, 70, 255)" href="https://jsfiddle.net/pj1v0396/" target="_blank">
+            https://jsfiddle.net/pj1v0396/
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>Auth0</td>
+        <td>Clickjacking:</td>
+        <td>
+          <a style="color: rgb(70, 70, 255)" href="https://auth0.com/blog/preventing-clickjacking-attacks/" target="_blank">
+            https://auth0.com/blog/preventing-clickjacking-attacks/
+          </a>
+        </td>
+      </tr>
+    </table>
+    <br />
+  </body>
+</html>

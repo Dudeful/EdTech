@@ -1,0 +1,58 @@
+/* #202020
+#606060
+#EAEAEA
+#DEDEDE
+#C0C0C0
+#9F9F9F
+#9C9C9C
+
+#F0BD61
+#FCCE7C
+#FFD996
+#FFE3B0
+#FFECCB */
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+#user_calls {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  color: #ffffff90;
+  background-color: #606060;
+  overflow-y: auto;
+  padding: 15px;
+}
+#user_calls_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#user_calls_header div {
+  display: flex;
+  align-items: center;
+}
+#user_calls_header h3 {
+  font-weight: 300;
+  margin: 15px 0;
+  padding-left: 10px;
+  color: #ffffff;
+}
+#user_calls_header img {
+  height: 40px;
+}
+#user_calls_history {
+  text-align: center;
+  margin-top: 40%;
+}
+#user_calls_history h5 {
+  font-weight: 300;
+  font-size: 16px;
+}
+#user_calls h2 {
+  text-align: center;
+  margin: 70% 0 0;
+}

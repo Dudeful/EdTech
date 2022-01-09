@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alpha EdTech - CSS Aula 04</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+    }
+    #parent_div {
+      display: flex;
+      justify-content: space-evenly;
+      background-color: blueviolet;
+    }
+    #parent_div div {
+      width: 15vw;
+      height: 100vh;
+    }
+    #solid {
+      background-color: aqua;
+    }
+    #solid_transparent {
+      background-color: rgba(0, 255, 255, 0.3);
+    }
+    #gradient {
+      background: linear-gradient(0deg, rgb(0, 72, 87) 0%, rgb(32, 75, 0) 50%, rgb(70, 0, 55) 100%);
+    }
+    #single_img {
+      background-image: url("Leonardo-Da-vinci_Mona-Lisa.jfif");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    #repeat_img {
+      background-image: url("Leonardo-Da-vinci_Mona-Lisa.jfif");
+      background-size: contain;
+      background-repeat: repeat;
+    }
+  </style>
+  <body>
+    <div id="parent_div">
+      <div id="solid"></div>
+      <div id="solid_transparent"></div>
+      <div id="gradient"></div>
+      <div id="single_img"></div>
+      <div id="repeat_img"></div>
+    </div>
+  </body>
+</html>

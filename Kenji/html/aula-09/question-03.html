@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <title>Alpha EdTech - Kenji Aula 09</title>
+  </head>
+  <style>
+    body {
+      font-family: "Roboto", sans-serif;
+      background-color: #181818;
+      margin: 0;
+      height: 120vh;
+    }
+    nav {
+      background-color: #202020;
+      color: white;
+      padding: 10px 24px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .logo_nav {
+      width: 27%;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+    }
+    .profile_nav {
+      width: 27%;
+      display: flex;
+      align-items: center;
+      justify-content: right;
+    }
+    .search_nav {
+      width: 46%;
+      display: flex;
+    }
+
+    .logo_nav .hamburger {
+      height: 24px;
+      width: auto;
+    }
+    .logo_nav .youtube_icon {
+      height: 29px;
+      width: auto;
+    }
+    .logo_nav h1 {
+      color: white;
+      margin: 0;
+      padding-left: 1px;
+      font-size: 24px;
+      letter-spacing: -0.9px;
+    }
+    .logo_nav .home_button {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      margin-left: 20px;
+      background: none;
+      padding: 0;
+      border: none;
+      cursor: pointer;
+    }
+
+    .search_nav input:focus {
+      outline: #2066c2 solid 1px;
+    }
+    .search_nav input {
+      font-size: 16px;
+      color: white;
+      height: 40px;
+      width: 85%;
+      padding: 6px 10px;
+      background-color: #181818;
+      border: 1px solid rgba(255, 255, 255, 0.137);
+      box-sizing: border-box;
+      position: relative;
+    }
+    .search_nav .search_button {
+      background-color: #313131;
+      border: none;
+      border-radius: 0 3px 3px 0;
+      height: 40px;
+      width: 9%;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+    .search_nav .search_button img {
+      height: 24px;
+      width: auto;
+      box-sizing: border-box;
+      vertical-align: middle;
+    }
+
+    .search_nav .voice_search_button {
+      background: none;
+      margin-left: 1.5%;
+      padding: 0;
+      border: none;
+      cursor: pointer;
+    }
+    .search_nav .voice_search_button img {
+      height: 24px;
+      width: auto;
+      background-color: #181818;
+      border-radius: 50%;
+      padding: 8px;
+    }
+
+    .profile_nav .notification_icon,
+    .profile_nav .dashboard_icon,
+    .profile_nav .create_icon {
+      height: 24px;
+      width: auto;
+    }
+    .profile_nav .create_button,
+    .profile_nav .dashboard_button,
+    .profile_nav .notification_button {
+      margin: 0 14px;
+      padding: 0;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+    .profile_nav .profile_button {
+      margin-left: 14px;
+      padding: 0;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+    .profile_nav .profile_pic {
+      border-radius: 50%;
+      height: 32px;
+      width: auto;
+    }
+
+    /* /////////////////---MAIN---///////////////// */
+
+    .container {
+      width: 88%;
+      margin: 22px auto;
+      display: flex;
+      justify-content: left;
+    }
+    .main .header_divider {
+      border: 0.1px solid rgba(255, 255, 255, 0.08);
+      margin-top: 15px;
+    }
+    .main .video_header {
+      display: flex;
+      justify-content: space-between;
+    }
+    .main p.video_title {
+      margin: 12px 0;
+      color: white;
+      font-weight: 400;
+      font-size: 18px;
+    }
+    .main small {
+      font-size: 14px;
+      color: #aaaaaa;
+      letter-spacing: 0.3px;
+    }
+    .main .interaction_buttons {
+      width: 50%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: right;
+    }
+    .main .interaction_buttons small {
+      color: white;
+      letter-spacing: 0px;
+      vertical-align: middle;
+      margin-left: 5px;
+    }
+    .main .interaction_buttons button {
+      margin: 0 12px;
+      padding: 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .main .interaction_buttons hr {
+      width: 235%;
+      border-bottom: 3px solid rgb(255, 255, 255);
+      margin-bottom: -15px;
+      margin-top: 12px;
+    }
+    .main .interaction_buttons img {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+    }
+    .recommendations {
+      margin-left: 2%;
+    }
+    .recommendations .thumbnail {
+      display: flex;
+      justify-content: left;
+      height: 94px;
+      margin-bottom: 10px;
+    }
+    .recommendations .thumbnail .thumbnail_text h4 {
+      color: white;
+      font-size: 14px;
+      padding: 0;
+      margin: 0 10px 8px;
+      max-height: 47px;
+      overflow: hidden;
+    }
+    .recommendations .thumbnail .thumbnail_text p {
+      color: #aaaaaa;
+      font-size: 15px;
+      padding: 0;
+      margin: 0 10px;
+      max-height: 47px;
+      overflow: hidden;
+    }
+  </style>
+  <body>
+    <nav>
+      <div class="logo_nav">
+        <img class="hamburger" src="images/hamburger.png" />
+        <button type="button" class="home_button">
+          <img class="youtube_icon" src="images/youtube.png" />
+          <h1>TechTube</h1>
+        </button>
+      </div>
+
+      <div class="search_nav">
+        <input placeholder="Search" type="text" />
+        <button type="button" class="search_button">
+          <img src="images/search.png" />
+        </button>
+        <button type="button" class="voice_search_button">
+          <img class="microphone_icon" src="images/microphone.png" />
+        </button>
+      </div>
+
+      <div class="profile_nav">
+        <button type="button" class="create_button">
+          <img class="create_icon" src="images/create.png" />
+        </button>
+        <button type="button" class="dashboard_button">
+          <img class="dashboard_icon" src="images/dashboard.png" />
+        </button>
+        <button type="button" class="notification_button">
+          <img class="notification_icon" src="images/notification.png" />
+        </button>
+        <button type="button" class="profile_button">
+          <img class="profile_pic" src="images/profile-pic.png" />
+        </button>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="main">
+        <iframe
+          width="900"
+          height="506"
+          src="https://www.youtube.com/embed/pKO9UjSeLew"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <div class="video_header">
+          <div class="video_info">
+            <p class="video_title">If Programming Was An Anime</p>
+            <small class="video_data"
+              >7,262,523 views &bull; Feb 24, 2020</small
+            >
+          </div>
+          <div class="interaction_buttons">
+            <button type="button" class="like_button">
+              <img src="images/like.png" />
+              <small>442K</small>
+              <hr />
+            </button>
+            <button type="button" class="dislike_button">
+              <img src="images/dislike.png" />
+              <small>6.2K</small>
+            </button>
+            <button type="button" class="share_button">
+              <img src="images/share.png" />
+              <small>SHARE</small>
+            </button>
+            <button type="button" class="save_button">
+              <img src="images/save.png" />
+              <small>SAVE</small>
+            </button>
+          </div>
+        </div>
+        <hr class="header_divider" />
+      </div>
+      <div class="recommendations">
+        <div class="thumbnail">
+          <iframe
+            width="168px"
+            height="94px"
+            src="https://www.youtube.com/embed/PY8f1Z3nARo?controls=0"
+            frameborder="0"
+          ></iframe>
+          <div class="thumbnail_text">
+            <h4>chill lofi beats to code/relax to</h4>
+            <p><small>Joma Tech</small></p>
+            <p><small>873 watching</small></p>
+          </div>
+        </div>
+        <div class="thumbnail">
+          <iframe
+            width="168px"
+            height="94px"
+            src="https://www.youtube.com/embed/PY8f1Z3nARo?controls=0"
+            frameborder="0"
+            showinfo="0"
+            controls="0"
+          ></iframe>
+          <div class="thumbnail_text">
+            <h4>chill lofi beats to code/relax to</h4>
+            <p><small>Joma Tech</small></p>
+            <p><small>873 watching</small></p>
+          </div>
+        </div>
+        <div class="thumbnail">
+          <iframe
+            width="168px"
+            height="94px"
+            src="https://www.youtube.com/embed/PY8f1Z3nARo?controls=0"
+            frameborder="0"
+            showinfo="0"
+            controls="0"
+          ></iframe>
+          <div class="thumbnail_text">
+            <h4>chill lofi beats to code/relax to</h4>
+            <p><small>Joma Tech</small></p>
+            <p><small>873 watching</small></p>
+          </div>
+        </div>
+        <div class="thumbnail">
+          <iframe
+            width="168px"
+            height="94px"
+            src="https://www.youtube.com/embed/PY8f1Z3nARo?controls=0"
+            frameborder="0"
+            showinfo="0"
+            controls="0"
+          ></iframe>
+          <div class="thumbnail_text">
+            <h4>chill lofi beats to code/relax to</h4>
+            <p><small>Joma Tech</small></p>
+            <p><small>873 watching</small></p>
+          </div>
+        </div>
+        <div class="thumbnail">
+          <iframe
+            width="168px"
+            height="94px"
+            src="https://www.youtube.com/embed/PY8f1Z3nARo?controls=0"
+            frameborder="0"
+            showinfo="0"
+            controls="0"
+          ></iframe>
+          <div class="thumbnail_text">
+            <h4>chill lofi beats to code/relax to</h4>
+            <p><small>Joma Tech</small></p>
+            <p><small>873 watching</small></p>
+          </div>
+        </div>
+        <div class="thumbnail">
+          <iframe
+            width="168px"
+            height="94px"
+            src="https://www.youtube.com/embed/PY8f1Z3nARo?controls=0"
+            frameborder="0"
+            showinfo="0"
+            controls="0"
+          ></iframe>
+          <div class="thumbnail_text">
+            <h4>chill lofi beats to code/relax to</h4>
+            <p><small>Joma Tech</small></p>
+            <p><small>873 watching</small></p>
+          </div>
+        </div>
+        <div class="thumbnail">
+          <iframe
+            width="168px"
+            height="94px"
+            src="https://www.youtube.com/embed/PY8f1Z3nARo?controls=0"
+            frameborder="0"
+            showinfo="0"
+            controls="0"
+          ></iframe>
+          <div class="thumbnail_text">
+            <h4>chill lofi beats to code/relax to</h4>
+            <p><small>Joma Tech</small></p>
+            <p><small>873 watching</small></p>
+          </div>
+        </div>
+        <div class="thumbnail">
+          <iframe
+            width="168px"
+            height="94px"
+            src="https://www.youtube.com/embed/PY8f1Z3nARo?controls=0"
+            frameborder="0"
+            showinfo="0"
+            controls="0"
+          ></iframe>
+          <div class="thumbnail_text">
+            <h4>chill lofi beats to code/relax to</h4>
+            <p><small>Joma Tech</small></p>
+            <p><small>873 watching</small></p>
+          </div>
+        </div>
+        <div class="thumbnail">
+          <iframe
+            width="168px"
+            height="94px"
+            src="https://www.youtube.com/embed/PY8f1Z3nARo?controls=0"
+            frameborder="0"
+            showinfo="0"
+            controls="0"
+          ></iframe>
+          <div class="thumbnail_text">
+            <h4>chill lofi beats to code/relax to</h4>
+            <p><small>Joma Tech</small></p>
+            <p><small>873 watching</small></p>
+          </div>
+        </div>
+        <div class="thumbnail">
+          <iframe
+            width="168px"
+            height="94px"
+            src="https://www.youtube.com/embed/PY8f1Z3nARo?controls=0"
+            frameborder="0"
+            showinfo="0"
+            controls="0"
+          ></iframe>
+          <div class="thumbnail_text">
+            <h4>chill lofi beats to code/relax to</h4>
+            <p><small>Joma Tech</small></p>
+            <p><small>873 watching</small></p>
+          </div>
+        </div>
+        <div class="thumbnail">
+          <iframe
+            width="168px"
+            height="94px"
+            src="https://www.youtube.com/embed/PY8f1Z3nARo?controls=0"
+            frameborder="0"
+            showinfo="0"
+            controls="0"
+          ></iframe>
+          <div class="thumbnail_text">
+            <h4>chill lofi beats to code/relax to</h4>
+            <p><small>Joma Tech</small></p>
+            <p><small>873 watching</small></p>
+          </div>
+        </div>
+        <div class="thumbnail">
+          <iframe
+            width="168px"
+            height="94px"
+            src="https://www.youtube.com/embed/PY8f1Z3nARo?controls=0"
+            frameborder="0"
+            showinfo="0"
+            controls="0"
+          ></iframe>
+          <div class="thumbnail_text">
+            <h4>chill lofi beats to code/relax to</h4>
+            <p><small>Joma Tech</small></p>
+            <p><small>873 watching</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

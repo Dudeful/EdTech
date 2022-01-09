@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alpha EdTech - Kenji Aula 11</title>
+  </head>
+
+  <style>
+    body {
+      overflow: hidden;
+      margin: 0;
+    }
+  </style>
+
+  <body></body>
+  <script>
+    let size = 1;
+
+    function start(numObj, i, update, offsetX, offsetY, event) {
+      area.start(numObj, i, update, offsetX, offsetY, event);
+
+      if (event && event.touches) {
+        for (let k = 1; k <= numObj; k++) {
+          window["obj" + k] = new component(
+            size,
+            size,
+            `rgb(${Math.floor(Math.random() * 0)}, ${Math.floor(
+              Math.random() * 255
+            )}, ${Math.floor(Math.random() * 0)}`,
+            event.touches[0].clientX,
+            event.touches[0].clientY
+          );
+        }
+      } else if (event) {
+        for (let k = 1; k <= numObj; k++) {
+          window["obj" + k] = new component(
+            size,
+            size,
+            `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(
+              Math.random() * 255
+            )}, ${Math.floor(Math.random() * 255)}`,
+            event.clientX,
+            event.clientY
+          );
+        }
+      } else {
+        for (let k = 1; k <= numObj; k++) {
+          window["obj" + k] = new component(
+            size,
+            size,
+            `rgb(0, 0, ${Math.floor(Math.random() * 150)}`,
+            window.innerWidth / 2,
+            window.innerHeight / 2
+          );
+        }
+      }
+    }
+
+    let area = {
+      canvas: document.createElement("canvas"),
+      start: function (numObj, i, update, offsetX, offsetY, event) {
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+        this.context = this.canvas.getContext("2d");
+        this.interval = setInterval(() => update(numObj, offsetX, offsetY), 0);
+        document.body.insertBefore(this.canvas, document.body.childNodes[i]);
+      },
+      clear: function (x, y) {
+        this.context.clearRect(x, y, this.canvas.width, this.canvas.height);
+      },
+    };
+
+    function component(width, height, color, x, y) {
+      this.width = width;
+      this.height = height;
+      this.x = x;
+      this.y = y;
+      this.update = function () {
+        ctx = area.context;
+        ctx.fillStyle = color;
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+      };
+    }
+
+    function update1(numObj, offsetX, offsetY) {
+      // area.clear();
+      for (let k = 1; k <= numObj; k++) {
+        window["obj" + k].x += (Math.random() - offsetX) * 5;
+        window["obj" + k].y += (Math.random() - offsetY) * 5;
+        window["obj" + k].update();
+      }
+    }
+
+    function update2(numObj, offsetX, offsetY) {
+      // area.clear();
+      for (let k = 1; k <= (numObj / 5) * 1; k++) {
+        window["obj" + k].x +=
+          (Math.random() - offsetX) * window.innerHeight * 0.04;
+        window["obj" + k].y +=
+          (Math.random() - offsetY) * window.innerHeight * 0.04;
+        window["obj" + k].update();
+      }
+      for (let k = (numObj / 5) * 1 + 1; k <= (numObj / 5) * 2; k++) {
+        window["obj" + k].x +=
+          (Math.random() - offsetX) * window.innerHeight * 0.03;
+        window["obj" + k].y +=
+          (Math.random() - offsetY) * window.innerHeight * 0.03;
+        window["obj" + k].update();
+      }
+      for (let k = (numObj / 5) * 2 + 1; k <= (numObj / 5) * 3; k++) {
+        window["obj" + k].x +=
+          (Math.random() - offsetX) * window.innerHeight * 0.02;
+        window["obj" + k].y +=
+          (Math.random() - offsetY) * window.innerHeight * 0.02;
+        window["obj" + k].update();
+      }
+      for (let k = (numObj / 5) * 3 + 1; k <= (numObj / 5) * 4; k++) {
+        window["obj" + k].x +=
+          (Math.random() - offsetX) * window.innerHeight * 0.01;
+        window["obj" + k].y +=
+          (Math.random() - offsetY) * window.innerHeight * 0.01;
+        window["obj" + k].update();
+      }
+      for (let k = (numObj / 5) * 4 + 1; k <= (numObj / 5) * 5; k++) {
+        window["obj" + k].x +=
+          (Math.random() - offsetX) * window.innerHeight * 0.005;
+        window["obj" + k].y +=
+          (Math.random() - offsetY) * window.innerHeight * 0.005;
+        window["obj" + k].update();
+      }
+    }
+
+    document.body.onload = start(400, 0, update1, 0.5, 0.5, event);
+
+    document.body.onclick = (event) => {
+      for (let k = 1; k <= 400; k++) {
+        window["obj" + k].x = 0;
+        window["obj" + k].y = 0;
+      }
+      offsetX = 0.5;
+      offsetY = 0.5;
+      // offsetX = event.clientX / window.innerWidth;
+      // offsetY = event.clientY / window.innerHeight;
+      start(400, 0, update2, offsetX, offsetY, event);
+      area.clear(event.clientX, event.clientY);
+    };
+
+    document.body.ontouchstart = (event) => {
+      for (let k = 1; k <= 400; k++) {
+        window["obj" + k].x = 0;
+        window["obj" + k].y = 0;
+      }
+      offsetX = 0.5;
+      offsetY = 0.5;
+      // offsetX = event.clientX / window.innerWidth;
+      // offsetY = event.clientY / window.innerHeight;
+      start(400, 0, update2, offsetX, offsetY, event);
+      area.clear(event.touches[0].clientX, event.touches[0].clientY);
+    };
+  </script>
+</html>

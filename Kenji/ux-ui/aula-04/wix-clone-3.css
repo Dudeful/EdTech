@@ -1,0 +1,454 @@
+@font-face {
+  font-family: Museo;
+  src: url('fonts/Museo300-Regular.otf');
+  font-weight: 300;
+}
+@font-face {
+  font-family: Museo;
+  src: url('fonts/Museo700-Regular.otf');
+  font-weight: 700;
+}
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+}
+a {
+  text-decoration: none;
+}
+/* ----------------------------------- */
+#navbar {
+  max-width: 100vw;
+  height: 102px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+#navbar #logo {
+  flex: 1 1 22%;
+  padding: 0 20px;
+  background-color: #fe8340;
+  height: 100%;
+}
+#navbar #logo h1 {
+  color: #293e31;
+  font-size: 28px;
+  margin: 0;
+  font-family: 'Museo';
+  font-weight: 700;
+  padding-top: 7%;
+}
+#navbar #logo h5 {
+  color: #293e31;
+  font-size: 16px;
+  margin: 0;
+  font-family: 'Museo';
+  font-weight: 300;
+}
+#navbar #nav_links {
+  box-sizing: border-box;
+  flex: 1 1 69%;
+  background-color: #293e31;
+  height: 100%;
+  padding: 0 115px;
+  display: flex;
+  flex-wrap: wrap;
+}
+#navbar #nav_links #main_links {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+}
+#navbar #nav_links a {
+  color: white;
+  font-size: 13px;
+  padding: 0 15px;
+}
+#navbar #nav_links a:hover {
+  color: #fe8340;
+}
+#navbar #nav_links a[active] {
+  color: #fe8340;
+}
+#navbar #nav_links #login_cart {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+#navbar #nav_links #login_cart img {
+  height: 22px;
+}
+#navbar #nav_links #login_cart a {
+  color: #fe8340;
+  display: flex;
+  align-items: center;
+}
+#navbar #nav_links #login_cart span {
+  font-size: 16px;
+  padding-left: 14px;
+}
+#navbar #join_us {
+  flex: 1 1 8%;
+  display: flex;
+  background-color: #fe8340;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0 10px 0 20px;
+  /* position: fixed;
+  right: 0;
+  height: 102px;
+  width: 116px;
+  z-index: 2; */
+}
+#navbar #join_us img {
+  height: 60px;
+  margin: auto;
+}
+#navbar #join_us span {
+  text-align: center;
+  color: #293e31;
+  font-size: 10px;
+  writing-mode: vertical-rl;
+  margin: auto;
+}
+/* ----------------------------------- */
+#main_section {
+  background-image: url('images/pumpkins.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 45vh;
+  max-width: 100vw;
+  padding: 25vh 20vw;
+  color: white;
+}
+#main_section h1 {
+  font-family: 'Museo';
+  font-size: 106px;
+  margin: 10px 0 0 -10px;
+}
+#main_section h3 {
+  font-family: 'Museo';
+  font-size: 32px;
+  margin: 10px auto 50px;
+  letter-spacing: 2px;
+}
+#main_section button {
+  border: none;
+  outline: none;
+  height: 40px;
+  width: 140px;
+  font-weight: 200;
+  font-family: 'Raleway', sans-serif;
+  background-color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+#main_section button:hover {
+  background-color: #fe8340;
+}
+/* ----------------------------------- */
+#sustainable_section {
+  padding: 10vh 9vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#sustainable_section #sustainable_info {
+  flex: 1 1 40%;
+  max-width: 40%;
+  height: 100%;
+}
+#sustainable_section h2 {
+  font-family: 'Museo';
+  font-size: 32px;
+  color: #293e31;
+  width: 80%;
+}
+#sustainable_section hr {
+  width: 62px;
+  margin-left: 0;
+  background-color: #293e31;
+  height: 1px;
+  border: none;
+}
+#sustainable_section p {
+  font-family: 'Raleway';
+  letter-spacing: 1px;
+  line-height: 30px;
+  color: #293e31;
+}
+#sustainable_section img {
+  flex: 0 0 60%;
+  max-width: 411px;
+}
+#sustainable_section button {
+  margin-top: 25px;
+  border: none;
+  outline: none;
+  height: 40px;
+  width: 140px;
+  font-weight: 200;
+  font-family: 'Raleway', sans-serif;
+  background-color: #fe8340;
+  color: #293e31;
+  font-size: 16px;
+  cursor: pointer;
+}
+#sustainable_section button:hover {
+  color: white;
+  background-color: #293e31;
+}
+/* ----------------------------------- */
+#baskets_section {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #dacec2;
+  padding: 15vh 20vw 10vh;
+}
+#baskets_section h2 {
+  flex: 1 1 100%;
+  color: #293e31;
+  font-family: 'Museo';
+  font-size: 32px;
+  margin: auto auto 10px;
+}
+#baskets_section hr {
+  flex: 1 1 100%;
+  max-width: 42px;
+  border: none;
+  height: 1px;
+  background-color: #293e31;
+  margin-left: 0;
+}
+#baskets_section #baskets_imgs {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 40px auto;
+  font-size: 14px;
+  margin: 40px 0;
+  color: #293e31;
+}
+#baskets_section #baskets_imgs img {
+  width: 287px;
+}
+#baskets_section button {
+  margin: auto;
+  border: none;
+  outline: none;
+  flex: 1 1 100%;
+  max-width: 172px;
+  height: 42px;
+  background-color: #fe8340;
+  color: #293e31;
+  font-size: 16px;
+  font-family: 'Raleway';
+}
+#baskets_section button:hover {
+  background-color: #293e31;
+  color: white;
+}
+/* ----------------------------------- */
+#market_section {
+  display: flex;
+}
+#market_section img {
+  width: 50%;
+  padding: 12% 8%;
+  box-sizing: border-box;
+  background-color: #293e31;
+  object-fit: cover;
+}
+#veg_market_bg {
+  width: 50%;
+  margin-right: 0;
+  background-image: url('images/veg-market.webp');
+  background-attachment: fixed;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+/* ----------------------------------- */
+#blog_section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15vh 19vw 30vh;
+  margin: auto;
+  box-sizing: border-box;
+  background-color: #dacec2;
+}
+#blog_section h2 {
+  flex: 1 1 100%;
+  color: #293e31;
+  font-size: 32px;
+  font-family: 'Museo';
+}
+#blog_section hr {
+  flex: 1 1 100%;
+  max-width: 62px;
+  margin-left: 0;
+  border: none;
+  height: 1px;
+  background-color: #293e31;
+}
+#blog_section #blog_posts_home {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+#blog_section #blog_posts_home .blog_cards {
+  background-color: white;
+}
+#blog_section #blog_posts_home .blog_cards .post_card_wrapper {
+  box-sizing: border-box;
+  padding: 28px 24px 25px;
+  height: 55%;
+}
+#blog_section #blog_posts_home .blog_cards h4 {
+  font-size: 18px;
+  color: #5a5a5a;
+  width: 242px;
+}
+#blog_section #blog_posts_home .blog_cards h4:hover {
+  color: #fe8340;
+}
+#blog_section #blog_posts_home .blog_cards hr {
+  min-width: 100%;
+  opacity: 0.15;
+}
+#blog_section #blog_posts_home #post_card_info {
+  display: flex;
+  justify-content: space-between;
+}
+#blog_section #blog_posts_home #post_card_info div {
+  font-size: 12px;
+  color: #414141;
+  font-weight: 500;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-right: auto;
+  margin-left: 12px;
+}
+#blog_section #blog_posts_home #post_card_info div h6,
+#blog_section #blog_posts_home #post_card_info div p {
+  margin: 0;
+  flex: 1 1 100%;
+}
+#blog_section #blog_posts_home .blog_cards img {
+  height: 164px;
+}
+#blog_section #blog_posts_home #post_card_info img {
+  height: 32px;
+}
+#blog_section #blog_posts_home #post_card_likes {
+  display: flex;
+  justify-content: space-between;
+  height: 19px;
+  margin-left: -60px;
+}
+#blog_section #blog_posts_home #post_card_likes img {
+  height: 100%;
+}
+#blog_section #blog_posts_home #post_card_likes a span {
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+  font-size: 12px;
+  position: relative;
+  top: -5px;
+}
+#blog_section button {
+  margin: 10vh auto auto;
+  border: none;
+  outline: none;
+  flex: 1 1 100%;
+  max-width: 142px;
+  height: 40px;
+  background-color: #fe8340;
+  color: #293e31;
+  font-size: 16px;
+  font-family: 'Raleway';
+  cursor: pointer;
+}
+#blog_section button:hover {
+  background-color: #293e31;
+  color: white;
+}
+/* ----------------------------------- */
+#main_footer {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #293e31;
+}
+#main_footer #business_info {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  background-color: white;
+  max-width: 60vw;
+  padding: 50px 40px;
+  font-family: 'Museo';
+  font-weight: 700;
+  font-size: 21px;
+  margin: -120px auto 0;
+  box-shadow: 0 0 15px 10px #293e3110;
+}
+#main_footer #business_info #footer_operating_hours {
+  padding: 0 50px;
+  border-left: 1px solid #293e31;
+  border-right: 1px solid #293e31;
+}
+#main_footer #business_info h4 {
+  margin: 0 0 20px;
+}
+#main_footer #business_info p {
+  margin: 6px 0;
+}
+#main_footer #business_info img {
+  position: absolute;
+  height: 180px;
+  bottom: -130px;
+  left: 60px;
+  transform: rotate(-15deg);
+}
+#main_footer #links_newsletter {
+  flex: 1 1 100%;
+  visibility: hidden;
+  margin: 10vh auto;
+  width: 60vw;
+}
+#main_footer #social_media {
+  flex: 1 1 100%;
+  text-align: center;
+  max-width: 60vw;
+  margin: 10vh auto;
+  display: flex;
+  justify-content: space-between;
+}
+#main_footer #social_media a {
+  font-size: 33px;
+  color: #fe8340;
+  font-family: 'Museo';
+  font-weight: 700;
+}
+#main_footer #social_media #twitter_link {
+  border-left: 1px solid #fe8340;
+  border-right: 1px solid #fe8340;
+  padding: 0 120px;
+}
+#main_footer #footer_copyright a {
+  color: #fe8340;
+  border-bottom: 1px solid #fe8340;
+}
+#main_footer #footer_copyright {
+  text-align: center;
+  flex: 1 1 100%;
+  max-width: 60vw;
+  margin: auto;
+  color: #fe8340;
+}

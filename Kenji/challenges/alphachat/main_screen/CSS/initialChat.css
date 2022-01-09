@@ -1,0 +1,310 @@
+* {
+  box-sizing: border-box;
+  color: white;
+}
+
+body {
+  font-family: 'Montserrat';
+  height: 100vh;
+  max-width: 1920px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  margin: auto;
+}
+
+#vertical_nav {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  background-color: #eaeaea;
+}
+
+#vertical_nav_header {
+  width: 100%;
+  height: 60px;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #606060;
+}
+
+#logo_vertical_nav {
+  height: 100%;
+  padding: 15px;
+  width: auto;
+}
+
+#vertical_nav h1 {
+  font-size: 1.7rem;
+  color: white;
+  height: fit-content;
+  align-self: center;
+  font-weight: normal;
+}
+
+#dots-btn {
+  display: flex;
+}
+
+#dots-btn img {
+  width: 50px;
+  align-self: center;
+}
+
+.users-in-main {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.user-btn-in-main {
+  background-color: #dedede;
+  max-width: 100%;
+  height: 80px;
+  padding: 12px 30px;
+  margin: 2px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-avatar {
+  width: 50px;
+}
+
+.user-btn-in-main p {
+  color: #606060;
+  font-size: 1.6rem;
+  font-weight: 500;
+  height: fit-content;
+  align-self: center;
+}
+
+.status-icon {
+  width: 20px;
+}
+
+main {
+  width: 70%;
+}
+
+#chat-nav-in-main-nav {
+  width: 100%;
+  height: 60px;
+  box-shadow: 2px 3px 5px 0px #f0bd6180;
+  background-color: #dedede;
+}
+
+.chat-in-main {
+  width: 100%;
+  height: 80vh;
+  background-color: #eaeaea;
+  background-image: url('../images/alphaChat.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.25;
+}
+
+/* -------------------------MODAL--------------------------- */
+
+.menu_modal:target {
+  transform: translate(0, 0);
+}
+
+.menu_modal {
+  position: absolute;
+  height: 88%;
+  top: 12%;
+  width: 30%;
+  transform: translate(-200%, 0);
+  transition: transform 0.3s ease-in-out;
+  outline: none;
+  border: none;
+  z-index: 11;
+}
+
+#user_info_modal:target {
+  transform: translate(0, 0);
+}
+
+#user_info_modal {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  padding: 3% 35%;
+  background-color: #20202090;
+  transform: translate(0, -200%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 11;
+  width: 100%;
+  height: 100%;
+}
+
+#user_info_modal iframe {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+}
+
+#modal_chat:target {
+  transform: translate(0, 0);
+}
+
+#modal_chat {
+  position: absolute;
+  right: 0;
+  height: 88%;
+  top: 12%;
+  width: 70%;
+  transform: translate(-200%, 0);
+  transition: transform 0.3s ease-in-out;
+  outline: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+
+#header-in-modal-chat {
+  width: 100%;
+  height: 60px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+#header-in-modal-chat img {
+  width: 50px;
+}
+
+#header-in-modal-chat p {
+  color: #606060;
+  width: fit-content;
+  height: fit-content;
+  align-self: center;
+  font-size: 2rem;
+  margin-left: 30px;
+}
+
+#board-in-modal-chat {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  background-color: white;
+  box-shadow: inset 0 4px 4px #20202060;
+}
+
+#left-box {
+  width: 50%;
+  height: 100%;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#img1 {
+  width: 200px;
+}
+
+#img2 {
+  width: 300px;
+}
+
+#img3 {
+  width: 200px;
+}
+
+#img7 {
+  height: 120px;
+  width: fit-content;
+  display: none;
+}
+#img7.send_msg {
+  display: initial;
+}
+#right-box {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#img4 {
+  align-self: flex-end;
+  width: 30%;
+}
+
+#img5 {
+  align-self: flex-end;
+  width: 80%;
+}
+
+#img6 {
+  align-self: flex-end;
+  width: 60%;
+}
+
+#img8 {
+  align-self: flex-end;
+  height: 125px;
+  width: fit-content;
+  display: none;
+}
+
+#img8.send_msg {
+  display: initial;
+}
+
+#footer-in-modal-char {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0px 40px;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #dedede;
+}
+
+#footer-in-modal-char img {
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+}
+#footer-in-modal-char input {
+  font-size: 1rem;
+  text-indent: 20px;
+  height: 40px;
+  color: #606060;
+  border-radius: 30px;
+  box-shadow: 0 0 0.2em;
+  width: 75%;
+}
+/* -------------------------SCROLL BAR--------------------------- */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #f0bd61;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
