@@ -1,0 +1,157 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#main_nav {
+  background-color: tomato;
+  color: #202020;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#main_nav_logo a {
+  display: flex;
+  align-items: center;
+}
+
+#main_nav_logo img {
+  height: 40px;
+  object-fit: contain;
+  margin-right: 15px;
+}
+
+#main_nav_logo h1 {
+  font-weight: 600;
+  color: #505050;
+  margin: 0;
+}
+
+#main_nav_links {
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+}
+
+#main_footer {
+  background-color: tomato;
+  color: #202020;
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 25vh;
+  margin-top: auto;
+}
+
+#main_footer small {
+  color: #606060;
+}
+
+#main_nav a,
+#main_footer a {
+  text-decoration: none;
+  color: #505050;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+#main_nav a:hover,
+#main_footer a:hover {
+  color: #202020;
+}
+
+#container {
+  width: 80%;
+  margin: 5vh auto;
+  padding: 15px;
+}
+
+form {
+  width: 100%;
+  margin: auto;
+}
+
+form > * {
+  width: 80%;
+  max-width: 500px;
+  display: block;
+  margin: 2vh auto;
+  font-size: 20px;
+  border: none;
+}
+
+form button {
+  border-radius: 3px;
+  background-color: skyblue;
+  color: #202020;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  height: 40px;
+  width: 150px;
+  display: block;
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 5vh;
+}
+
+form button:hover {
+  background-color: #202020;
+  color: tomato;
+}
+
+form input {
+  padding: 5px 10px;
+  border: 1px solid #60606060;
+  border-radius: 3px;
+  transition: all 0.2s ease-in-out;
+}
+
+form input:hover {
+  background-color: tomato;
+  color: white;
+}
+
+#fetched_data {
+  width: 80%;
+  max-width: 768px;
+  margin: 5vh auto;
+  background-color: aliceblue;
+  box-shadow: 0px 0px 10px 0px #20202030;
+}
+
+#fetched_data .fetched_data {
+  background-color: rgb(226, 238, 248);
+  margin: 2vh auto;
+  padding: 0.5vh 0;
+  color: #202020;
+  font-family: 'Montserrat';
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 600px) {
+  #main_nav {
+    padding: 15px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  #main_nav_links {
+    margin-top: 30px;
+  }
+  #container {
+    width: 100%;
+    margin: 5vh auto;
+  }
+}
