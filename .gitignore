@@ -1,2 +1,4 @@
 **/*.insyncdl
 **/.*.insyncdl
+**/node_modules/
+**/.vscode/

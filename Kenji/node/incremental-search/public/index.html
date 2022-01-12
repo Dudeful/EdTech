@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Alpha EdTech</title>
+    <title>Datarator</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
@@ -35,10 +35,21 @@
     </nav>
     <div id="container">
       <form>
-        <input id="userID" type="text" placeholder="User ID" />
-        <input id="userName" type="text" placeholder="User Name" />
-        <input id="userEmail" type="email" placeholder="User Email" />
-        <button type="button" onclick="fetchUsers()">Enviar</button>
+        <select name="query_param" id="query_param">
+          <option disabled selected value="" value="">
+            <i>select a parameter</i>
+          </option>
+          <option value="ID">ID</option>
+          <option value="Name">Name</option>
+          <option value="Email">Email</option>
+        </select>
+
+        <input
+          disabled
+          id="query_value"
+          type="text"
+          placeholder="Search User By..."
+        />
       </form>
     </div>
 

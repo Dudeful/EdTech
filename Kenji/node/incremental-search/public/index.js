@@ -1,36 +1,56 @@
-const fetchUsers = () => {
-  const userID = document.getElementById('userID').value;
-  const userName = document.getElementById('userName').value;
-  const userEmail = document.getElementById('userEmail').value;
+const queryParam = document.getElementById('query_param');
+const queryValue = document.getElementById('query_value');
 
-  fetch(
-    `/fetch-users?id=${userID}&name=${userName}&email=${userEmail}`
-  )
-    .then((res) => {
-      if (res.status < 200 || res.status > 299) {
-        alert(
-          `Error with Status Code: ${res.status} Check the console for info about the error.`
-        );
-        console.log(res.status, res);
-        return;
-      }
+queryParam.addEventListener('change', () => selectHandler());
+queryValue.addEventListener('input', () => debounce());
 
-      return res.json();
-    })
-    .then((data) => renderResponse(data))
-    .catch((err) => console.error(err));
+const selectHandler = () => {
+  queryValue.setAttribute('placeholder', queryParam.value);
+  queryValue.disabled = false;
+}
+
+const debounceHandler = (delay) => {
+  let debouncing;
+  return function () {
+    clearTimeout(debouncing);
+    console.log('hello')
+    debouncing = setTimeout(() => fetchUsers(), delay);
+  }
 };
 
-const renderResponse = (data) => {
+const debounce = debounceHandler(2000);
+
+const fetchUsers = () => {
+  if (queryValue.value && queryValue.value.length > 3) {
+    fetch(
+      `/fetch-users?${queryParam.value}=${queryValue.value}`
+    )
+      .then((res) => {
+        if (!res.ok) {
+          alert(
+            `Error ${res.status}, check the console for more information.`
+          );
+          console.log(res.status, res);
+          return;
+        }
+
+        return res.json();
+      })
+      .then((data) => renderResponse(data))
+      .catch((err) => console.error(err));
+  }
+};
+
+const renderResponse = (res) => {
   const fetchedData = document.getElementById('fetched_data');
   fetchedData.innerHTML = '';
 
-  if (data.error) {
-    alert(data.msg);
+  if (res.error) {
+    alert(res.msg);
   } else {
-    data.users.forEach(
+    res.data.forEach(
       (el) =>
-        (fetchedData.innerHTML += `
+      (fetchedData.innerHTML += `
         <div class='fetched_data'>
         <ul>
           <li>User ID: ${el.id}</li>
