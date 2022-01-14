@@ -11,19 +11,18 @@ const selectHandler = () => {
 
 const debounceHandler = (delay) => {
   let debouncing;
-  return function () {
+  return () => {
     clearTimeout(debouncing);
-    console.log('hello')
     debouncing = setTimeout(() => fetchUsers(), delay);
   }
 };
 
-const debounce = debounceHandler(2000);
+const debounce = debounceHandler(750);
 
 const fetchUsers = () => {
   if (queryValue.value && queryValue.value.length > 3) {
     fetch(
-      `/fetch-users?${queryParam.value}=${queryValue.value}`
+      `http://localhost:80/fetch-users?${queryParam.value}=${queryValue.value}`
     )
       .then((res) => {
         if (!res.ok) {
