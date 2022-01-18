@@ -22,7 +22,7 @@ const debounce = debounceHandler(750);
 const fetchUsers = () => {
   if (queryValue.value && queryValue.value.length > 3) {
     fetch(
-      `http://localhost:80/fetch-users?${queryParam.value}=${queryValue.value}`
+      `/fetch-users?${queryParam.value}=${queryValue.value}`
     )
       .then((res) => {
         if (!res.ok) {
