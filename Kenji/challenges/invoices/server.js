@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const fs = require('fs');
-const invoices = require('./data/invoices.json');
 
 app.use(express.json());
 
@@ -22,12 +21,13 @@ app.get('/invoices', (req, res) => {
 
 app.post('/invoices', (req, res) => {
   const newInvoice = req.body.invoice;
-  console.log(req.body.invoice);
-  // let stream = fs.createWriteStream('data/invoices.json', {flags: 'a'});
-  // stream.write(newInvoice);
-  // stream.end();
-  // let invoices = fs.readFileSync('data/invoices.json', 'utf8');
 
+  // let stream = fs.createWriteStream('data/invoices.json', {flags: 'a'});
+  // stream.write(JSON.stringify(newInvoice));
+  // stream.end();
+
+  let invoices = [];
+  invoices = JSON.parse(fs.readFileSync('data/invoices.json', 'utf8'));
   invoices.push(newInvoice);
 
   fs.writeFile('data/invoices.json', JSON.stringify(invoices), (err) => {
@@ -37,12 +37,3 @@ app.post('/invoices', (req, res) => {
 }); 
 
 app.listen(80);
-
-
-
-
-// const date = new Date().getTime();
-// console.log(date);
-
-// const date2 = new Date(date);
-// console.log(date2);

@@ -1,4 +1,20 @@
-const invoices = [];
+let invoices = [];
+
+const clearForm = () => {
+  document.getElementById('customer_name').value = '';
+  document.getElementById('due_date').value = '';
+  document.getElementById('purchase_total').value = '';
+};
+
+const clearTable = () => {
+  document.getElementById('customers_log').innerHTML = `
+    <tr>
+      <th>Nome</th>
+      <th>Vencimento</th>
+      <th>Valor</th>
+      <th>Juros</th>
+    </tr>`;
+}
 
 const getFormInput = () => {
   let customerName = document.getElementById('customer_name').value;
@@ -24,11 +40,14 @@ const postData = (url, data) => {
 
   fetch(url, options)
   .then(res => { return res.json() })
-  .then(data => console.log(data))
+  .then(data => getInvoices(false))
   .catch(err => console.log(err))
 }
 
 const getInvoices = (filters) => {
+  invoices = [];
+  clearTable();
+
   fetch(`/invoices?filters=${filters}`)
   .then(res => { return res.json() })
   .then(data => {
@@ -39,12 +58,6 @@ const getInvoices = (filters) => {
 }
 
 getInvoices(false);
-
-const clearForm = () => {
-  document.getElementById('customer_name').value = '';
-  document.getElementById('due_date').value = '';
-  document.getElementById('purchase_total').value = '';
-};
 
 const appendNewDataToTable = (newCustomerData) => {
   let newTableRow = `
@@ -95,13 +108,7 @@ const calculateInterest = (invoiceArray) => {
     }
   });
 
-  document.getElementById('customers_log').innerHTML = `
-    <tr>
-      <th>Nome</th>
-      <th>Vencimento</th>
-      <th>Valor</th>
-      <th>Juros</th>
-    </tr>`;
+  clearTable();
 
   invoicesWithInterest.forEach((el) => appendNewDataToTable(el));
 };
@@ -122,24 +129,16 @@ const groupBy = (arr, property) => {
 
 const groupByName = (invoiceArray) => {
   let groupedByName = groupBy(invoiceArray, 'customerName');
-  console.log(groupedByName);
   renderGroupedBy(groupedByName);
 };
 
 const groupByDueDate = (invoiceArray) => {
   let groupedByDueDate = groupBy(invoiceArray, 'dueDate');
-  console.log(groupedByDueDate);
   renderGroupedBy(groupedByDueDate);
 };
 
 const renderGroupedBy = (invoiceArray) => {
-  document.getElementById('customers_log').innerHTML = `
-  <tr>
-    <th>Nome</th>
-    <th>Vencimento</th>
-    <th>Valor</th>
-    <th>Juros</th>
-  </tr>`;
+  clearTable();
 
   Object.keys(invoiceArray).forEach((group) => {
     invoiceArray[group].forEach((invoiceEl) => appendNewDataToTable(invoiceEl));
