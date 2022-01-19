@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alpha EdTech - JavaScript Map</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="container">
+      <form id="purchase_data">
+        <input id="customer_name" type="text" placeholder="Nome" />
+        <input id="due_date" type="date" placeholder="Data de Vencimento" />
+        <input id="purchase_total" type="text" placeholder="Valor da Compra" />
+
+        <button onclick="getFormInput()" type="button">Enviar</button>
+
+        <button onclick="calculateInterest(invoices)" type="button">
+          Calcular Juros
+        </button>
+
+        <button onclick="calculateTotalPerCustomer(invoices)" type="button">
+          Calcular Totais
+        </button>
+
+        <div id="groupBy">
+          <button onclick="groupByName(invoices)" type="button">
+            Agrupar por Cliente
+          </butto>
+          <button onclick="groupByDueDate(invoices)" type="button">
+            Agrupar por Vencimento
+          </button>
+        </div>
+
+        <div id="filters">
+          <input type="date" placeholder="Data Inicial" id="initialDate" 
+            onfocus="this.placeholder = ''" 
+            onblur="this.placeholder = 'Data Inicial'" 
+          />
+          <input type="date" placeholder="Data Final" id="finalDate"
+            onfocus="this.placeholder = ''" 
+            onblur="this.placeholder = 'Data Final'" 
+          />
+          <input type="number" placeholder="Valor Mínimo" id="minTotal" />
+          <input type="number" placeholder="Valor Máximo" id="maxTotal" />
+          
+          <button onclick="filterInvoices(invoices)" type="button">
+            Filtrar
+          </butto>
+        </div>
+      </form>
+
+      <table id="customers_log">
+        <tr>
+          <th>Nome</th>
+          <th>Vencimento</th>
+          <th>Valor</th>
+        </tr>
+      </table>
+    </div>
+
+    <script src="index.js" defer></script>
+  </body>
+</html>
