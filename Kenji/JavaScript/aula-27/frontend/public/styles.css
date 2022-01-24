@@ -1,0 +1,106 @@
+body {
+	margin: 0;
+	font-family: 'IBM Plex Mono', monospace;
+}
+
+#root {
+	box-sizing: border-box;
+	width: 80%;
+	margin: auto;
+	padding: 12vh 5vw 6vh;
+	box-shadow: 0 0 10px 0 #20202025;
+	min-height: 100vh;
+}
+
+#hellofriend {
+	margin-bottom: 10vh;
+	display: block;
+}
+
+#employee_form {
+	margin: 7vh auto 10vh;
+}
+
+#employee_form input {
+	display: block;
+	margin: 5px auto;
+}
+
+#employee_form button {
+	display: block;
+	margin: 10px auto;
+	border: none;
+	cursor: pointer;
+	font-family: 'IBM Plex Mono', monospace;
+	padding: 6px 12px;
+	background-color: tomato;
+	color: ivory;
+	font-weight: 600;
+	transition: all 0.2s ease-in-out;
+}
+
+#fetch_employees button:hover {
+	background-color: ivory;
+	color: tomato;
+	box-shadow: 0 0 8px 0 #20202030;
+}
+
+#render_data {
+	display: block;
+	margin: 5vh auto;
+}
+
+.employee_div {
+	padding: 10px;
+	margin: 10px 0;
+	background-color: #fffff080;
+	box-shadow: 0 0 10px 0 #20202010;
+}
+
+#fetch_employees {
+	display: flex;
+	justify-content: center;
+}
+
+#fetch_employees select {
+	background-color: #60606080;
+}
+
+#fetch_employees > * {
+	border-radius: 0;
+	outline: none;
+	border: #606060 solid 1px;
+	text-align: center;
+	font-size: 16px;
+}
+
+#fetch_employees button {
+	border: none;
+	cursor: pointer;
+	font-family: 'IBM Plex Mono', monospace;
+	padding: 6px 12px;
+	background-color: tomato;
+	color: ivory;
+	font-weight: 600;
+	transition: all 0.2s ease-in-out;
+}
+
+#fetch_employees button:hover {
+	background-color: ivory;
+	color: tomato;
+	box-shadow: 0 0 8px 0 #20202030;
+}
+
+@media only screen and (max-width: 500px) {
+	#root {
+		width: 100%;
+	}
+
+	#fetch_employees > * {
+		font-size: 14px;
+	}
+
+	#fetch_employees button {
+		padding: 4px 8px;
+	}
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Alpha EdTech - JavaScript Routes on Node with POST</title>
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;600&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div id="root">
+			<span id="hellofriend">hellofriend</span>
+
+			<form id="employee_form">
+				<input
+					class="employee_data"
+					type="text"
+					placeholder="registration"
+					name="registration"
+					id="registration_input"
+				/>
+				<input
+					class="employee_data"
+					type="text"
+					placeholder="name"
+					name="name"
+					id="name_input"
+				/>
+				<input
+					class="employee_data"
+					type="email"
+					placeholder="email"
+					name="email"
+					id="email_input"
+				/>
+				<input
+					class="employee_data"
+					type="text"
+					placeholder="sector"
+					name="sector"
+					id="sector_input"
+				/>
+				<input
+					class="employee_data"
+					type="number"
+					placeholder="branch_line"
+					name="branch_line"
+					id="branch_line_input"
+				/>
+				<input
+					class="employee_data"
+					type="text"
+					placeholder="entry_date"
+					name="entry_date"
+					id="entry_date_input"
+					onfocus="this.type='date'"
+					onblur="this.type='text'"
+				/>
+				<input
+					class="employee_data"
+					type="text"
+					placeholder="birthday"
+					name="birthday"
+					id="birthday_input"
+					onfocus="this.type='date'"
+					onblur="this.type='text'"
+				/>
+
+				<button type="button" id="post_employees_button">
+					Post Employees Data
+				</button>
+			</form>
+
+			<div id="fetch_employees">
+				<select name="param" id="param">
+					<option value="BIRTHDAY">BIRTHDAY</option>
+					<option value="BRANCH LINE">BRANCH LINE</option>
+					<option value="SECTOR">SECTOR</option>
+				</select>
+				<input
+					id="query"
+					type="text"
+					value=""
+					placeholder="place here your query"
+				/>
+				<button id="get_employees_button">Get Employees Data</button>
+			</div>
+
+			<div id="render_data"></div>
+		</div>
+		<script type="module" src="index.js"></script>
+	</body>
+</html>
