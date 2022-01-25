@@ -1,12 +1,12 @@
 const express = require('express');
 const app = express();
 const router = express.Router();
-const employees = require('../data/employees.json');
 const fs = require('fs');
 app.use(express.json());
 
 router.get('/sectors', (req, res) => {
   const query = req.query.sector;
+  const employees = JSON.parse(fs.readFileSync('data/employees.json', 'utf8'));
 
   if (query) {
     const filteredEmployees = employees.filter(
@@ -25,7 +25,8 @@ router.get('/sectors', (req, res) => {
 
 router.get('/branch_lines', (req, res) => {
   const query = req.query.line;
-
+  const employees = JSON.parse(fs.readFileSync('data/employees.json', 'utf8'));
+  
   if (query) {
     const filteredEmployees = employees.filter(
       el => el.branch_line.toLowerCase().includes(query.toLowerCase())
@@ -47,7 +48,8 @@ router.get('/branch_lines', (req, res) => {
 
 router.get('/birthdays', (req, res) => {
   const query = req.query.date;
-
+  const employees = JSON.parse(fs.readFileSync('data/employees.json', 'utf8'));
+  
   if (query) {
     const filteredEmployees = employees.filter(
       el => el.birthday.slice(3, 5) == query || el.birthday.slice(3, 5) == '0' + query
@@ -71,13 +73,35 @@ router.post('/new-employee', (req, res) => {
   // stream.write(JSON.stringify(newInvoice));
   // stream.end();
 
-  let employees = JSON.parse(fs.readFileSync('data/employees.json', 'utf8'));
+  const employees = JSON.parse(fs.readFileSync('data/employees.json', 'utf8'));
   employees.push(newEmployee);
 
   fs.writeFile('data/employees.json', JSON.stringify(employees), (err) => {
     if(err) console.log(err);
     res.send({error: false, msg: 'the new employee has been saved'});
   });
-})
+});
+
+router.delete('/delete-employee', (req, res) => {
+  const employeeRegistration = req.query.id;
+
+  if(req.query.id){
+    const employees = JSON.parse(fs.readFileSync('data/employees.json', 'utf8'));
+    
+    const employee = employees.find((el) => el.registration === employeeRegistration);
+
+    if(employee){
+      const employeeIndex = employees.indexOf(employee);
+      employees.splice(employeeIndex, 1);
+
+      fs.writeFile('data/employees.json', JSON.stringify(employees), (err) => {
+        if(err) console.log(err);
+        res.send({error: false, msg: 'the new employee has been saved'});
+      });
+    }else{
+      res.send({error: true, msg: 'no employee was found'});
+    }
+  }
+});
 
 module.exports = router;

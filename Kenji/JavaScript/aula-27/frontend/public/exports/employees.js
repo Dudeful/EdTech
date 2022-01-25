@@ -1,36 +1,39 @@
 const apiURL = 'http://edtech.dudeful.com:5000';
 
 const birthdays = async (date) => {
-  const data = await fetch(`${apiURL}/employees/birthdays?date=${date}`);
-  // const data = await fetch(`http://127.1.1.0:5001/employees/birthdays?date=${date}`);
+  const response = await fetch(`${apiURL}/employees/birthdays?date=${date}`);
 
-  return data.json();
+  return response.json();
 };
 
 const branch_lines = async (line) => {
-  const data = await fetch(`${apiURL}/employees/branch_lines?line=${line}`);
-  // const data = await fetch(`http://127.1.1.0:5001/employees/branch_lines?line=${line}`);
+  const response = await fetch(`${apiURL}/employees/branch_lines?line=${line}`);
 
-  return data.json();
+  return response.json();
 };
 
 const sectors = async (sector) => {
-  const data = await fetch(`${apiURL}/employees/sectors?sector=${sector}`);
-  // const data = await fetch(`http://127.1.1.0:5001/employees/sectors?sector=${sector}`);
+  const response = await fetch(`${apiURL}/employees/sectors?sector=${sector}`);
 
-  return data.json();
+  return response.json();
 };
 
-const post = async (employee) => {
+const postEmployee = async (employee) => {
   const options = {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({data: employee})
   };
 
-  const data = await fetch(`${apiURL}/employees/new-employee`, options);
+  const response = await fetch(`${apiURL}/employees/new-employee`, options);
 
-  return data.json();
+  return response.json();
 }
 
-export { birthdays, branch_lines, sectors, post };
+const deleteEmployee = async (employee) => {
+  const response = await fetch(`${apiURL}/employees/delete-employee?id=${employee}`, {method: 'DELETE'});
+
+  return response.json();
+}
+
+export { birthdays, branch_lines, sectors, postEmployee, deleteEmployee };

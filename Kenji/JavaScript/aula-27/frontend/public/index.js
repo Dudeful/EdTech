@@ -1,8 +1,9 @@
-import { birthdays, branch_lines, sectors, post } from './exports/employees.js';
+import { birthdays, branch_lines, sectors, postEmployee, deleteEmployee } from './exports/employees.js';
 import { render_data } from './exports/render_data.js';
 
 document.getElementById('get_employees_button').addEventListener('click', () => getEmployeesData());
-document.getElementById('post_employees_button').addEventListener('click', () => postEmployeesData());
+document.getElementById('post_employee_button').addEventListener('click', () => postEmployeeData());
+document.getElementById('delete_employee_button').addEventListener('click', () => deleteEmployeeData());
 
 const getEmployeesData = async () => {
   const query = document.getElementById('query').value;
@@ -45,7 +46,7 @@ const getEmployeesData = async () => {
   }
 }
 
-const postEmployeesData = async () => {
+const postEmployeeData = async () => {
   const employeeData = document.querySelectorAll('.employee_data');
 
   const employeeDataObj = {};
@@ -54,7 +55,7 @@ const postEmployeesData = async () => {
     employeeDataObj[el.name] = el.value;
    });
 
-  const postResponse = await post(employeeDataObj);
+  const postResponse = await postEmployee(employeeDataObj);
 
   console.log(postResponse);
 
@@ -67,4 +68,12 @@ const clearForm = () => {
   const employeeData = document.querySelectorAll('.employee_data');
   
   Array.from(employeeData).forEach(el => el.value = '');
+}
+
+const deleteEmployeeData = async () => {
+  const employeeRegistration = document.getElementById('employee_registration').value;
+
+  const deleteResponse = await deleteEmployee(employeeRegistration);
+
+  console.log(deleteResponse);
 }

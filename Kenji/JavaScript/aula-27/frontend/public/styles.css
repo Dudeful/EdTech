@@ -17,16 +17,19 @@ body {
 	display: block;
 }
 
-#employee_form {
+#employee_form,
+#delete_employee_form {
 	margin: 7vh auto 10vh;
 }
 
-#employee_form input {
+#employee_form input,
+#delete_employee_form input {
 	display: block;
 	margin: 5px auto;
 }
 
-#employee_form button {
+#employee_form button,
+#delete_employee_form button {
 	display: block;
 	margin: 10px auto;
 	border: none;
@@ -39,7 +42,8 @@ body {
 	transition: all 0.2s ease-in-out;
 }
 
-#fetch_employees button:hover {
+#employee_form button:hover,
+#delete_employee_form button:hover {
 	background-color: ivory;
 	color: tomato;
 	box-shadow: 0 0 8px 0 #20202030;
