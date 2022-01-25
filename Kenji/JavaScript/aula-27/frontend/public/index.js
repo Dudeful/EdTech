@@ -57,4 +57,14 @@ const postEmployeesData = async () => {
   const postResponse = await post(employeeDataObj);
 
   console.log(postResponse);
+
+  if(!postResponse.error){
+    clearForm();
+  }
+}
+
+const clearForm = () => {
+  const employeeData = document.querySelectorAll('.employee_data');
+  
+  Array.from(employeeData).forEach(el => el.value = '');
 }
