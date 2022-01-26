@@ -1,0 +1,139 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: 'IBM Plex Mono', monospace;
+}
+
+#container {
+	min-height: 100vh;
+	width: 80%;
+	max-width: 1024px;
+	margin: auto;
+	padding: 20px 10px;
+	background-color: #f0f8ff20;
+	box-shadow: 0 0 10px 0 #20202020;
+}
+
+#new_customer {
+	margin: auto;
+	width: 100%;
+}
+
+#new_customer h3 {
+	text-align: center;
+}
+
+#new_customer input {
+	width: 70%;
+	display: block;
+	margin: auto;
+	height: 20px;
+	font-size: 18px;
+	color: tomato;
+	transition: all 0.2s ease-in-out;
+}
+
+#new_customer input:focus {
+	background-color: tomato;
+	color: aliceblue;
+}
+
+#new_customer button {
+	cursor: pointer;
+	height: 20px;
+	font-weight: 600;
+	border: none;
+	width: 70%;
+	display: block;
+	margin: 15px auto 50px;
+	border-radius: 3px;
+	background-color: tomato;
+	color: aliceblue;
+	transition: all 0.2s ease-in-out;
+}
+
+#new_customer button:hover {
+	color: tomato;
+	background-color: lightslategray;
+	font-weight: 600;
+}
+
+#fetch_customers {
+	width: 100%;
+	margin: auto;
+}
+
+#fetch_customers > * {
+	width: 80%;
+	max-width: 500px;
+	display: block;
+	margin: 2vh auto;
+	font-size: 20px;
+	border: none;
+}
+
+#fetch_customers button {
+	border-radius: 3px;
+	background-color: skyblue;
+	color: #202020;
+	transition: all 0.2s ease-in-out;
+	cursor: pointer;
+	height: 25px;
+	display: block;
+	font-size: 18px;
+	font-weight: 600;
+	margin-top: 15px;
+}
+
+#fetch_customers button:hover {
+	background-color: #202020;
+	color: tomato;
+}
+
+#fetch_customers input {
+	padding: 5px 10px;
+	border: 1px solid #60606060;
+	border-radius: 3px;
+	transition: all 0.2s ease-in-out;
+}
+
+#fetch_customers input:hover {
+	background-color: tomato;
+	color: white;
+}
+
+#customers_db {
+	width: 80%;
+	max-width: 768px;
+	margin: 5vh auto;
+	background-color: aliceblue;
+	box-shadow: 0px 0px 10px 0px #20202030;
+}
+
+#customers_db .customers_db {
+	background-color: rgb(226, 238, 248);
+	margin: 2vh auto;
+	padding: 0.5vh 0;
+	color: #202020;
+	font-family: 'Montserrat';
+	font-size: 18px;
+}
+
+.delete_customer_button {
+	cursor: pointer;
+	background-color: tomato;
+	padding: 3px;
+	border: none;
+	border-radius: 2px;
+	font-weight: 600;
+	display: block;
+	margin-left: auto;
+	margin-bottom: -30px;
+}
+
+.delete_customer_button:hover {
+	box-shadow: 0 0 5px 0 #606060;
+}
