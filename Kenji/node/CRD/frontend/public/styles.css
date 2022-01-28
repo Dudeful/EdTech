@@ -17,16 +17,16 @@ body {
 	box-shadow: 0 0 10px 0 #20202020;
 }
 
-#new_product {
+#new_customer {
 	margin: auto;
 	width: 100%;
 }
 
-#new_product h3 {
+#new_customer h3 {
 	text-align: center;
 }
 
-#new_product input {
+#new_customer input {
 	width: 70%;
 	display: block;
 	margin: auto;
@@ -36,43 +36,37 @@ body {
 	transition: all 0.2s ease-in-out;
 }
 
-#new_product input:focus {
+#new_customer input:focus {
 	background-color: tomato;
 	color: aliceblue;
 }
 
-#new_product .buttons {
-	display: flex;
-	justify-content: space-between;
-	margin: auto;
-	width: 70%;
-}
-
-#new_product .buttons > * {
+#new_customer button {
 	cursor: pointer;
 	height: 20px;
 	font-weight: 600;
 	border: none;
-	width: 45%;
-	margin: 15px 0 50px;
+	width: 70%;
+	display: block;
+	margin: 15px auto 50px;
 	border-radius: 3px;
 	background-color: tomato;
 	color: aliceblue;
 	transition: all 0.2s ease-in-out;
 }
 
-#new_product .buttons > *:hover {
+#new_customer button:hover {
 	color: tomato;
 	background-color: lightslategray;
 	font-weight: 600;
 }
 
-#fetch_products {
+#fetch_customers {
 	width: 100%;
 	margin: auto;
 }
 
-#fetch_products > * {
+#fetch_customers > * {
 	width: 80%;
 	max-width: 500px;
 	display: block;
@@ -81,7 +75,7 @@ body {
 	border: none;
 }
 
-#fetch_products button {
+#fetch_customers button {
 	border-radius: 3px;
 	background-color: skyblue;
 	color: #202020;
@@ -94,24 +88,24 @@ body {
 	margin-top: 15px;
 }
 
-#fetch_products button:hover {
+#fetch_customers button:hover {
 	background-color: #202020;
 	color: tomato;
 }
 
-#fetch_products input {
+#fetch_customers input {
 	padding: 5px 10px;
 	border: 1px solid #60606060;
 	border-radius: 3px;
 	transition: all 0.2s ease-in-out;
 }
 
-#fetch_products input:hover {
+#fetch_customers input:hover {
 	background-color: tomato;
 	color: white;
 }
 
-#products_db {
+#customers_db {
 	width: 80%;
 	max-width: 768px;
 	margin: 5vh auto;
@@ -119,7 +113,7 @@ body {
 	box-shadow: 0px 0px 10px 0px #20202030;
 }
 
-#products_db .products_db {
+#customers_db .customers_db {
 	background-color: rgb(226, 238, 248);
 	margin: 2vh auto;
 	padding: 0.5vh 0;

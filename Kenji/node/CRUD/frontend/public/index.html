@@ -14,53 +14,37 @@
 	</head>
 	<body>
 		<div id="container">
-			<form id="new_customer">
-				<h3>Save New Customer</h3>
+			<form id="new_product">
+				<h3>Save New Product</h3>
 				<input
 					type="number"
 					name="id"
-					id="customer_id"
-					placeholder="Customer ID"
+					id="product_id"
+					placeholder="Product ID"
 				/>
 				<input
 					type="text"
 					name="name"
-					id="customer_name"
-					placeholder="Customer Name"
+					id="product_name"
+					placeholder="Product Name"
 				/>
-				<input
-					type="email"
-					name="email"
-					id="customer_email"
-					placeholder="Customer Email"
-				/>
-				<button type="button" id="post_customer_button">Save</button>
+				<div class="buttons">
+					<button type="button" id="post_product_button">Save</button>
+					<button type="button" id="update_product_button">Update</button>
+				</div>
 			</form>
 
-			<form id="fetch_customers">
-				<select name="query_param" id="query_param">
-					<option disabled selected value="" value="">
-						<i>select a parameter</i>
-					</option>
-					<option value="ID">ID</option>
-					<option value="Name">Name</option>
-					<option value="Email">Email</option>
-					<option value="All">All Customers</option>
-				</select>
-
+			<form id="fetch_products">
 				<input
-					disabled
 					id="query_value"
 					type="text"
-					placeholder="Search User By..."
+					value="All"
+					placeholder="Search Product by ID"
 				/>
-
-				<button type="button" id="get_customers_button">
-					Search Customers
-				</button>
+				<button type="button" id="get_products_button">Search Products</button>
 			</form>
 
-			<section id="customers_db"></section>
+			<section id="products_db"></section>
 		</div>
 		<script src="index.js"></script>
 	</body>

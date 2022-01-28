@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Alpha EdTech - Node JS | CRUD Operations</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;600&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div id="container">
+			<form id="new_customer">
+				<h3>Save New Customer</h3>
+				<input
+					type="number"
+					name="id"
+					id="customer_id"
+					placeholder="Customer ID"
+				/>
+				<input
+					type="text"
+					name="name"
+					id="customer_name"
+					placeholder="Customer Name"
+				/>
+				<input
+					type="email"
+					name="email"
+					id="customer_email"
+					placeholder="Customer Email"
+				/>
+				<button type="button" id="post_customer_button">Save</button>
+			</form>
+
+			<form id="fetch_customers">
+				<select name="query_param" id="query_param">
+					<option disabled selected value="" value="">
+						<i>select a parameter</i>
+					</option>
+					<option value="ID">ID</option>
+					<option value="Name">Name</option>
+					<option value="Email">Email</option>
+					<option value="All">All Customers</option>
+				</select>
+
+				<input
+					disabled
+					id="query_value"
+					type="text"
+					placeholder="Search User By..."
+				/>
+
+				<button type="button" id="get_customers_button">
+					Search Customers
+				</button>
+			</form>
+
+			<section id="customers_db"></section>
+		</div>
+		<script src="index.js"></script>
+	</body>
+</html>

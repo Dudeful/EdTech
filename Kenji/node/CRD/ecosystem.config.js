@@ -1,13 +1,13 @@
 module.exports = {
   apps : [
     {
-      name   : "Frontend:5005",
+      name   : "Frontend:5003",
       script : "server.js",
       cwd: "frontend/",
       watch: true
     },
     {
-      name   : "Backend:5004",
+      name   : "Backend:5002",
       script : "server.js",
       cwd: "backend/",
       watch: true
