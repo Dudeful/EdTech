@@ -1,11 +1,11 @@
 const express = require('express');
 const cors = require('cors');
-const customers = require('./routes/customers');
+const products = require('./routes/products');
 const app = express();
 const port = 5004;
 app.use(express.json());
 app.use(cors({origin: 'http://edtech.dudeful.com:5005'}));
 
-app.use('/products', customers);
+app.use('/products', products);
 
 app.listen(port);
