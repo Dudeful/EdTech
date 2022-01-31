@@ -1,5 +1,5 @@
-//const apiURL = 'http://edtech.dudeful.com:5006';
-const apiURL = 'http://localhost:5006';
+const apiURL = 'http://edtech.dudeful.com:5006';
+// const apiURL = 'http://localhost:5006';
 
 const screen = document.getElementById('screen');
 const regex = /[+|−|\-|×|*|÷|/]/;
