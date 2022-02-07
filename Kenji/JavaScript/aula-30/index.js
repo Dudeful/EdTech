@@ -162,29 +162,29 @@ class Calculator_3 {
 const calc = new Calculator_3;
 const regex = /[+|−|\-|×|*|÷|/]/;
 
-$(document).ready(() => {
+$(document).ready(function() {
   $('.number').each(function() {
-    $(this).click((event) => operandHandler($(event.target).html()))
+    $(this).click(function(event) {operandHandler($(event.target).html())})
   })
 
   $('.operation').each(function() {
-    $(this).click((event) => operatorHandler($(event.target).html()))
+    $(this).click(function(event) {operatorHandler($(event.target).html())})
   })
 
   $('#clear').each(function() {
-    $(this).click(() => clearCalculator())
+    $(this).click(function() {clearCalculator()})
   })
 
   $('#equal').each(function() {
-    $(this).click(() => resultHandler())
+    $(this).click(function() {resultHandler()})
   })
 })
 
-const operandHandler = (operand) => {
+function operandHandler(operand) {
   $('#screen').html($('#screen').html() + operand);
 }
 
-const operatorHandler = (operator) => {
+function operatorHandler(operator) {
   if (isNaN($('#screen').html().at(-1))) return;
   if ($('#screen').html().split(regex).length >= 2) return;
 
@@ -192,7 +192,7 @@ const operatorHandler = (operator) => {
   calc.setOperation(operator);
 }
 
-const resultHandler = () => {
+function resultHandler() {
   if ($('#screen').html().split(regex).length < 2) return;
   const operands = $('#screen').html().split(regex);
 
@@ -203,12 +203,12 @@ const resultHandler = () => {
   $('#screen').html(Math.ceil(calc.getResult() * 100000) / 100000);
 }
 
-const clearCalculator = () => {
+function clearCalculator() {
   $('#screen').html('');
   calc.clearCalculator();
 }
 
-document.onkeydown = (event) => {
+document.onkeydown = function(event) {
   if (event.key >= 0 && event.key <= 9 || event.key === '.') {
     operandHandler(event.key);
   }
