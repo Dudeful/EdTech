@@ -208,7 +208,7 @@ function clearCalculator() {
   calc.clearCalculator();
 }
 
-document.onkeydown = function(event) {
+$(document).keydown(function(event) {
   if (event.key >= 0 && event.key <= 9 || event.key === '.') {
     operandHandler(event.key);
   }
@@ -221,4 +221,4 @@ document.onkeydown = function(event) {
   if (event.key === 'Escape') {
     clearCalculator();
   }
-}
+})
