@@ -11,6 +11,7 @@ $(document).ready(function() {
         <th>To</th>
         <th>High</th>
         <th>Low</th>
+        <th>Closing</th>
       </tr>
     </table>
   `)
@@ -47,6 +48,7 @@ const getQuotation = (currency, date) => {
 }
 
 const renderQuotation = (data) => {
+  console.log(data)
   if(!data){
     alert("No quotation for this currency on the selected date");
     return;
@@ -63,6 +65,7 @@ const renderQuotation = (data) => {
         <td>${data.codein}: ${data.name.split('/')[1]}</td>
         <td>${data.high}</td>
         <td>${data.low}</td>
+        <td>${data.bid}</td>
       </tr>
   `)
 }
