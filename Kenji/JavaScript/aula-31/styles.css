@@ -18,6 +18,23 @@ body {
 	box-shadow: 0 0 10px 0 #20202020;
 }
 
+#get_period_quotations {
+	border-radius: 3px;
+	border: none;
+	background-color: tomato;
+	padding: 3px 10px;
+	cursor: pointer;
+	color: whitesmoke;
+	font-weight: 600;
+	box-shadow: 0 0 5px 0 #20202030;
+	transition: all 0.2s ease-in-out;
+}
+
+#get_period_quotations:hover {
+	color: tomato;
+	background-color: whitesmoke;
+}
+
 #request_data {
 	display: flex;
 	flex-wrap: wrap;
