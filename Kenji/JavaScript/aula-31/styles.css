@@ -1,0 +1,37 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: 'IBM Plex Mono', monospace;
+	color: #202020;
+}
+
+#root {
+	width: 80%;
+	max-width: 1024px;
+	min-height: 100vh;
+	margin: auto;
+	padding: 5vh 0;
+	text-align: center;
+	box-shadow: 0 0 10px 0 #20202020;
+}
+
+#request_data {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#request_data > * {
+	margin: 1vh auto;
+}
+
+#quotation_data {
+	margin: 2vh auto;
+}
+
+#quotation_data * {
+	border: 1px solid;
+	padding: 10px;
+}
