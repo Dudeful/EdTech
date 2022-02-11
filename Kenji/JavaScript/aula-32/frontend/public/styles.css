@@ -1,0 +1,43 @@
+/* 
+#E6F5FF 
+#834C69
+#3C4F65 
+*/
+
+* {
+	box-sizing: border-box;
+	font-family: 'IBM Plex Mono', monospace;
+	color: #33313b;
+}
+
+body {
+	margin: 0;
+	background-color: #e6f5ff50;
+}
+
+#root {
+	width: 80%;
+	max-width: 1024px;
+	min-height: 100vh;
+	margin: auto;
+	padding: 40px 30px;
+	box-shadow: 0 0 10px 0 #33313b50;
+}
+
+#cep {
+	font-size: 20px;
+	font-weight: 600;
+	letter-spacing: 3px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#cep input,
+#cep button {
+	font-size: 20px;
+}
+
+#zip_data {
+	font-size: 18px;
+}
