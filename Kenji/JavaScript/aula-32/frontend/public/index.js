@@ -43,20 +43,22 @@ const renderZipCodeData = (data) => {
         <th>ZIP</th>
         <th>Address</th>
         <th>District</th>
-        <th>State</th>
         <th>City</th>
+        <th>State</th>
         <th>DDD</th>
       </tr>
       <tr>
         <td>${data.cep}</td>
         <td>${data.address}</td>
         <td>${data.district}</td>
-        <td>${data.state}</td>
         <td>${data.city}</td>
+        <td>${data.state}</td>
         <td>${data.ddd}</td>
       </tr>
     </table>
   `);
+
+	mapsHandler(data);
 };
 
 const renderZipCodeError = (error) => {
@@ -76,4 +78,22 @@ const renderZipCodeError = (error) => {
       </tr>
     </table>
   `);
+};
+
+const mapsHandler = (data) => {
+	$('#map').remove();
+	$('#root').append(`<div id="map"></div>`);
+
+	// The location
+	const location = { lat: Number(data.lat), lng: Number(data.lng) };
+	// The map, centered at
+	const map = new google.maps.Map(document.getElementById('map'), {
+		zoom: 10,
+		center: location,
+	});
+	// The marker position
+	const marker = new google.maps.Marker({
+		position: location,
+		map: map,
+	});
 };
