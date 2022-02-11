@@ -28,6 +28,7 @@ const getZipCodeData = async (zip) => {
 		const data = await $.ajax(
 			`https://cep.awesomeapi.com.br/json/${zip}`
 		);
+
 		renderZipCodeData(data);
 	} catch (error) {
 		renderZipCodeError(error.responseJSON);
@@ -81,20 +82,36 @@ const renderZipCodeError = (error) => {
   `);
 };
 
+// const mapsHandler = (data) => {
+// 	$('#map').remove();
+// 	$('#root').append(`<div id="map"></div>`);
+
+// 	// The location
+// 	const location = { lat: Number(data.lat), lng: Number(data.lng) };
+// 	// The map, centered at
+// 	const map = new google.maps.Map(document.getElementById('map'), {
+// 		zoom: 10,
+// 		center: location,
+// 	});
+// 	// The marker position
+// 	const marker = new google.maps.Marker({
+// 		position: location,
+// 		map: map,
+// 	});
+// };
+
 const mapsHandler = (data) => {
 	$('#map').remove();
-	$('#root').append(`<div id="map"></div>`);
-
-	// The location
-	const location = { lat: Number(data.lat), lng: Number(data.lng) };
-	// The map, centered at
-	const map = new google.maps.Map(document.getElementById('map'), {
-		zoom: 10,
-		center: location,
-	});
-	// The marker position
-	const marker = new google.maps.Marker({
-		position: location,
-		map: map,
-	});
+	$('#root').append(`
+    <iframe
+      width='450'
+      height='250'
+      frameborder='0'
+      style='border:0'
+      src="https://www.google.com/maps?api=1&q=${data.lat}%2C${data.lng}&hl=es;z=15&output=embed" 
+      allowfullscreen
+      id="map"
+    >
+    </iframe>
+  `);
 };
