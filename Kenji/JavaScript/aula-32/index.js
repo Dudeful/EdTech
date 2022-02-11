@@ -63,6 +63,7 @@ const renderZipCodeData = (data) => {
 
 const renderZipCodeError = (error) => {
 	$('#zip_data').remove();
+	$('#map').remove();
 
 	$('#root').append(`
     <table id="zip_data">
