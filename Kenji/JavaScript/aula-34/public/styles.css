@@ -1,0 +1,41 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: 'Nunito', sans-serif;
+	color: #495371;
+}
+
+#root {
+	width: 85vw;
+	max-width: 1024px;
+	min-height: 100vh;
+	padding: 30px;
+	margin: auto;
+	box-shadow: 0 0 10px 0 #20202025;
+}
+
+#title {
+	color: #495371;
+	font-weight: 400;
+	font-size: 40px;
+	height: 60px;
+	text-align: center;
+	letter-spacing: 2px;
+	margin: auto auto 8vh;
+	transition: all 0.3s ease-in-out;
+}
+
+#title:hover {
+	letter-spacing: 10px;
+	font-weight: 500;
+	font-size: 45px;
+	cursor: default;
+}
+
+#player {
+	display: block;
+	margin: 5vh auto;
+}
