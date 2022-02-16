@@ -22,22 +22,25 @@ $(document).ready(() => {
 
 	$('.tabs').click(() => handleTabClick(event));
 	$('#tabs').tabs();
-	$('.accordion').accordion();
+	$('.accordion').accordion({ heightStyle: 'content' });
 });
 
 const handleTabClick = (event) => {
-	//remove old iframe before adding new one.
+	//remove old iframe before adding new one.qq
 	//needs to be improved in order to reuse old iframes.
 	$('#player').remove();
 
-	const video = event.target.href.split('-').at(-1);
+	const video = event.target.href.slice(-1);
 
 	//add the iframe to tab content only when user clicks on the given tab
 	$(`#tabs-${video}`).prepend(`
-    <iframe id="player" rel=0 controls=0 modestbranding=1 loop=1 autoplay=1 type="text/html" width="640" height="360" src="http://www.youtube.com/embed/${
+    <iframe id="player" type="text/html" width="640" height="360" src="http://www.youtube.com/embed/${
 			videosArray[video - 1]
 		}?enablejsapi=1" frameborder="0"></iframe>
   `);
+
+	createPlayer(videosArray[video - 1]);
+	window.videoTab = `tabs-${video}`;
 };
 
 const renderTabs = () => {
@@ -51,10 +54,6 @@ const renderTabs = () => {
 
 //populate the tabs with its specific content
 const renderTabContents = (tab, landingVideo) => {
-	const title = 'xpto';
-	const description = 'hellofriend';
-	const stats = '123 views';
-
 	//append the tab marker
 	$('#tabs > ul').append(
 		`<li class='tabs'>
@@ -71,14 +70,22 @@ const renderTabContents = (tab, landingVideo) => {
       <div class="accordion">
         <h3>Description</h3>
         <div>
-          <p>
-            ${description}
+          <p class="video_title">
           </p>
         </div>
         <h3>Stats</h3>
         <div>
-          <p>
-            ${stats}
+          <p class="video_duration">
+          </p>
+        </div>
+        <h3>URL</h3>
+        <div>
+          <p class="video_url">
+          </p>
+        </div>
+        <h3>Video ID</h3>
+        <div>
+          <p class="video_id">
           </p>
         </div>
       </div>
@@ -86,12 +93,43 @@ const renderTabContents = (tab, landingVideo) => {
   `);
 };
 
-var player;
 function onYouTubeIframeAPIReady(videoId = videosArray[0]) {
+	createPlayer(videoId);
+}
+
+var player;
+const createPlayer = (videoId) => {
+	if (player) player.destroy();
+
 	player = new YT.Player('player', {
 		height: '360',
 		width: '640',
 		videoId: videoId,
+		events: {
+			onReady: onPlayerReady,
+			// onStateChange: onPlayerStateChange,
+		},
 	});
-	console.log(player);
+};
+
+function onPlayerReady(event) {
+	const tab = videosArray.indexOf(
+		event.target.getVideoData().video_id
+	);
+
+	console.log(`#tabs-${tab}`);
+
+	$(`#tabs-${tab} > .video_title`).html(
+		event.target.getVideoData().title
+	);
+
+	$(`#tabs-${tab} > .video_duration`).html(
+		event.target.getDuration()
+	);
+
+	$(`#tabs-${tab} > .video_url`).html(event.target.getVideoUrl());
+
+	$(`#tabs-${tab} > .video_id`).html(
+		event.target.getVideoData().video_id
+	);
 }
