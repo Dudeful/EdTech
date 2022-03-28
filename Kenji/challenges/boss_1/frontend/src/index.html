@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- --------------------OPENGRAPH START-------------------- -->
+		<meta property="og:title" content="Alpha Tower" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://alphatower.dudeful.com" />
+		<meta
+			property="og:image"
+			content="https://raw.githubusercontent.com/Vitorrt2021/DesafioHard/main/DesafioHard/frontend/src/assets/interface_shared_images/opengraph.png"
+		/>
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image:width" content="300" />
+		<meta property="og:image:height" content="300" />
+		<meta property="og:image:alt" content="Torre Coelho Vermelho - Level 3" />
+		<meta
+			property="og:description"
+			content="Play now the most sofisticated Tower Defense game ever!!"
+		/>
+		<!-- --------------------OPENGRAPH END-------------------- -->
+
+		<link
+			rel="shortcut icon"
+			href="assets/interface_shared_images/favicon.png"
+			type="image/x-icon"
+		/>
+		<link
+			rel="stylesheet"
+			href="interface/main_page/main_page.css"
+			type="text/css"
+		/>
+		<link
+			rel="stylesheet"
+			href="interface/ranking_modal/ranking_modal.css"
+			type="text/css"
+		/>
+		<link
+			rel="stylesheet"
+			href="interface/sound_modal/sound_modal.css"
+			type="text/css"
+		/>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="interface/main_page/main_page.js" type="module"></script>
+
+		<title>ANIMALS VS MONSTERS</title>
+	</head>
+
+	<body>
+		<div id="app_container">
+			<div id="welcome_container">
+				<div id="buttons_container">
+					<div id="ranking_and_sound_container">
+						<button id="ranking_button"></button>
+						<button id="sound_button"></button>
+					</div>
+					<button id="play_button"></button>
+				</div>
+			</div>
+		</div>
+
+		<div id="ranking_modal">
+			<div id="ranking_modal_content">
+				<div id="ranking_container">
+					<div id="ranking_cell_container"></div>
+					<button id="ranking_modal_close_button"></button>
+				</div>
+			</div>
+		</div>
+
+		<div id="sound_modal">
+			<div id="sound_modal_content">
+				<div id="sound_container">
+					<div id="volume_menu">
+						<p id="volume_value"></p>
+						<div id="volume_slider_container">
+							<button id="sound_button_modal_zero"></button>
+							<input
+								id="volume_slider"
+								type="range"
+								min="0"
+								max="100"
+								step="1"
+							/>
+							<button id="sound_button_modal_100"></button>
+						</div>
+						<button id="sound_modal_close_button"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
