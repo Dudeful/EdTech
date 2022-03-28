@@ -57,7 +57,7 @@ const renderTabContents = (tab, landingVideo) => {
 	//append the tab marker
 	$('#tabs > ul').append(
 		`<li class='tabs'>
-      <a href="#${tab}">
+      <a id="title-${tab}" href="#${tab}">
         ${tab}
       </a>
     </li>`
@@ -68,24 +68,24 @@ const renderTabContents = (tab, landingVideo) => {
     <div id="${tab}">
       ${landingVideo ? '<div id="player"></div>' : ''}
       <div class="accordion">
-        <h3>Description</h3>
-        <div>
-          <p class="video_title">
+        <h3>Title</h3>
+        <div class="video_title">
+          <p>
           </p>
         </div>
-        <h3>Stats</h3>
-        <div>
-          <p class="video_duration">
+        <h3>Duration</h3>
+        <div class="video_duration">
+          <p>
           </p>
         </div>
         <h3>URL</h3>
-        <div>
-          <p class="video_url">
+        <div class="video_url">
+          <p>
           </p>
         </div>
         <h3>Video ID</h3>
-        <div>
-          <p class="video_id">
+        <div class="video_id">
+          <p>
           </p>
         </div>
       </div>
@@ -117,19 +117,25 @@ function onPlayerReady(event) {
 		event.target.getVideoData().video_id
 	);
 
-	console.log(`#tabs-${tab}`);
+	$(`#title-tabs-${tab + 1}`).html(event.target.getVideoData().title);
 
-	$(`#tabs-${tab} > .video_title`).html(
+	$(`#tabs-${tab + 1} > .accordion > .video_title > p`).html(
 		event.target.getVideoData().title
 	);
 
-	$(`#tabs-${tab} > .video_duration`).html(
-		event.target.getDuration()
+	$(`#tabs-${tab + 1} > .accordion > .video_duration > p`).html(
+		parseInt(event.target.getDuration() / 60) +
+			':' +
+			(event.target.getDuration() % 60)
 	);
 
-	$(`#tabs-${tab} > .video_url`).html(event.target.getVideoUrl());
+	$(`#tabs-${tab + 1} > .accordion > .video_url > p`).html(
+		`<a target='_blank' href="${event.target.getVideoUrl()}">
+			${event.target.getVideoUrl()}
+		</a>`
+	);
 
-	$(`#tabs-${tab} > .video_id`).html(
+	$(`#tabs-${tab + 1} > .accordion > .video_id > p`).html(
 		event.target.getVideoData().video_id
 	);
 }
