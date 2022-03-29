@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;300;400;500;600&display=swap');
+
+* {
+	box-sizing: border-box;
+	font-family: 'IBM Plex Mono', monospace;
+	font-weight: 300;
+}
+
+body {
+	margin: 0;
+}
+
+#container {
+	min-height: 100vh;
+	width: 80%;
+	margin: auto;
+	box-shadow: 0 0 20px 0 #20202020;
+	padding: 10vh 0 0;
+}
+
+#form_fetch {
+	padding: 20px;
+	margin: auto;
+	font-size: 17px;
+}
+
+#form_fetch * {
+	height: 30px;
+	padding: 4px 8px;
+	font-size: 18px;
+	font-weight: 400;
+}
+
+#form_fetch button {
+	border: none;
+	cursor: pointer;
+	border-radius: 2px;
+	background-color: tomato;
+	color: #202020;
+	transition: all 0.2s ease-in-out;
+}
+
+#form_fetch button:hover {
+	background-color: #202020;
+	color: tomato;
+}
+
+#render_character {
+	padding: 20px;
+}
+
+.character {
+	margin: 7.5vh 0;
+	padding: 10px;
+	background-color: #f0f8ff50;
+	border-radius: 3px;
+	box-shadow: 0 0 20px 0 #20202015;
+}
+
+.character_info {
+	font-weight: 500;
+}
