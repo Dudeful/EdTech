@@ -11,7 +11,9 @@ route.get('/', validateToken, (req, res) => {
 
 		res.send({
 			authentication: 'ok',
-			data: 'https://gonintendo.com/system/file_uploads/uploads/000/049/594/original/hackerman.jpg',
+			hackerman:
+				'https://gonintendo.com/system/file_uploads/uploads/000/049/594/original/hackerman.jpg',
+			data: req.user.img,
 		});
 	} catch (error) {
 		console.error(error);

@@ -33,7 +33,8 @@ const classified = async () => {
 
 	container.innerHTML = `
 		<h1 style="text-align: center">C L A S S I F I E D</h1>
-    <img id="classified_img" src="${classifiedData.data}">
+    <img id="classified_img" src="${classifiedData.hackerman}">
+    <img style="margin-top: 5vh" id="classified_img" src="${classifiedData.data}">
   `;
 };
 

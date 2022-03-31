@@ -19,6 +19,13 @@ const validateToken = (req, res, next) => {
 		next();
 	}
 
+	const users = JSON.parse(
+		fs.readFileSync(__dirname + '/../database/users.json', 'utf-8')
+	);
+
+	const user = users.find((user) => user.email === userToken.email);
+
+	req.user = user;
 	req.validations = true;
 	next();
 };

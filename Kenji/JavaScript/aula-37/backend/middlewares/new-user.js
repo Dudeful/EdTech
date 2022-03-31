@@ -20,6 +20,9 @@ const newUser = (req, res, next) => {
 		email: req.body.data.email,
 		//FIXME use bcrypt here
 		password: req.body.data.password,
+		img: `https://picsum.photos/id/${Math.ceil(
+			Math.random() * 500
+		)}/768`,
 	};
 
 	users.push(newUserData);
