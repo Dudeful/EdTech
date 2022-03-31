@@ -1,9 +1,12 @@
 const login = async () => {
 	try {
-		const email = document.getElementById('login_email').value;
-		const password = document.getElementById('login_password').value;
+		const email = document.getElementById('login_email');
+		const password = document.getElementById('login_password');
 
-		const user = { email, password };
+		const user = { email: email.value, password: password.value };
+
+		email.value = '';
+		password.value = '';
 
 		const options = {
 			method: 'POST',
@@ -20,7 +23,9 @@ const login = async () => {
 
 		if (userToken.error) throw new Error(userToken.error);
 
-		sessionStorage.setItem('classified_token', userToken.user.token);
+		// sessionStorage.setItem('classified_token', userToken.user.token);
+		const token = document.getElementById('classified_input');
+		token.value = userToken.user.token;
 	} catch (error) {
 		alert(error.message);
 		console.error(error);

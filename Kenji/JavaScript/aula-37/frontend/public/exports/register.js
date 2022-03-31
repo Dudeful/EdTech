@@ -1,13 +1,21 @@
 const register = async () => {
 	try {
-		const fName = document.getElementById('f_name').value;
-		const lName = document.getElementById('l_name').value;
-		const email = document.getElementById('register_email').value;
-		const password = document.getElementById(
-			'resgister_password'
-		).value;
+		const fName = document.getElementById('f_name');
+		const lName = document.getElementById('l_name');
+		const email = document.getElementById('register_email');
+		const password = document.getElementById('resgister_password');
 
-		const user = { fName, lName, email, password };
+		const user = {
+			fName: fName.value,
+			lName: lName.value,
+			email: email.value,
+			password: password.value,
+		};
+
+		fName.value = '';
+		lName.value = '';
+		email.value = '';
+		password.value = '';
 
 		const options = {
 			method: 'POST',
@@ -24,7 +32,9 @@ const register = async () => {
 
 		if (userToken.error) throw new Error(userToken.error);
 
-		sessionStorage.setItem('classified_token', userToken.user.token);
+		// sessionStorage.setItem('classified_token', userToken.user.token);
+		const token = document.getElementById('classified_input');
+		token.value = userToken.user.token;
 	} catch (error) {
 		alert(error.message);
 		console.error(error);

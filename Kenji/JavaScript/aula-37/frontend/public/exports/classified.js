@@ -1,6 +1,7 @@
 const getClassifiedData = async () => {
 	try {
-		const token = sessionStorage.getItem('classified_token');
+		// const token = sessionStorage.getItem('classified_token');
+		const token = document.getElementById('classified_input').value;
 
 		const response = await fetch(
 			`http://localhost:5037/classified?token=${token}`
