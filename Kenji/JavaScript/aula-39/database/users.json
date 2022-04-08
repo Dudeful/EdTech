@@ -1,0 +1,16 @@
+[
+	{
+		"fName": "Dude",
+		"lName": "Dudeful",
+		"email": "dudeful@outlook.com",
+		"password": "hellofriend",
+		"img": "https://picsum.photos/id/430/768"
+	},
+	{
+		"fName": "Hello",
+		"lName": "World",
+		"email": "hello@world.com",
+		"password": "helloworld",
+		"img": "https://picsum.photos/id/170/768"
+	}
+]
