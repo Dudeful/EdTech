@@ -1,4 +1,5 @@
-const apiUrl = 'http://localhost:8000';
+// const apiUrl = 'http://localhost:8000';
+const apiUrl = 'http://edtech.dudeful.com:8000';
 
 const getQRCodeData = async () => {
 	try {
@@ -35,7 +36,7 @@ const qrCode = async () => {
 		return;
 	}
 
-	if (!qrCodeData.events) {
+	if (!qrCodeData.events || !qrCodeData.events[0]) {
 		alert('You does not have any event registered in your user');
 		return;
 	}

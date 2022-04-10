@@ -1,4 +1,5 @@
-const apiUrl = 'http://localhost:8000';
+// const apiUrl = 'http://localhost:8000';
+const apiUrl = 'http://edtech.dudeful.com:8000';
 
 const registerUser = async () => {
 	try {

@@ -26,21 +26,20 @@ const signUp = (req, res, next) => {
 		return next();
 	}
 
-	if (user.events.find((e) => e.id === event.id)) {
-		req.validations = false;
-		req.errorMessage =
-			'the user has already signed up for this event!';
-		return next();
-	}
-
 	QRCode.toDataURL(
-		`http://edtech.dudeul.com:8000/check-qrcode?eventId=${event.id}&userId=${user.cpf}`,
+		`http://edtech.dudeful.com:8000/api/qr-code/check-qrcode?eventId=${event.id}&userId=${user.cpf}`,
 		function (err, url) {
 			if (err) throw err;
 
 			const userIndex = users.indexOf(user);
 
 			if (users[userIndex].events) {
+				if (user.events.find((e) => e.id === event.id)) {
+					req.validations = false;
+					req.errorMessage =
+						'the user has already signed up for this event!';
+					return next();
+				}
 				users[userIndex].events.push({
 					title: event.title,
 					id: event.id,

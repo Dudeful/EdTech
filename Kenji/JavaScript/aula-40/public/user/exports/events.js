@@ -1,4 +1,5 @@
-const apiUrl = 'http://localhost:8000';
+// const apiUrl = 'http://localhost:8000';
+const apiUrl = 'http://edtech.dudeful.com:8000';
 
 const getEvents = async () => {
 	//FIXME fix event.remove() and code.remove()

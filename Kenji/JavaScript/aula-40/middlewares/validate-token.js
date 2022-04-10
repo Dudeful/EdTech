@@ -14,7 +14,7 @@ const validateToken = (req, res, next) => {
 		return next();
 	}
 
-	if (userToken.timestamp + 36 * 1000 < Date.now()) {
+	if (userToken.timestamp + 180 * 1000 < Date.now()) {
 		req.validations = false;
 		return next();
 	}
