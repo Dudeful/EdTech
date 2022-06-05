@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600;700&display=swap');
+
+*{
+  box-sizing: border-box;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+body{
+  margin: 0;
+  text-align: center;
+}
+
+#fetch_button, #save_foo_button, #get_foo_button, #foo_input{
+  cursor: pointer;
+  margin: 2vh 0.5vw;
+  background-color: tomato;
+  color: #383838;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  font-size: 18px;
+}
+
+#root{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#root img{
+  flex: 1 1 auto;
+  margin: 0.5vh;
+  width: 10vw;
+  height: auto;
+  box-shadow: 0 0 8px 0 #383838;
+}
+
+#root #foo_response{
+  margin: 10vh auto;
+  color: #383838;
+  letter-spacing: 2px;
+  text-shadow: 0 3px 2px #38383850;
+}
+
+#root #foo_div{
+  display: flex;
+  flex-wrap: wrap;
+  width: 85%;
+  padding: 20px;
+  margin: auto;
+}
+
+#root #foo_div .foos{
+  text-align: left;
+  flex: 1 1 20vw;
+  box-shadow: 0 0 8px 0 #383838;
+  color: #383838;
+  margin: 15px 20px;
+  padding: 15px;
+}
