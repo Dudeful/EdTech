@@ -16,8 +16,8 @@ require("dotenv/config");
 const app = (0, express_1.default)();
 const port = process.env.PORT || 5000;
 app.use(express_1.default.json());
-app.get('/', (req, res) => {
-    res.send('Express + TypeScript Server');
+app.get('/ping', (req, res) => {
+    res.send('pong');
 });
 app.use('/accounts', accounts_1.default);
 app.use('/register-deposit', register_deposit_1.default);

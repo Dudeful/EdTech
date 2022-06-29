@@ -17,7 +17,7 @@ router.post('/', user_data_1.default, async (req, res) => {
     }
     catch (error) {
         console.error(error);
-        //FIXME dev only! stop sending entire error messages to the client
+        //FIXME dev only! stop sending entire error messages to the client and improve custom messages
         res.status(error.code || 503).send({ error: error.message });
     }
 });

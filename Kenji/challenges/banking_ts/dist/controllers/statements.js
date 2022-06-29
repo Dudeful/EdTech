@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     }
     catch (error) {
         console.error(error);
-        //FIXME dev only! stop sending entire error messages to the client
+        //FIXME dev only! stop sending entire error messages to the client and improve custom messages
         res.status(error.code || 400).send({ error: error.message });
     }
 });

@@ -14,8 +14,8 @@ const port = process.env.PORT || 5000;
 
 app.use(express.json());
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Express + TypeScript Server');
+app.get('/ping', (req: Request, res: Response) => {
+  res.send('pong');
 });
 
 app.use('/accounts', accounts);
@@ -28,7 +28,5 @@ app.use('/transactions', transactions);
 app.use('/users', users);
 
 app.listen(port, () => {
-  console.log(
-    `Server is running on port ${port}`
-  );
+  console.log(`Server is running on port ${port}`);
 });
