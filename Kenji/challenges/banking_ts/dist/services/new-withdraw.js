@@ -12,9 +12,10 @@ const newWithdraw = async (data) => {
     await client.connect();
     try {
         const selectOriginQuery = `
-      SELECT *
-      FROM public.accounts
-      WHERE account_number = $1 AND branch = $2
+    SELECT a.*, c.password 
+    FROM public.accounts a
+      JOIN public.clients c ON c.id = a.client_id
+    WHERE a.account_number = $1 AND a.branch = $2
     `;
         const originResult = await client.query(selectOriginQuery, [
             data.origin.account,
