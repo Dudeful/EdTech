@@ -5,7 +5,8 @@ interface Withdraw
     branch: string,
     account: string
   }, 
-  amount: number
+  amount: number,
+  password: string
 }
 
 export { Withdraw };

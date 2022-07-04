@@ -1,4 +1,5 @@
 import pg from 'pg';
+import bcrypt from 'bcrypt';
 import { Statement } from '../models/statement-interface';
 const { Client } = pg;
 
@@ -7,6 +8,28 @@ const statements: any = async (data: Statement) => {
   await client.connect();
 
   try {
+    const selectUser = `
+      SELECT c.password
+      FROM public.clients c
+        JOIN public.accounts a ON a.client_id = c.id 
+      WHERE a.client_id=$1 OR (a.branch=$2 AND a.account_number=$3)
+    `;
+
+    const selectUserResults = await client.query(selectUser, [
+      data.id,
+      data.branch,
+      data.account
+    ]);
+
+    const match = await bcrypt.compare(
+      data.password, 
+      selectUserResults.rows[0].password
+    );
+
+    if (!match) {
+      throw new Error('Wrong password!');
+    }
+
     const query = `
       WITH all_transactions AS(
         SELECT 

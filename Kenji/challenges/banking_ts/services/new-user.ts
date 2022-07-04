@@ -1,4 +1,5 @@
 import crypto from 'crypto';
+import bcrypt from 'bcrypt';
 import pg from 'pg';
 import checkDigit from '../utils/check-digit';
 const { Client } = pg;
@@ -23,11 +24,12 @@ const newUser: any = async (data: User) => {
 
     // CREATE USER
     const userID = crypto.randomUUID();
+    const userPassword = bcrypt.hashSync(data.password, 12);
     const insertUser = `
-      INSERT INTO public.clients (id, name, cpf, email, birthdate) 
-      VALUES ($1, $2, $3, $4, $5)
+      INSERT INTO public.clients (id, name, cpf, email, birthdate, password) 
+      VALUES ($1, $2, $3, $4, $5, $6)
     `;
-    const userData = [userID, data.name, data.cpf, data.email, data.birthdate];
+    const userData = [userID, data.name, data.cpf, data.email, data.birthdate, userPassword];
     await client.query(insertUser, userData);
 
     // CREATE ACCOUNT

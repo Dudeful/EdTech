@@ -5,7 +5,8 @@ interface Statement
   branch: string,
   account: string,
   date: Date, 
-  all: boolean
+  all: boolean,
+  password: string
 }
 
 export { Statement };

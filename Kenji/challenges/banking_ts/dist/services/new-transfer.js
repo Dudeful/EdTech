@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const crypto_1 = __importDefault(require("crypto"));
+const bcrypt_1 = __importDefault(require("bcrypt"));
 const pg_1 = __importDefault(require("pg"));
 const { Client } = pg_1.default;
 const newTransfer = async (data) => {
@@ -21,6 +22,10 @@ const newTransfer = async (data) => {
             data.origin.branch,
         ]);
         const originAccount = originResult.rows[0];
+        const match = await bcrypt_1.default.compare(data.password, originAccount.password);
+        if (!match) {
+            throw new Error('Wrong password!');
+        }
         // FIXME use IF/CASE for query optimization
         const selectDestinationQuery = `
       SELECT * 

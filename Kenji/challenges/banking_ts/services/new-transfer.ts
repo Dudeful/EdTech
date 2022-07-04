@@ -1,4 +1,5 @@
 import crypto from 'crypto';
+import bcrypt from 'bcrypt';
 import pg from 'pg';
 import { Transfer } from '../models/transfer-interface';
 const { Client } = pg;
@@ -19,6 +20,12 @@ const newTransfer: any = async (data: Transfer) => {
       data.origin.branch,
     ]);
     const originAccount = originResult.rows[0];
+
+    const match = await bcrypt.compare(data.password, originAccount.password);
+
+    if (!match) {
+      throw new Error('Wrong password!');
+    }
 
     // FIXME use IF/CASE for query optimization
     const selectDestinationQuery = `

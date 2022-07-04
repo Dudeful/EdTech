@@ -4,11 +4,27 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const pg_1 = __importDefault(require("pg"));
+const bcrypt_1 = __importDefault(require("bcrypt"));
 const { Client } = pg_1.default;
 const statements = async (data) => {
     const client = new Client();
     await client.connect();
     try {
+        const selectUser = `
+      SELECT c.password
+      FROM public.clients c
+        JOIN public.accounts a ON a.client_id = c.id 
+      WHERE a.client_id=$1 OR (a.branch=$2 AND a.account_number=$3)
+    `;
+        const selectUserResults = await client.query(selectUser, [
+            data.id,
+            data.branch,
+            data.account
+        ]);
+        const match = await bcrypt_1.default.compare(data.password, selectUserResults.rows[0].password);
+        if (!match) {
+            throw new Error('Wrong password!');
+        }
         const query = `
       WITH all_transactions AS(
         SELECT 

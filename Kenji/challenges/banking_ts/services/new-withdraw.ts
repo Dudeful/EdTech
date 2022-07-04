@@ -1,4 +1,5 @@
 import crypto from 'crypto';
+import bcrypt from 'bcrypt';
 import pg from 'pg';
 import { Withdraw } from '../models/withdraw-interface';
 const { Client } = pg;
@@ -18,6 +19,12 @@ const newWithdraw: any = async (data: Withdraw) => {
       data.origin.branch,
     ]);
     const originAccount = originResult.rows[0];
+
+    const match = await bcrypt.compare(data.password, originAccount.password);
+
+    if (!match) {
+      throw new Error('Wrong password!');
+    }
 
     if (!originAccount) {
       throw new Error("we couldn't find the account");

@@ -6,7 +6,8 @@ interface User
   cpf: string, 
   email: string, 
   birthdate: string,
-  all: boolean
+  all: boolean,
+  password: string
 }
 
 export { User };
